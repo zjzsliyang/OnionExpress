@@ -7,6 +7,30 @@
 
 Group 4
 
+> 1452669 Yang LI
+>
+> 1453645 Zhongjin LUO
+>
+> 1451228 Guohui YANG
+>
+> 1552651 Yirui WANG
+>
+> 1552677	Xinying WU
+>
+> 1552705 Yiqun LIN
+
+## Prerequisites
+
+- [Astah Professional](http://astah.net/editions/professional) for UML
+- [Typora](https://typora.io/) for markdown(optional)
+- [Sketch](https://www.sketchapp.com/) for User Interface
+- [InVision](https://www.invisionapp.com/) for Prototype
+
+## Reference
+
+- UML 2.0学习指南
+- Thinking in UML
+
 ## PART I Assignment
 
 **Due April 15th, 7:00 pm**
