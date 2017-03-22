@@ -69,7 +69,7 @@ Weight: 15%
 
 ## Agenda
 
-- First Point: MEETING(*March 23, THU, 3:10-3:30pm TAC*)
+- First Point: MEETING(*March 23, THU, 3:10-3:30pm, TAC*)
 - Second Point: MEETING(*March 24, FRI*)
-- Third Point: Deadline(*March 26, SUN*)
-- Fourth Point: Recognized(*March 28, TUE*)
+- Third Point: DEADLINE(*March 26, SUN*)
+- Fourth Point: RECOGNIZE(*March 28, TUE*)
