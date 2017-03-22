@@ -59,3 +59,17 @@ Weight: 15%
   - Contributions of team members
   - Presenting the use case model(**Due March 30**)
 - Releated UML Models
+
+## Distribution
+
+- **Use Case**
+- **Activity Diagram**
+- iOS UI
+- Web UI
+
+## Agenda
+
+- First Point: MEETING(*March 23, THU, 3:10-3:30pm TAC*)
+- Second Point: MEETING(*March 24, FRI*)
+- Third Point: Deadline(*March 26, SUN*)
+- Fourth Point: Recognized(*March 28, TUE*)
