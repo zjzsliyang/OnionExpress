@@ -2,7 +2,7 @@
 | :----------------------- | :--------------------------------------- |
 | Related Requirements     | Scenario Seven                           |
 | Goal In Context          | The server passes the request and provides information for the customer to send the product back. |
-| Preconditions            | The customer wants to return the product the or she unsatisfied with after receiving within a month. |
+| Preconditions            | The customer wants to return the product he or she unsatisfied with after receiving within a month. |
 | Successful End Condition | The server provide the customer a label containing the address to send the product back including the postage. |
 | Failed End Condition     | The request is rejected.                 |
 | Primary Actors           | Customer                                 |
