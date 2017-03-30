@@ -72,5 +72,5 @@ Weight: 15%
 - First Point: MEETING(*March 23, THU, 3:10-3:30pm, TAC*)
 - Second Point: MEETING(*March 25, SAT, 8:00-9:00pm, TAC*)
 - Third Point: DEADLINE(*March 26, SUN*)
-- Fourth Point: RECOGNIZE(*March 28, TUE*)
+- Fourth Point: RECOGNIZE(*March 30, TUE*)
 
