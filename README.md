@@ -5,19 +5,16 @@
 
 *Spring 2017, Prof. CAO*
 
+## Contributors
+
 Group 4
 
-> 1452669 Yang LI
->
-> 1453645 Zhongjin LUO
->
-> 1451228 Guohui YANG
->
-> 1552651 Yirui WANG
->
-> 1552677	Xinying WU
->
-> 1552705 Yiqun LIN
+- 1452669 Yang LI
+- 1453645 Zhongjin LUO
+- 1451228 Guohui YANG
+- 1552651 Yirui WANG
+- 1552677	Xinying WU
+- 1552705 Yiqun LIN
 
 ## Prerequisites
 
