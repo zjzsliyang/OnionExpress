@@ -9,12 +9,12 @@
 
 Group 4
 
-- 1452669 Yang LI
-- 1453645 Zhongjin LUO
-- 1451228 Guohui YANG
-- 1552651 Yirui WANG
-- 1552677	Xinying WU
-- 1552705 Yiqun LIN
+- 1452669 [Yang LI](https://github.com/zjzsliyang)
+- 1453645 [Zhongjin LUO](https://github.com/tjluozhongjin)
+- 1451228 [Guohui YANG](https://github.com/Yghifi)
+- 1552651 [Yirui WANG](https://github.com/Charon0622)
+- 1552677 Xinying WU
+- 1552705 [Yiqun LIN](https://github.com/lyqun)
 
 ## Prerequisites
 
@@ -59,10 +59,17 @@ Weight: 15%
 
 ## Distribution
 
-- **Use Case**
-- **Activity Diagram**
+- Use Case
+  - Zhongjin LUO
+  - Guohui YANG
+  - Yirui WANG
+  - Yiqun LIN
+- Activity Diagram
 - iOS UI
+  - Yang LI
 - Web UI
+- Document
+  - Yang LI
 
 ## Agenda
 
