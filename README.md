@@ -1,13 +1,11 @@
 # 42003201ObjectOrientedAnalysisAndDesign
-42003201Object-Oriented Analysis And Design(Project) by Yan LIU & Buyang CAO @ SSE, TJU
+42003201 Spring2017 Object-Oriented Analysis And Design(Project) by Yan LIU & Buyang CAO @ SSE, TJU
 
 ------
 
-*Spring 2017, Prof. CAO, [TA](mailto:1131974342@qq.com)*
-
 ## Contributors
 
-Group 4
+*Group 4*
 
 - 1452669 [Yang LI](https://github.com/zjzsliyang)
 - 1453645 [Zhongjin LUO](https://github.com/tjluozhongjin)
@@ -65,6 +63,7 @@ Weight: 15%
   - Yirui WANG
   - Yiqun LIN
 - Activity Diagram
+  - Yirui WANG
 - iOS UI
   - Yang LI
 - Web UI
@@ -75,6 +74,8 @@ Weight: 15%
 
 - First Point: MEETING(*March 23, THU, 3:10-3:30pm, TAC*)
 - Second Point: MEETING(*March 25, SAT, 8:00-9:00pm, TAC*)
-- Third Point: DEADLINE(*March 26, SUN*)
+- Third Point: DEADLINE for Use Case(*March 26, SUN*)
 - Fourth Point: PRESENTATION(*March 30, THU*)
+- Fifth Point: DEADLINE for SRS Document(*April 6, THU*)
+
 
