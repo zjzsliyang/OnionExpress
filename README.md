@@ -3,7 +3,7 @@
 
 ------
 
-*Spring 2017, Prof. CAO*
+*Spring 2017, Prof. CAO, [TA](mailto:1131974342@qq.com)*
 
 ## Contributors
 
@@ -76,5 +76,5 @@ Weight: 15%
 - First Point: MEETING(*March 23, THU, 3:10-3:30pm, TAC*)
 - Second Point: MEETING(*March 25, SAT, 8:00-9:00pm, TAC*)
 - Third Point: DEADLINE(*March 26, SUN*)
-- Fourth Point: RECOGNIZE(*March 30, THU*)
+- Fourth Point: PRESENTATION(*March 30, THU*)
 
