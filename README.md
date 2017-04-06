@@ -23,7 +23,7 @@
 
 ## Reference
 
-- UML 2.0学习指南
+- Learning UML 2.0
 - Thinking in UML
 
 ## PART I Assignment
@@ -77,7 +77,16 @@ Weight: 15%
 - Second Point: MEETING(*March 25, SAT, 8:00-9:00pm, TAC*)
 - Third Point: DEADLINE for Use Case(*March 26, SUN*)
 - Fourth Point: PRESENTATION(*March 30, THU*)
-- Fifth Point: DEADLINE for SRS Document(*April 7, FRI*)
+- Fifth Point: DEADLINE for SRS Document(*April 9, SUn*)
 - Sixth Point: SRS Document Submission(*April 15, SAT*)
 
 
+## Todo
+
+- [ ] Web UI & Description -> WU 
+- [ ] iOS UI Description -> LI
+- [ ] Activity Diagram -> WANG
+- [ ] Sub Use Case Diagram -> WANG
+- [ ] Global Use Case Diagram -> WANG
+- [ ] Review for Glossary of terms -> LI
+- [ ] Review for Use Case -> Everyone
