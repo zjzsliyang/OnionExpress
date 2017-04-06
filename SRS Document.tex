@@ -11,7 +11,7 @@
 \usepackage{verbatim}
 \usepackage{hyperref}
 \usepackage{color}
-\usepackage{fontspec}
+\usepackage{setspace}
 \title{
 \includegraphics[width=0.8in]{DocumentRes/OnionExpress.png} \\
 \vspace*{1in}
@@ -131,6 +131,145 @@ detailed in supplementary Specification.
 
 
 \chapter{Glossary of Terms}
+\begin{spacing}{0.4}
+\subsubsection{after-sales service}
+Also called customer service, after sales service is the provision of
+service to customers before, during and after a purchase.
+\subsubsection{article}
+The material in the package which is sent by a normal customer.
+\subsubsection{bi-directional read}
+The information can be read in both direction.
+\subsubsection{cash-on-delivery express}
+The sale of goods by express where payment is made on delivery rather
+than in advance.
+\subsubsection{claim}
+When packages are damaged or lost, customers have right to ask for compensation.
+\subsubsection{courier}
+A courier is a person who delivers messages, packages, and mail. Here it refers
+to postmen.
+\subsubsection{customer service staff}
+The staff in the logistics company serving customers.
+\subsubsection{damaged express item}
+The package that is damaged during express.
+\subsubsection{decision support system(DSS)}
+A decision support system is a computer-based information system that supports
+ business or organizational decision-making activities.
+\subsubsection{delivery}
+A single task to send the package to a customer.
+\subsubsection{delivery terminal}
+The destination of the delivery where the receiver receive and sign the package.
+\subsubsection{dispath list}
+The digital list of information of the packages to be delivered in
+postmen’s port.
+\subsubsection{distribution center}
+A station in a large district to transfer packages to the regional
+distribution center.
+\subsubsection{door-to-cfs}
+From the shipper factory or warehouse to the destination or the
+Container freight station of the discharging port.
+\subsubsection{door-to-door}
+From the shipper factory or warehouse to the consignee's factory
+or warehouse.
+\subsubsection{Electronic Data Interchange(EDI)}
+Electronic Data Interchange is an electronic communication method that provides
+standards for exchanging data via any electronic means.
+\subsubsection{Electronic Order System(EOS)}
+Electronic Order System is to meet demand instantly,
+with perfect quality and punctuality.
+\subsubsection{express item}
+Packages to be delivered.
+\subsubsection{express item tracking system}
+A subsystem in our system to track the packages with GIS automatically.
+\subsubsection{express network}
+A service network within the scope to help delivery.
+\subsubsection{express waybill}
+An express receipt given by the carrier to the shipper acknowledging receipt
+of the packages being shipped and specifying the terms of delivery.
+\subsubsection{first time delivery}
+The first time for particular postman to send the package to a position.
+\subsubsection{Global Position System(GPS)}
+The Global Positioning System is a space-based navigation system that
+provides location and time information in all weather conditions,
+anywhere on or near the Earth where there is an unobstructed line of
+sight to four or more GPS satellites.
+\subsubsection{Geographic Information System(GIS)}
+A geographic information system is a system designed to capture,
+store, manipulate, analyze, manage, and present all types of spatial
+or geographical data.
+\subsubsection{handheld terminal}
+Handheld terminal refers to the portable data processing terminal
+with some particular features. Here it refers to mobile phones with our app.
+\subsubsection{inquiry}
+The customer logins the system or connects with customer service staff to get
+information about the order, operation instruction etc.
+\subsubsection{Integrated Services Digital Network(ISDN)}
+Integrated Services for Digital Network is a set of communication standards
+for simultaneous digital transmission of voice, video, data, and other
+network services over the traditional circuits of the public switched
+telephone network.
+\subsubsection{interchange receipt}
+A voucher to certify that the customers or e-business commits articles
+or products to the logistics company for delivery.
+\subsubsection{Invoice(INV)}
+An invoice is a commercial document issued by a seller to a buyer,
+relating to a sale transaction and indicating the products, quantities,
+and agreed prices for products or services the seller had provided the buyer.
+\subsubsection{Just-in-time logistics(JIT logistics)}
+Just-in-time logistics is a modern logistics method based on the JIT
+management philosophy.
+\subsubsection{lost express item}
+The package that is lost during express.
+\subsubsection{order number}
+The number generalized when the order is created.
+\subsubsection{order processing}
+A series automatic operation in system to deal the order, such as
+creating an order, completing an order and so on.
+\subsubsection{package}
+The material to be delivered after customers or the e-business company
+create orders.
+\subsubsection{product}
+The material in the package which is ordered by customers from the
+e-business company.
+\subsubsection{QR code}
+QR code (abbreviated from Quick Response Code) is the trademark for
+a type of matrix barcode(or two-dimensional barcode) first designed for
+the automotive industry in Japan.
+\subsubsection{receiver}
+Generalized from Customer and Agent, the person receiving and signing
+the package directly.
+\subsubsection{redelivery}
+When no one can sign the package, the postman will carry it back to
+the delivery terminal and the order will be rescheduled in the system.
+\subsubsection{redirect express item}
+When customer changes the destination or the destination is out of scope,
+the package will be reassigned.
+\subsubsection{regional distribution center}
+The substation in a certain region of the logistics company to assign
+packages to postmen.
+\subsubsection{return}
+If customers are unsatisfied with the product, he or she can send it back
+with a label from system.
+\subsubsection{sender}
+The customer or the e-business company who sends the package.
+\subsubsection{serial number of express}
+i.e. the tracking number of packages in the system.
+\subsubsection{sign in}
+The receiver sign the package and get it.
+\subsubsection{sorting}
+The packages in the regional distribution center are sorted to transfer to
+corresponding postmen or the packages in the distribution center are sorted to
+transport to regional distribution centers.
+\subsubsection{tracking number}
+Especially for tracking the real-time GPS location of the package.
+\subsubsection{withdrawal}
+If the customer is unsatisfied with the product and has sent it back,
+he or she can choose withdraw the order and the payment will be reimbursed.
+
+
+
+
+
+\end{spacing}
 
 \chapter{Supplementary Specification}
 \section{Security}
@@ -253,7 +392,7 @@ advantage of by the wicked.
 
 \section{Others}
 \begin{enumerate}
-  \item The architectures of the postman APP and the customer APP are B/S
+  \item The architectures of the postman app and the customer app are B/S
   and C/S, but that of custom service is C/S for safety.
   \item Our system can be used in iOS and Android on mobile devices and in
   a normal browser on PC(Windows/macOS/Linux).
@@ -268,7 +407,7 @@ advantage of by the wicked.
 \chapter{Contributions}
 Visit more on \href{https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign}{GitHub}
 \vspace{3mm}\\
-\href{https://github.com/zjzsliyang}{{\color{blue}1452559 Yang LI}} \hspace{16mm} iOS UI, Document\hfill 17\%\\
+\href{https://github.com/zjzsliyang}{{\color{blue}1452559 Yang LI}} \hspace{17mm} iOS UI, Document\hfill 17\%\\
 \href{https://github.com/tjluozhongjin}{{\color{blue}1453645 Zhongjin LUO}} \hspace{5mm} Use Case\hfill 17\%\\
 \href{https://github.com/Yghifi}{{\color{blue}1451229 Guohui YANG}} \hspace{4.5mm} Use Case\hfill 17\%\\
 \href{https://github.com/Charon0622}{{\color{blue}1552651 Yirui WANG}} \hspace{7mm} Use Case, Activity Diagram, Review\hfill 17\%\\
@@ -323,6 +462,5 @@ Visit more on \href{https://github.com/zjzsliyang/42003201ObjectOrientedAnalysis
   2nd edition,
   March 2012.
 \end{thebibliography}
-
 
 \end{document}
