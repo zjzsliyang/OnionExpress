@@ -102,23 +102,163 @@ detailed in supplementary Specification.
 \section{Activity Diagram}
 
 \section{Use Case Diagram}
+\subsection{Global Use Cases}
+\begin{figure}[htbp]
+  \centering\includegraphics[width=3.5in]{DocumentRes/OnionExpress.png}
+  \caption{Global Use Case Diagram}
+\end{figure}
+\subsection{Sub Use Cases}
+\subsubsection{Payment View}
+
+\subsubsection{Logistics Company View}
+
+\subsection{Specification of Use Cases}
+\subsubsection{Scenario 1}
+
+\subsubsection{Scenario 2}
+
+\subsubsection{Scenario 3}
+
+\subsubsection{Scenario 4}
+
+\subsubsection{Scenario 5}
+
+\subsubsection{Scenario 6}
+
+\subsubsection{Scenario 7}
+
+\subsubsection{Scenario 8}
 
 
 \chapter{Glossary of Terms}
 
 \chapter{Supplementary Specification}
 \section{Security}
+The system should avoid the database being attacked and data being taken
+advantage of by the wicked.
+\subsection{Access and Data Integrity}
+\begin{enumerate}
+  \item The authorization of access to the system of postmen, customers
+  and customer servers should be classified and announced clearly. With
+  certain authorization, different users have limited access to data and
+  operation.
+  \item The server should use anti-virus software.
+  \item Firewalls and network protection are necessary, and they should
+  be updated in time.
+  \item The atomic processes in the database will ensure the accuracy
+  of the database.
+\end{enumerate}
+
+\subsection{Encryption}
+\begin{enumerate}
+  \item The session should not be transmitted in DNS.
+  \item All texts and messages should be encrypted with Encryption Algorithm
+  such as RSA, 3DES or IDEA.
+  \item Two keys are used to identify a certain user. One public key is
+  used for encryption and anther private key is used for decryption.
+  The key is a completely random mix of letters.
+  \item The session will record the activity of the customer, and if the
+  customer has no operation for 5 minutes, he or she will log out the system
+  automatically.
+  \item After customers log out the system, all the private information(cookies)
+  will be cleaned.
+\end{enumerate}
+
+\subsection{Digital Certificates}
+\begin{enumerate}
+  \item We use digital certificates as a replacement of user names and
+  passwords, for example, SSL Certificates. It will be used automatically
+  with the permission of users.
+  \item The IP address or location where users log in the system will be
+  recorded and when the account is used beyond their regular locations, the
+  user will get alarmed.
+\end{enumerate}
+
+\subsection{Digital Signatures}
+\begin{enumerate}
+  \item Users should log in the system with a password. Our system will
+  test its complexity. If it is too simple, the system will remind the
+  users to complicate it. That involves cryptography.
+  \item We use a message digest to ensure the integrality of the data.
+  \item If necessary, we can extend our fingerprint system to login system.
+\end{enumerate}
 
 \section{Performance}
+\begin{enumerate}
+  \item The information of the package, including the real-time position,
+  Order-ID, the postman etc., should be checked by customers in 3 seconds
+  with at most 0.1\% error rate.
+  \item The payment should be confirmed in 2 seconds by the system from
+  the moment when the third party trade agent sends the message or the
+  postmen report the payment.
+  \item The order created by customers should be processed in 15 minutes.
+  \item The orders obtained from e-business should be processed every
+  hour(about 5,000 orders).
+  \item Information of the delivery such as the phone number, the address,
+  the receiver and others should be updated and checked by postman in 1 min.
+  \item This system allows the e-business to create batch orders which can
+  be sent at regular time.
+  \item The estimate of delivery time should be accurate with the max
+  uncertainty in 2 days.
+  \item The expectation should be sent to custom service in 2 min from
+  the time a postman reports it.
+  \item This system’s unavailable time should be controlled in 20 minutes
+  in a year.
+  \item To offer the best user experience, a content delivery network
+  should be used by this system.
+\end{enumerate}
 
 \section{Data Storage and Computing}
+\begin{enumerate}
+  \item To store a huge amount of data, distributed database should be used.
+  And it should use Homogeneous Distributed Databases Management System.
+  \item Considering that there may be an enormous number of visitors and
+  inquiries at the same time, the system must implement cloud computing service.
+  \item The system can support as many as 1500 times of visits per second.
+  \item There must be a copy of the database, including device entity,
+  software, data and even employees, in order to prevent some unpredictable
+  disasters.
+  \item If the database is destroyed, the copy should be enabled in 3 hours.
+  \item The data can be in English, Chinese, Japanese, French and Korean.
+\end{enumerate}
 
 \section{Track the Package}
+\begin{enumerate}
+  \item In order to track the package, the GIS system should be applied,
+  with the help of the GPS system. The system gets geographic information
+  from a third party system, and get the position of postmen who deliver
+  the package through the system of postmen. And this system should match
+  both kinds of the information and show it to users of the system.
+  \item The system for postmen should upload the position of the postman
+  automatically every 2 hours, through 3G, 4G or WLAN network.
+  \item If the locations of postmen are missing for 4 hours, the system
+  should inform the custom servers, and custom servers will contact with
+  postmen.
+\end{enumerate}
 
 \section{Maintenance}
+\begin{enumerate}
+  \item The distributed database should be maintained by the employees
+  of our own company including the employees of the standby database
+  every day when the visiting traffic is not heavy.
+  \item The software for custom service, customer and postmen and the
+  system itself should be maintained by our employees.
+  \item The geographic information source should be multiple, in case
+  that one of the sources is unavailable.
+  \item The engineers from the company offered DBMS will maintain
+  our system every year.
+  \item An integrated scheme to deal accidents, for example, the crash
+  of database, is necessary.
+\end{enumerate}
 
 \section{Others}
-
+\begin{enumerate}
+  \item The architectures of the postman APP and the customer APP are B/S
+  and C/S, but that of custom service is C/S for safety.
+  \item Our system can be used in iOS and Android on mobile devices and in
+  a normal browser on PC(Windows/macOS/Linux).
+  \item Anticipated development time is two months.
+\end{enumerate}
 
 \chapter{User Interface}
 \section{Mobile Devices(iOS)}
