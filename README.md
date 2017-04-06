@@ -77,7 +77,7 @@ Weight: 15%
 - Second Point: MEETING(*March 25, SAT, 8:00-9:00pm, TAC*)
 - Third Point: DEADLINE for Use Case(*March 26, SUN*)
 - Fourth Point: PRESENTATION(*March 30, THU*)
-- Fifth Point: DEADLINE for SRS Document(*April 6, THU*)
+- Fifth Point: DEADLINE for SRS Document(*April 7, FRI*)
 - Sixth Point: SRS Document Submission(*April 15, SAT*)
 
 
