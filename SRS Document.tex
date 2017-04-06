@@ -1,9 +1,9 @@
 %SRS Document
 %Copyright 2017 Yang LI
 %https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign
-%Under MIT License
+%Under GPL-3.0 License
 
-\documentclass[11pt]{scrreprt}
+\documentclass[12pt]{scrreprt}
 \usepackage{outline}
 \usepackage{pmgraph}
 \usepackage[normalem]{ulem}
@@ -39,23 +39,101 @@
 \tableofcontents
 
 \chapter{Introduction}
+Onion Express\textregistered\ is a system built for logistic companies,
+which provides them with a solution to logistics tracking, goods packing,
+goods distribution, after-sales management, data storage, information
+processing, etc.
 
-\chapter{Use Case Modeling}
+\section{Purpose}
+These days as B2C business is increasing rapidly, the growth of
+logistics business is also remarkable. The enormous market demand
+brings logistics companies opportunities as well as the challenge.
+Facing such kind of condition, this project is aimed at improving the
+efficiency of field personnel and customer satisfaction of a logistics
+company by building a cross-platform system.
+
+\section{Definitions}
+As Jobs has ever said, “People don't know what I really want at all,
+until your products are in their eyes”. This project is specially
+designed for an independent logistics companies like UPS. The business
+scope is limited within China. To be more precise, the express is only
+available in Jiangsu, Zhejiang and Shanghai at the beginning.
+Temporarily private orders are not covered in the business scope,
+which means the express company corporates with e-commercial companies only
+with the cash-on-delivery express or normal express. The system focuses on logistics
+service without regard to O2O, bulk cargo or self-support e-business.
+Timing express might be expanded in future.
+
+\section{System Overview}
+The actors in the system are classified as \emph{Postman, E-business, Customer
+service, Customer} and \emph{Agent}. \emph{Customer} and \emph{Agent} are
+generalized as Receiver. The \emph{Postman} has access to this system
+only on mobile devices while \emph{Customer} has access both on browsers
+as well as mobile devices. \emph{E-business} offers orders periodically.
+\emph{Customer service} helps to deal with tasks cannot be done only by
+the system.\\
+Web application and iOS application provide different functions for different
+users to enhance user experience and have some humanization design(e.g.
+using different colors to mark tasks as reception or delivery in postman’s app).
+Besides basic functions, the system also provides some advanced functions,
+like printing invoices. Different offline payment methods are supported.
+And the customer’s telephone number is hidden to protect his/her privacy.\\
+The postman is equipped with a multifunctional special device, when the
+customer receives his/her package, he/she can use this device to pay by
+card and can also press thumb on it to sign digitally, besides, the device
+helps collect postman’s GPS location accurately.\\
+The system considers all the 8 scenarios, including sending the package,
+paying for the product, signing the package and so on. To integrate the
+system, two scenarios are added. One is creating the orders, at the beginning
+of the entire flow. Another is dealing the order manually, to reduce errors
+caused by the system and handle other unanticipated situations. That can
+improve the stability of the system and in consideration of the relatively
+small scale of users in the early stage, robot customer service is not
+necessary. It can be taken into consideration when the business is expanding
+to a certain stage.\\
+This project also designs several user interface mock-ups on the website
+and on mobile devices. Core functions are exhibited in these mock-ups,
+for example, the dispatch list interface.\\
+Nonfunctional requirements and further explanations on security, performance,
+data storage and computing, tracking the package, maintenance and others are
+detailed in supplementary Specification.
+
+\chapter{Use Case Modelling}
+\section{Activity Diagram}
+
+\section{Use Case Diagram}
+
 
 \chapter{Glossary of Terms}
 
 \chapter{Supplementary Specification}
+\section{Security}
+
+\section{Performance}
+
+\section{Data Storage and Computing}
+
+\section{Track the Package}
+
+\section{Maintenance}
+
+\section{Others}
+
 
 \chapter{User Interface}
+\section{Mobile Devices(iOS)}
+
+\section{Website}
 
 \chapter{Contributions}
+Visit more on \href{https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign}{GitHub}
+\vspace{3mm}\\
 \href{https://github.com/zjzsliyang}{{\color{blue}1452559 Yang LI}} \hspace{16mm} iOS UI, Document\hfill 17\%\\
 \href{https://github.com/tjluozhongjin}{{\color{blue}1453645 Zhongjin LUO}} \hspace{5mm} Use Case\hfill 17\%\\
 \href{https://github.com/Yghifi}{{\color{blue}1451229 Guohui YANG}} \hspace{4.5mm} Use Case\hfill 17\%\\
-\href{https://github.com/Charon0622}{{\color{blue}1552651 Yirui WANG}} \hspace{7mm} Use Case, Activity Diagram\hfill 17\%\\
+\href{https://github.com/Charon0622}{{\color{blue}1552651 Yirui WANG}} \hspace{7mm} Use Case, Activity Diagram, Review\hfill 17\%\\
 {{\color{blue}1552677 Xinying WU} \hspace{8mm} Web UI\hfill 17\%\\
-\href{https://github.com/lyqun}{{\color{blue}1552705 Yiqun LIN}} \hspace{11mm} Use Case\hfill 17\%\\ \\
-Visit more on \href{https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign}{GitHub}\\
+\href{https://github.com/lyqun}{{\color{blue}1552705 Yiqun LIN}} \hspace{11mm} Use Case\hfill 17\%
 
 \begin{thebibliography}{99}
 \bibitem{1998}

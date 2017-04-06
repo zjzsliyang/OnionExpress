@@ -67,6 +67,7 @@ Weight: 15%
 - iOS UI
   - Yang LI
 - Web UI
+  - Xinying WU(*Expected*)
 - Document
   - Yang LI
 
@@ -77,5 +78,6 @@ Weight: 15%
 - Third Point: DEADLINE for Use Case(*March 26, SUN*)
 - Fourth Point: PRESENTATION(*March 30, THU*)
 - Fifth Point: DEADLINE for SRS Document(*April 6, THU*)
+- Sixth Point: SRS Document Submission(*April 15, SAT*)
 
 
