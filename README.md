@@ -11,7 +11,7 @@
 - 1453645 [Zhongjin LUO](https://github.com/tjluozhongjin)
 - 1451228 [Guohui YANG](https://github.com/Yghifi)
 - 1552651 [Yirui WANG](https://github.com/Charon0622)
-- 1552677 Xinying WU
+- 1552677 [Xinying WU](https://github.com/CandiceGemini)
 - 1552705 [Yiqun LIN](https://github.com/lyqun)
 
 ## Prerequisites
