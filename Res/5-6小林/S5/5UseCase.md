@@ -1,4 +1,4 @@
-| Use case name            | Pay for the Product                      |
+| Use case name            | Pay the Product                          |
 | ------------------------ | ---------------------------------------- |
 | Related Requirements     | Scenario Five                            |
 | Goal In Context          | The customer needs to pay for the product after he/she has placed the product or received the product. |
@@ -31,7 +31,7 @@
 |                          | Step5 E-business receives the payment.   |
 | Extensions               | None.                                    |
 
-| Use case name            | pay offline                              |
+| Use case name            | pay Offline                              |
 | ------------------------ | ---------------------------------------- |
 | Related Requirements     | Scenario Five                            |
 | Goal In Context          | The customer wants to pay for the product offline after he/she has received the product. |
