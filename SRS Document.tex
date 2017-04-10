@@ -13,6 +13,7 @@
 \usepackage{color}
 \usepackage{setspace}
 \usepackage{tabularx}
+\usepackage{float}
 \title{
 \includegraphics[width=0.8in]{DocumentRes/OnionExpress.png} \\
 \vspace*{1in}
@@ -106,14 +107,14 @@ detailed in supplementary Specification.
 \section{Global Use Cases}
 \begin{figure}[!htb]
   \centering\includegraphics[width=5.5in]{DocumentRes/0UseCaseDiagram.png}
-  \caption{Global Use Cases}
+  \caption{Global Use Cases Diagram}
 \end{figure}
 
 \section{Specigication of Use Cases}
-\subsection{Scenario one}
-\begin{figure}[!htb]
+\subsection{Scenario One}
+\begin{figure}[H]
   \centering\includegraphics[width=5in]{DocumentRes/1UseCaseDiagram.png}
-  \caption{Scenario One Use Case}
+  \caption{Scenario One Use Case Diagram}
 \end{figure}
 
 \begin{table}
@@ -155,12 +156,63 @@ detailed in supplementary Specification.
   \end{tabular}
 \end{table}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
   \centering\includegraphics[width=6in]{DocumentRes/1ActivityDiagram.png}
-  \caption{Global Use Cases}
+  \caption{Scenario One Activity Diagram}
 \end{figure}
 
+\subsection{Scenario Two}
+\begin{figure}[H]
+  \centering\includegraphics[width=5in]{DocumentRes/2UseCaseDiagram.png}
+  \caption{Scenario Two Use Case Diagram}
+\end{figure}
 
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Check Delivery Information\\
+    \hline
+    Related Requirements & Scenario Two\\
+    \hline
+    Goal in Context & Postmen accept delivery task assigned by the system.\\
+    \hline
+    Preconditions & TOrders have been created and packages have been
+    transported to the regional distribution centers.\\
+    \hline
+    Successful End Condition & Postmen check delivery information and send
+    packages to the customer.\\
+    \hline
+    Failed End Condition & None\\
+    \hline
+    Primary Actors & Postman\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & Postmen accept an delivery task.\\
+    \hline
+    Main Flow & Step 1 : Logistics Company assigns task to Postman.\\
+    & Step 2 : Postmen accept delivery task.\\
+    & Step 3 : Postmen log in the system.\\
+    & Step 4 : Postmen check delivery information including tracking number,
+    destination, personal information about receivers, QR code for payment
+    (if the customer choose to pay on-site) and so on.\\
+    & Step 5 : Postmen go to the regional distribution center and get the
+    package.\\
+    & Step 6 : Postmen deliver it to the destination.\\
+    & Step 7 : Postmen inform customers to take packages. At the same time,
+    Postmen will Inspect Address, if the GPS address of  the customer is not
+    in the database, they will collect the GPS address.\\
+    \hline
+    Extensions & None\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/2ActivityDiagram.png}
+  \caption{Scenario Two Activity Diagram}
+\end{figure}
 
 \chapter{Glossary of Terms}
 \begin{spacing}{0.7}
@@ -465,11 +517,11 @@ advantage of by the wicked.
 Visit more on \href{https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign}{GitHub}
 \vspace{3mm}\\
 \href{https://github.com/zjzsliyang}{{\color{blue}1452559 Yang LI}} \hspace{17mm} iOS UI, Document\hfill 17\%\\
-\href{https://github.com/tjluozhongjin}{{\color{blue}1453645 Zhongjin LUO}} \hspace{5mm} Use Case\hfill 17\%\\
-\href{https://github.com/Yghifi}{{\color{blue}1451229 Guohui YANG}} \hspace{4.5mm} Use Case\hfill 17\%\\
-\href{https://github.com/Charon0622}{{\color{blue}1552651 Yirui WANG}} \hspace{7mm} Use Case, Activity Diagram, Review\hfill 17\%\\
+\href{https://github.com/tjluozhongjin}{{\color{blue}1453645 Zhongjin LUO}} \hspace{5mm} Use Case Diagram, Activity Diagram\hfill 17\%\\
+\href{https://github.com/Yghifi}{{\color{blue}1451229 Guohui YANG}} \hspace{4.5mm} Use Case Diagram, Activity Diagram\hfill 17\%\\
+\href{https://github.com/Charon0622}{{\color{blue}1552651 Yirui WANG}} \hspace{7mm} Use Case Diagram, Activity Diagram\hfill 17\%\\
 {{\color{blue}1552677 Xinying WU} \hspace{8mm} Web UI\hfill 17\%\\
-\href{https://github.com/lyqun}{{\color{blue}1552705 Yiqun LIN}} \hspace{11mm} Use Case\hfill 17\%
+\href{https://github.com/lyqun}{{\color{blue}1552705 Yiqun LIN}} \hspace{11mm} Use Case Diagram, Activity Diagram\hfill 17\%
 
 \begin{thebibliography}{99}
 \bibitem{1998}
