@@ -57,17 +57,15 @@ Weight: 15%
 
 ## Distribution
 
-- Use Case
+- Use Case Diagram & Activity Diagram
   - Zhongjin LUO
   - Guohui YANG
   - Yirui WANG
   - Yiqun LIN
-- Activity Diagram
-  - Yirui WANG
-- iOS UI
+- iOS UI & Description
   - Yang LI
 - Web UI
-  - Xinying WU(*Expected*)
+  - Xinying WU
 - Document
   - Yang LI
 
@@ -77,16 +75,7 @@ Weight: 15%
 - Second Point: MEETING(*March 25, SAT, 8:00-9:00pm, TAC*)
 - Third Point: DEADLINE for Use Case(*March 26, SUN*)
 - Fourth Point: PRESENTATION(*March 30, THU*)
-- Fifth Point: DEADLINE for SRS Document(*April 9, SUn*)
-- Sixth Point: SRS Document Submission(*April 15, SAT*)
+- Fifth Point: DEADLINE for Diagram(*April 9, SUN*)
+- Sixth Point: DEADLINE for SRS Document(*April 10, MON*)
+- Seventh Point: SRS Document Submission(*April 15, SAT*)
 
-
-## Todo
-
-- [ ] Web UI & Description -> WU 
-- [ ] iOS UI Description -> LI
-- [ ] Activity Diagram -> WANG
-- [ ] Sub Use Case Diagram -> WANG
-- [ ] Global Use Case Diagram -> WANG
-- [ ] Review for Glossary of terms -> LI
-- [ ] Review for Use Case -> Everyone
