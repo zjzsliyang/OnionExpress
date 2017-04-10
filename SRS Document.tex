@@ -12,6 +12,7 @@
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{setspace}
+\usepackage{tabularx}
 \title{
 \includegraphics[width=0.8in]{DocumentRes/OnionExpress.png} \\
 \vspace*{1in}
@@ -103,10 +104,62 @@ detailed in supplementary Specification.
 
 \chapter{Use Case Modelling}
 \section{Global Use Cases}
-\begin{figure}[htbp]
-  \centering\includegraphics[width=6in]{DocumentRes/0UseCaseDiagram.png}
+\begin{figure}[!htb]
+  \centering\includegraphics[width=5.5in]{DocumentRes/0UseCaseDiagram.png}
   \caption{Global Use Cases}
 \end{figure}
+
+\section{Specigication of Use Cases}
+\subsection{Scenario one}
+\begin{figure}[!htb]
+  \centering\includegraphics[width=5in]{DocumentRes/1UseCaseDiagram.png}
+  \caption{Scenario One Use Case}
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Create Order\\
+    \hline
+    Related Requirements & Scenario One\\
+    \hline
+    Goal in Context & The customer or E-business requests to create order.\\
+    \hline
+    Preconditions & The customer buys products from E-business or wants to
+    send packages.\\
+    \hline
+    Successful End Condition & Server creates order according to the
+    information provided by E-business \& Customer.\\
+    \hline
+    Failed End Condition & Server refuses to create an order.\\
+    \hline
+    Primary Actors & E-business and Customer\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & E-business \& Customer sends the related information to Server.\\
+    \hline
+    Main Flow & Step 1 : Customer \& E-business Registers Information to Server.\\
+    & Step 2 : Customer \& E-business Sends Information to Server.\\
+    & Step 3 : Server checks whether the information is completed.\\
+    & Step 4 : Server creates orders automatically according to the information above.\\
+    & Step 5 : E-business \& customer transfers products to Logistics
+    company and pays for the delivery. If the customer doesn’t pay before,
+    Logistics company will pay for products for the customer in advance.\\
+    & Step 6 : Logistics company transports packages to different regional
+    distribution centers.\\
+    \hline
+    Extensions & The request of creating Order is rejected.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[!htb]
+  \centering\includegraphics[width=6in]{DocumentRes/1ActivityDiagram.png}
+  \caption{Global Use Cases}
+\end{figure}
+
 
 
 \chapter{Glossary of Terms}
