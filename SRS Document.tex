@@ -630,6 +630,179 @@ detailed in supplementary Specification.
   \caption{Scenario Four Activity Diagram}
 \end{figure}
 
+\subsection{Scenario Five}
+\begin{figure}[H]
+  \centering\includegraphics[width=5in]{DocumentRes/5UseCaseDiagram.png}
+  \caption{Scenario Five Use Case Diagram}
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Pay for the Product\\
+    \hline
+    Related Requirements & Scenario Five\\
+    \hline
+    Goal in Context & The customer needs to pay for the product after he/she
+    has placed the product or received the product.\\
+    \hline
+    Preconditions & The customer has placed the order.\\
+    \hline
+    Successful End Condition & The payment is completed.\\
+    \hline
+    Failed End Condition & The order has been canceled or the customer has not
+    received the product for some reasons.\\
+    \hline
+    Primary Actors & Customer\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & The customer places the order or receives the product.\\
+    \hline
+    Main Flow & Step 1 : Customer chooses one acceptable way to pay for the
+    product.\\
+    & Step 2 : Customer checks the amount.\\
+    & Step 3 : Customer finishes the payment.\\
+    & Step 4 : E-business receives the payment.\\
+    \hline
+    Extensions & Step3.1 : Customer asks for a invoice about the product.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Pay Online\\
+    \hline
+    Related Requirements & Scenario Five\\
+    \hline
+    Goal in Context & The customer wants to pay for the product online after
+    he/she has placed the order.\\
+    \hline
+    Preconditions & The customer has placed the order, and paying online is
+    provided.\\
+    \hline
+    Successful End Condition & The payment is completed.\\
+    \hline
+    Failed End Condition & The order has been canceled.\\
+    \hline
+    Primary Actors & Customer\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & The customer places the order.\\
+    \hline
+    Main Flow & Step 1 : Customer logins the Third-party Trade system.\\
+    & Step 2 : Customer checks the amount in the system.\\
+    & Step 3 : Customer enters the passwords to pay.\\
+    & Step 4 : Customer finishes the payment.\\
+    & Step 5 : E-business receives the payment.\\
+    \hline
+    Extensions & None\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Pay Offline\\
+    \hline
+    Related Requirements & Scenario Five\\
+    \hline
+    Goal in Context & The customer wants to pay for the product offline after
+    he/she has received the product.\\
+    \hline
+    Preconditions & The customer has received the product, and paying offline
+    is provided.\\
+    \hline
+    Successful End Condition & The payment is completed.\\
+    \hline
+    Failed End Condition & The customer has not received the product for some
+    reasons.\\
+    \hline
+    Primary Actors & Customer\\
+    \hline
+    Secondary Actors & Postman\\
+    \hline
+    Trigger & The customer receives the product.\\
+    \hline
+    Main Flow & Step 1 : Postman checks the amount with the customer.\\
+    & Step 2 : Customer chooses one way to pay, by cash or by credit card.\\
+    & Step 3 : Customer finishes the payment.\\
+    & Step 4 : Postman records the information about the payment.\\
+    & Step 5 : The logistics company transfers the money to E-business.\\
+    \hline
+    Extensions & Step 2.1 : Customer chooses to pay by cash.\\
+    & \ \ Customers pays for the product by cash.\\
+    & \ \ Postman checks the amounts of money and confirms the payment in the app.\\
+    & Step 2.2 : Customer Chooses to pay by credit card.\\
+    & \ \ Postman provide the POS device for the customer.\\
+    & \ \ Customer gives the postman his/her Visa card or Union-Pay card.\\
+    & \ \ Postman swipes the card and enters the amount of money.\\
+    & \ \ Customer enters the password.\\
+    & \ \ The bank system adds money to the logistics company’s account.\\
+    & Step 4.1 : Postman submits the money to the logistics company.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Provide the Invoice\\
+    \hline
+    Related Requirements & Scenario Five\\
+    \hline
+    Goal in Context & E-business provides the invoice about the product for
+    the customer.\\
+    \hline
+    Preconditions & The customer has completed the payment and asks for
+    the invoice.\\
+    \hline
+    Successful End Condition & The Invoice has been sent to the customer.\\
+    \hline
+    Failed End Condition & E-business rejects the request.\\
+    \hline
+    Primary Actors & E-business\\
+    \hline
+    Secondary Actors & Customer\\
+    \hline
+    Trigger & Customer asks for the invoice about the product.\\
+    \hline
+    Main Flow & Step 1 : Customer choose one way to receive the invoice,
+    digital invoice sent by e-mail or a paper invoice sent by post.\\
+    & Step 2 : E-business sends the invoice to the customer.\\
+    & Step 3 : Customer receives the invoice and confirm whether
+    the infomation is onsistent.\\
+    \hline
+    Extensions & Step 1.1 : Customer chooses to receive a digital invoice
+    sent by e-mail.\\
+    & \ \ Customer fills in the e-mail address in the app.\\
+    & Step 1.2 : Customer chooses to receive a paper invoice sent by post.\\
+    & \ \ Customer fills in the mailing address in the app.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/5PayTheProduct.png}
+  \caption{Scenario Five Activity Diagram: Pay The Product}
+\end{figure}
+
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/5PayOnline.png}
+  \caption{Scenario Five Activity Diagram: Pay Online}
+\end{figure}
+
+
+
+
 \chapter{Glossary of Terms}
 \begin{spacing}{0.7}
 \subsubsection{after-sales service}

@@ -23,6 +23,8 @@
 
 ## Reference
 
+> Provided in QQ Group
+
 - Learning UML 2.0
 - Thinking in UML
 
@@ -55,13 +57,13 @@ Weight: 15%
   - Presenting the use case model(**Due March 30**)
 - Releated UML Models
 
-## Distribution
+### Distribution
 
 - Use Case Diagram & Activity Diagram
-  - Zhongjin LUO
-  - Guohui YANG
-  - Yirui WANG
-  - Yiqun LIN
+  - Zhongjin LUO(Scenario 1-2)
+  - Guohui YANG(Scenario 3-4)
+  - Yiqun LIN(Scenario 5-6)
+  - Yirui WANG(Scenario 7-8 & Global)
 - iOS UI & Description
   - Yang LI
 - Web UI
@@ -69,7 +71,7 @@ Weight: 15%
 - Document
   - Yang LI
 
-## Agenda
+### Agenda
 
 - First Point: MEETING(*March 23, THU, 3:10-3:30pm, TAC*)
 - Second Point: MEETING(*March 25, SAT, 8:00-9:00pm, TAC*)
