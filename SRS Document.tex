@@ -105,7 +105,7 @@ detailed in supplementary Specification.
 
 \chapter{Use Case Modelling}
 \section{Global Use Cases}
-\begin{figure}[!htb]
+\begin{figure}[H]
   \centering\includegraphics[width=5.5in]{DocumentRes/0UseCaseDiagram.png}
   \caption{Global Use Cases Diagram}
 \end{figure}
@@ -113,7 +113,7 @@ detailed in supplementary Specification.
 \section{Specigication of Use Cases}
 \subsection{Scenario One}
 \begin{figure}[H]
-  \centering\includegraphics[width=5in]{DocumentRes/1UseCaseDiagram.png}
+  \centering\includegraphics[width=4in]{DocumentRes/1UseCaseDiagram.png}
   \caption{Scenario One Use Case Diagram}
 \end{figure}
 
@@ -151,21 +151,54 @@ detailed in supplementary Specification.
     & Step 6 : Logistics company transports packages to different regional
     distribution centers.\\
     \hline
-    Extensions & The request of creating Order is rejected.\\
+    Extensions & The request of creating order is rejected.\\
     \hline
   \end{tabular}
 \end{table}
 
 \begin{figure}[H]
-  \centering\includegraphics[width=6in]{DocumentRes/1ActivityDiagram.png}
+  \centering\includegraphics[width=5in]{DocumentRes/1ActivityDiagram.png}
   \caption{Scenario One Activity Diagram}
 \end{figure}
 
 \subsection{Scenario Two}
 \begin{figure}[H]
-  \centering\includegraphics[width=5in]{DocumentRes/2UseCaseDiagram.png}
+  \centering\includegraphics[width=4in]{DocumentRes/2UseCaseDiagram.png}
   \caption{Scenario Two Use Case Diagram}
 \end{figure}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Collect GPS Address\\
+    \hline
+    Related Requirements & Scenario One\\
+    \hline
+    Goal in Context & Postmen collect the GPS address of the customer.\\
+    \hline
+    Preconditions & Postmen have delivered packages to the destination.\\
+    \hline
+    Successful End Condition & Server Updates database successfully.\\
+    \hline
+    Failed End Condition & None\\
+    \hline
+    Primary Actors & Postman\\
+    \hline
+    Secondary Actors & Server\\
+    \hline
+    Trigger & The GPS address of  the customer is not in the database.\\
+    \hline
+    Main Flow & Step 1 : Postmen inspect that whether the GPS address of
+    the customer is in the database.\\
+    & Step 2 : If the GPS address of  the customer is not in the database,
+    postmen will collect the GPS address.\\
+    & Include : Update database.\\
+    \hline
+    Extensions & None\\
+    \hline
+  \end{tabular}
+\end{table}
 
 \begin{table}
   \centering
@@ -213,39 +246,6 @@ detailed in supplementary Specification.
   \centering
   \begin{tabular}{| c | p{11cm} |}
     \hline
-    Use Case Name & Collect GPS Address\\
-    \hline
-    Related Requirements & Scenario One\\
-    \hline
-    Goal in Context & Postmen collect the GPS address of the customer.\\
-    \hline
-    Preconditions & Postmen have delivered packages to the destination.\\
-    \hline
-    Successful End Condition & Server Updates database successfully.\\
-    \hline
-    Failed End Condition & None\\
-    \hline
-    Primary Actors & Postman\\
-    \hline
-    Secondary Actors & Server\\
-    \hline
-    Trigger & The GPS address of  the customer is not in the database.\\
-    \hline
-    Main Flow & Step 1 : Postmen inspect that whether the GPS address of
-    the customer is in the database.\\
-    & Step 2 : If the GPS address of  the customer is not in the database,
-    postmen will collect the GPS address.\\
-    & Include : Update database.\\
-    \hline
-    Extensions & None\\
-    \hline
-  \end{tabular}
-\end{table}
-
-\begin{table}
-  \centering
-  \begin{tabular}{| c | p{11cm} |}
-    \hline
     Use Case Name & Update Database\\
     \hline
     Goal in Context & Server Updates database.\\
@@ -271,17 +271,17 @@ detailed in supplementary Specification.
 \end{table}
 
 \begin{figure}[H]
-  \centering\includegraphics[width=6in]{DocumentRes/2ActivityDiagram.png}
+  \centering\includegraphics[width=5in]{DocumentRes/2ActivityDiagram.png}
   \caption{Scenario Two Activity Diagram}
 \end{figure}
 
 \subsection{Scenario Three}
 \begin{figure}[H]
-  \centering\includegraphics[width=5in]{DocumentRes/3UseCaseDiagram.png}
+  \centering\includegraphics[width=4in]{DocumentRes/3UseCaseDiagram.png}
   \caption{Scenario Three Use Case Diagram}
 \end{figure}
 
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{| c | p{11cm} |}
     \hline
@@ -506,13 +506,13 @@ detailed in supplementary Specification.
 \end{table}
 
 \begin{figure}[H]
-  \centering\includegraphics[width=6in]{DocumentRes/3SignPackage.png}
+  \centering\includegraphics[width=5.5in]{DocumentRes/3SignPackage.png}
   \caption{Scenario Three Activity Diagram}
 \end{figure}
 
 \subsection{Scenario Four}
 \begin{figure}[H]
-  \centering\includegraphics[width=5in]{DocumentRes/4UseCaseDiagram.png}
+  \centering\includegraphics[width=4in]{DocumentRes/4UseCaseDiagram.png}
   \caption{Scenario Four Use Case Diagram}
 \end{figure}
 
@@ -626,17 +626,17 @@ detailed in supplementary Specification.
 \end{table}
 
 \begin{figure}[H]
-  \centering\includegraphics[width=6in]{DocumentRes/4RescheduleDelivery.png}
+  \centering\includegraphics[width=5in]{DocumentRes/4RescheduleDelivery.png}
   \caption{Scenario Four Activity Diagram}
 \end{figure}
 
 \subsection{Scenario Five}
 \begin{figure}[H]
-  \centering\includegraphics[width=5in]{DocumentRes/5UseCaseDiagram.png}
+  \centering\includegraphics[width=4in]{DocumentRes/5UseCaseDiagram.png}
   \caption{Scenario Five Use Case Diagram}
 \end{figure}
 
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{| c | p{11cm} |}
     \hline
@@ -751,7 +751,7 @@ detailed in supplementary Specification.
   \end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{| c | p{11cm} |}
     \hline
@@ -791,22 +791,22 @@ detailed in supplementary Specification.
 \end{table}
 
 \begin{figure}[H]
-  \centering\includegraphics[width=6in]{DocumentRes/5PayTheProduct.png}
+  \centering\includegraphics[width=5in]{DocumentRes/5PayTheProduct.png}
   \caption{Scenario Five Activity Diagram: Pay The Product}
 \end{figure}
 
 \begin{figure}[H]
-  \centering\includegraphics[width=6in]{DocumentRes/5PayOnline.png}
+  \centering\includegraphics[width=3.5in]{DocumentRes/5PayOnline.png}
   \caption{Scenario Five Activity Diagram: Pay Online}
 \end{figure}
 
 \subsection{Scenario Six}
 \begin{figure}[H]
-  \centering\includegraphics[width=5in]{DocumentRes/6UseCaseDiagram.png}
+  \centering\includegraphics[width=4in]{DocumentRes/6UseCaseDiagram.png}
   \caption{Scenario Six Use Case Diagram}
 \end{figure}
 
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{| c | p{11cm} |}
     \hline
@@ -918,11 +918,11 @@ detailed in supplementary Specification.
 
 \subsection{Scenario Seven}
 \begin{figure}[H]
-  \centering\includegraphics[width=5in]{DocumentRes/7UseCaseDiagram.png}
+  \centering\includegraphics[width=3.5in]{DocumentRes/7UseCaseDiagram.png}
   \caption{Scenario Seven Use Case Diagram}
 \end{figure}
 
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{| c | p{11cm} |}
     \hline
@@ -1008,17 +1008,17 @@ detailed in supplementary Specification.
 \end{figure}
 
 \begin{figure}[H]
-  \centering\includegraphics[width=6in]{DocumentRes/7MakeReturningRequest.png}
+  \centering\includegraphics[width=5in]{DocumentRes/7MakeReturningRequest.png}
   \caption{Scenario Seven Activity Diagram: Make Returning Request}
 \end{figure}
 
 \subsection{Scenario Eight}
 \begin{figure}[H]
-  \centering\includegraphics[width=5in]{DocumentRes/8UseCaseDiagram.png}
+  \centering\includegraphics[width=4in]{DocumentRes/8UseCaseDiagram.png}
   \caption{Scenario Seven Use Case Diagram}
 \end{figure}
 
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{| c | p{11cm} |}
     \hline
@@ -1099,12 +1099,12 @@ detailed in supplementary Specification.
 \end{table}
 
 \begin{figure}[H]
-  \centering\includegraphics[width=6in]{DocumentRes/8TrackPackage.png}
+  \centering\includegraphics[width=5in]{DocumentRes/8TrackPackage.png}
   \caption{Scenario Seven Activity Diagram: Track Package}
 \end{figure}
 
 \begin{figure}[H]
-  \centering\includegraphics[width=6in]{DocumentRes/8GetPackageTrackInmformation.png}
+  \centering\includegraphics[width=5in]{DocumentRes/8GetPackageTrackInmformation.png}
   \caption{Scenario Seven Activity Diagram: Get Package Track Inmformation}
 \end{figure}
 
@@ -1421,7 +1421,7 @@ change settings there and it's simple and concise。
 There is basic information of the system showed on the page. The services can
 be ordered on this website after the user logs in. The custom can search for
 their packages' particulars after logging in. In addition, the significant
-notations of the Onion Express\textregistered\ are showed on the web page, such us the forbidden 
+notations of the Onion Express\textregistered\ are showed on the web page, such us the forbidden
 objects etc. Any common browsers of the website can contact the Onion
 Express\textregistered\ company and know about the company freely.
 \begin{figure}[htbp]
