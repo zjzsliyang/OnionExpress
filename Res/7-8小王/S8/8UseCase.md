@@ -7,6 +7,7 @@
 | Failed End Condition     | The logistics fails track all the packages and feed back to the customer or the e-business. |
 | Primary Actors           | Logistics                                |
 | Secondary Actors         | None                                     |
+| Trigger                  | Postman receives the package from the customer. |
 | Main Flow                | Step 1 Postman receives and expresses the package to the logistics. |
 |                          | Step 2 Logistics delivers the package to the express station. |
 |                          | Step 3 The express station  scans the bar code. |
@@ -25,6 +26,7 @@
 | Failed End Condition     | The customer or the e-business successfully failed to track the package he or she delivered. |
 | Primary Actors           | Customer, E-business                     |
 | Secondary Actors         | None                                     |
+| Trigger                  | The customer or the E-business logins the system. |
 | Main Flow                | Step 1 The customer or the e-business logins the system. |
 |                          | Step 2 The customer or the e-business inputs the tracking number. |
 |                          | Step 3 The customer or the e-business get package track information. |
