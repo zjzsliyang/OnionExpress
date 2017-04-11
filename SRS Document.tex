@@ -177,7 +177,7 @@ detailed in supplementary Specification.
     \hline
     Goal in Context & Postmen accept delivery task assigned by the system.\\
     \hline
-    Preconditions & TOrders have been created and packages have been
+    Preconditions & Orders have been created and packages have been
     transported to the regional distribution centers.\\
     \hline
     Successful End Condition & Postmen check delivery information and send
@@ -209,10 +209,308 @@ detailed in supplementary Specification.
   \end{tabular}
 \end{table}
 
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Collect GPS Address\\
+    \hline
+    Related Requirements & Scenario One\\
+    \hline
+    Goal in Context & Postmen collect the GPS address of the customer.\\
+    \hline
+    Preconditions & Postmen have delivered packages to the destination.\\
+    \hline
+    Successful End Condition & Server Updates database successfully.\\
+    \hline
+    Failed End Condition & None\\
+    \hline
+    Primary Actors & Postman\\
+    \hline
+    Secondary Actors & Server\\
+    \hline
+    Trigger & The GPS address of  the customer is not in the database.\\
+    \hline
+    Main Flow & Step 1 : Postmen inspect that whether the GPS address of
+    the customer is in the database.\\
+    & Step 2 : If the GPS address of  the customer is not in the database,
+    postmen will collect the GPS address.\\
+    & Include : Update database.\\
+    \hline
+    Extensions & None\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Update Database\\
+    \hline
+    Goal in Context & Server Updates database.\\
+    \hline
+    Preconditions & Postmen collected the GPS address of  the customer and
+    sended to server.\\
+    \hline
+    Successful End Condition & Server Updates database successfully.\\
+    \hline
+    Failed End Condition & Server fails to update database.\\
+    \hline
+    Primary Actors & Server\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & The GPS address of  the customer is not in the database.\\
+    \hline
+    Main Flow & Step 1 : Server Updates database.\\
+    \hline
+    Extensions & None\\
+    \hline
+  \end{tabular}
+\end{table}
+
 \begin{figure}[H]
   \centering\includegraphics[width=6in]{DocumentRes/2ActivityDiagram.png}
   \caption{Scenario Two Activity Diagram}
 \end{figure}
+
+\subsection{Scenario Three}
+\begin{figure}[H]
+  \centering\includegraphics[width=5in]{DocumentRes/3UseCaseDiagram.png}
+  \caption{Scenario Three Use Case Diagram}
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Collect Corresponding Information\\
+    \hline
+    Related Requirements & Scenario Two \& Three\\
+    \hline
+    Goal in Context & Collect information and archive related data.\\
+    \hline
+    Preconditions & Signing package is finished successfully.\\
+    \hline
+    Successful End Condition & The order is marked as complete; Relavant
+    information is gathered.\\
+    \hline
+    Failed End Condition & The order is unfinished; Inspect system exception.\\
+    \hline
+    Primary Actors & Server\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & System sends server a message that informs the package delivery
+    is done.\\
+    \hline
+    Main Flow & Step 1 : Information including the data of received products,
+    customer acceptance and some other transaction details are collected by
+    the server. All necessary related data is archived to database.\\
+    & Step 2 : Server requests to mark this order as complete.\\
+    \hline
+    Extensions & Step 1.1 : Error appears upon the procedure of data
+    collection.\\
+    & Step 1.2 : Data collection is undone.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Confirm Reception\\
+    \hline
+    Related Requirements & Scenario Two \& Three\\
+    \hline
+    Goal in Context & Customer verifies if the receiver is designated
+    by him/her.\\
+    \hline
+    Preconditions & The package has delivered to the customer-specified
+    location on time but customer is not convenient to received it.\\
+    \hline
+    Successful End Condition & The receiver has the permission to sign the
+    package.\\
+    \hline
+    Failed End Condition & The receiver is an imposter; Postman refuses giving
+    him/her the package.\\
+    \hline
+    Primary Actors & Customer\\
+    \hline
+    Secondary Actors & Postman\\
+    \hline
+    Trigger & Someone but not customer claims that he/she have the permission
+    to receive the package.\\
+    \hline
+    Main Flow & Step 1 : Postman collects the necessary information of that
+    person and then sends to customer.\\
+    & Step 2 : Customer confirms the if the potential receiver is as expected.\\
+    & Step 3 : Postman gets a positive feedback from customer.\\
+    & Step 4 : The receiver can sign the package under customer's permission.\\
+    \hline
+    Extensions & Step 3.1 : Postman gets a negative feedback from customer;
+    That person is an imposter.\\
+    & Step 3.2 : Postman refuses to give away the parcel.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Sign on Pad\\
+    \hline
+    Related Requirements & Scenario Two \& Three\\
+    \hline
+    Goal in Context & A customer or the receiver designated by him/her requests
+    to sign his/her name (or other proofs of identity) on Pad.\\
+    \hline
+    Preconditions & The package has delivered to the customer-specified
+    location on time.\\
+    \hline
+    Successful End Condition & The customer receives the package; Package
+    delivery success.\\
+    \hline
+    Failed End Condition & The customer fails to get the package; Package
+    should be returned or reschedule delivery.\\
+    \hline
+    Primary Actors & Customer, Package receiving representative.\\
+    \hline
+    Secondary Actors & Postman\\
+    \hline
+    Trigger & Postman requests customer to sign on pad with the agreetment of
+    customer.\\
+    \hline
+    Included Cases & Confirm Reception, Collect Corresponding Information\\
+    \hline
+    Main Flow & Step 1 : Customer checks if the parcel is delivered right
+    and in good condition in person.\\
+    & Step 2 : Customer signs on pad.\\
+    & Step 3 : Postman confirms the package is received by customer or his/her
+    representative.\\
+    & Step 4 : All corresponding information including the data of the received
+    product and customer acceptance will be transferred back to the server;
+    The order will be marked as complete.\\
+    & Include : Collect Corresponding Information\\
+    \hline
+    Extensions & Step 1.1 : The customer is not convenient to sign the package
+    and asks someone to receive for him/her.\\
+    & Step 2.1 : The representative of customer request to sign the package.\\
+    & Step 2.2 : A confirming message is send to customer and he/she should
+    ensure the package is received by the person he/she designated.\\
+    & Include : Confirm Reception\\
+    & Step 2.3 : The representative signs on pad.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Sign Package Digitally\\
+    \hline
+    Related Requirements & Scenario Two \& Three\\
+    \hline
+    Goal in Context & A customer requests to sign the package.\\
+    \hline
+    Preconditions & The package has delivered to the customer-specified
+    location on time.\\
+    \hline
+    Successful End Condition & The customer receives the package; Package
+    delivery success.\\
+    \hline
+    Failed End Condition & The customer fails to get the package; Package
+    should be returned or reschedule delivery.\\
+    \hline
+    Primary Actors & Customer, Package receiving representative.\\
+    \hline
+    Secondary Actors & Postman\\
+    \hline
+    Trigger & Postman sends customer the request of signing the package.\\
+    \hline
+    Included Cases & Confirm Reception, Collect Corresponding Information\\
+    \hline
+    Main Flow & Step 1 : Customer checks if the parcel is delivered right and
+    in good condition in person.\\
+    & Step 2 : Customer signs the package digitally.\\
+    & Step 3 : Postman confirms the package is received by customer or his/her
+    representative.\\
+    & Step 4 : All corresponding information including the data of the received
+    product and customer acceptance will be transferred back to the server;
+    The order will be marked as complete.\\
+    & Inlude : Collect Corresponding Information\\
+    \hline
+    Extensions & Step 1.1 : The customer is not convenient to sign the package
+    and asks someone to receive for him/her.\\
+    & Step 2.1 : The representative of customer request to sign the package.\\
+    & Step 2.2 : Step 2.2 : A confirming message is send to customer and he/she
+    should ensure the package is received by the person he/she designated.\\
+    & Include : Confirm Reception\\
+    & Step 2.3 : The representative signs the package digitally.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Sign with Fingerprint\\
+    \hline
+    Related Requirements & Scenario Two \& Three\\
+    \hline
+    Goal in Context & A customer or the receiver designated by him/her requests
+    to sign his/her name (or other proofs of identity) on Pad.\\
+    \hline
+    Preconditions & The package has delivered to the customer-specified location
+     on time.\\
+    \hline
+    Successful End Condition & The customer receives the package; Package
+    delivery success.\\
+    \hline
+    Failed End Condition & The customer fails to get the package; Package
+    should be returned or reschedule delivery.\\
+    \hline
+    Primary Actors & Customer, Package receiving representative.\\
+    \hline
+    Secondary Actors & Postman\\
+    \hline
+    Trigger & Postman requests customer to sign via fingerprint with the
+    agreetment of customer.\\
+    \hline
+    Included Cases & Confirm Reception, Collect Corresponding Information\\
+    \hline
+    Main Flow & Step 1 : Customer checks if the parcel is delivered right and
+    in good condition in person.\\
+    & Step 2 : Customer signs with fingerprint.\\
+    & Step 3 : Postman confirms the package is received by customer or his/her
+     representative.\\
+    & Step 4 : All corresponding information including the data of the received
+    product and customer acceptance will be transferred back to the server; The
+    order will be marked as complete.\\
+    & Include : Collect Corresponding Information\\
+    \hline
+    Extensions & Step 1.1 : The customer is not convenient to sign the package
+    and asks someone to receive for him/her.\\
+    & Step 2.1 : The representative of customer request to sign the package.\\
+    & Step 2.2 : A confirming message is send to customer and he/she should
+    ensure the package is received by the person he/she designated.\\
+    & Include : Confirm Reception\\
+    & Step 2.3 : The representative signs with fingerprint.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/3SignPackage.png}
+  \caption{Scenario Three Activity Diagram}
+\end{figure}
+
+
 
 \chapter{Glossary of Terms}
 \begin{spacing}{0.7}
@@ -514,7 +812,7 @@ advantage of by the wicked.
 \end{figure}
 
 \chapter{Contributions}
-Visit more on \href{https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign}{GitHub}
+More information, please visit more on \href{https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign}{GitHub}
 \vspace{3mm}\\
 \href{https://github.com/zjzsliyang}{{\color{blue}1452559 Yang LI}} \hspace{17mm} iOS UI, Document\hfill 17\%\\
 \href{https://github.com/tjluozhongjin}{{\color{blue}1453645 Zhongjin LUO}} \hspace{5mm} Use Case Diagram, Activity Diagram\hfill 17\%\\

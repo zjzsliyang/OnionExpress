@@ -29,7 +29,7 @@
 | Trigger                  | The GPS address of  the customer is not in the database. |
 | Main Flow                | Step 1 : Postmen inspect that whether the GPS address of  the customer is in the database. |
 |                          | Step 2 : If the GPS address of  the customer is not in the database, postmen will collect the GPS address. |
-|                          | Include::Update database                 |
+|                          | Include: Update database                 |
 | Extensions               | None                                     |
 
 | Use case name            | Update Database                          |
@@ -38,7 +38,7 @@
 | Goal In Context          | Server Updates database.                 |
 | Preconditions            | Postmen collected the GPS address of  the customer and sended to server. |
 | Successful End Condition | Server Updates database successfully.    |
-| Failed End Condition     | Server fails to update database          |
+| Failed End Condition     | Server fails to update database.         |
 | Primary Actors           | Server                                  |
 | Secondary Actors         | None                                     |
 | Trigger                  | The GPS address of  the customer is not in the database. |
