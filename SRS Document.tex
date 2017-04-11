@@ -800,8 +800,313 @@ detailed in supplementary Specification.
   \caption{Scenario Five Activity Diagram: Pay Online}
 \end{figure}
 
+\subsection{Scenario Six}
+\begin{figure}[H]
+  \centering\includegraphics[width=5in]{DocumentRes/6UseCaseDiagram.png}
+  \caption{Scenario Six Use Case Diagram}
+\end{figure}
 
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Record the Damage\\
+    \hline
+    Related Requirements & Scenario Six\\
+    \hline
+    Goal in Context & Postman records the information of the damaged or
+    lost package.\\
+    \hline
+    Preconditions & The package was damaged or lost.\\
+    \hline
+    Successful End Condition & Postman records the infomation successfully.\\
+    \hline
+    Failed End Condition & The information of the package was lost as well.\\
+    \hline
+    Primary Actors & Postman\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & The package was damaged or lost.\\
+    \hline
+    Main Flow & Step 1 : Postman records the information of the package.\\
+    & Step 2 : The logistics company receives the corresponding information.\\
+    & Step 3 : The logistics company sends a message to the customer,
+    explaining the situation and making an apology to the customer.\\
+    \hline
+    Extensions & None\\
+    \hline
+  \end{tabular}
+\end{table}
 
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Cancel the Order\\
+    \hline
+    Related Requirements & Scenario Six\\
+    \hline
+    Goal in Context & The customer wants to cancel the order for some reasons.\\
+    \hline
+    Preconditions & The customer has placed the order. The package has not
+    been shipped or the package was damaged or lost during process of delivery.\\
+    \hline
+    Successful End Condition & The logistics company passes the request.\\
+    \hline
+    Failed End Condition & The request is rejected.\\
+    \hline
+    Primary Actors & Customer\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & The customer makes the request of canceling the order.\\
+    \hline
+    Main Flow & Step 1 : Customer logins the logistics system.\\
+    & Step 2 : Customer selects the button "cancel the order".\\
+    & Step 3 : Customer explains the reason.\\
+    & Step 4 : The logistics company receives the request and passes the
+    request.\\
+    \hline
+    Extensions & None\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Recreate a New Order\\
+    \hline
+    Related Requirements & Scenario Six\\
+    \hline
+    Goal in Context & The customer wants to recreate a new order without any
+    extra fees beceause the old package was damaged or lost.\\
+    \hline
+    Preconditions & The old package was damaged or lost and the customer has
+    eceived the message from the logistics company.\\
+    \hline
+    Successful End Condition & The new order is placed successfully.\\
+    \hline
+    Failed End Condition & The new order is non-compliant and rejected.\\
+    \hline
+    Primary Actors & Customer\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & The customer makes the request of recreating a new order.\\
+    \hline
+    Main Flow & Step 1 : Customer receives the message about the infomation
+    of the damaged or lost package.\\
+    & Step 2 : Customer logins the logistics system.\\
+    & Step 3 : Customer chooses to deliver a new package.\\
+    & Step 4 : Customer fills in the basic information and recreates a new
+    order whithout any extra fees.\\
+    & Step 5 : The logistics company receives the new order and passes
+    the request.\\
+    \hline
+    Extensions & None\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/6RecordDamage.png}
+  \caption{Scenario Six Activity Diagram}
+\end{figure}
+
+\subsection{Scenario Seven}
+\begin{figure}[H]
+  \centering\includegraphics[width=5in]{DocumentRes/7UseCaseDiagram.png}
+  \caption{Scenario Seven Use Case Diagram}
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Withdraw Product\\
+    \hline
+    Related Requirements & Scenario Seven\\
+    \hline
+    Goal in Context & A customer returns the product and the payment is
+    reimbursed.\\
+    \hline
+    Preconditions & The customer wants to withdraw the product the or she
+    unsatisfied with after receiving within a month.\\
+    \hline
+    Successful End Condition & The order is completed and the payment is
+    reimbursed to the customer.\\
+    \hline
+    Failed End Condition & The order is not completed and the payment is not
+    reimbursed to the customer.\\
+    \hline
+    Primary Actors & Customer\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & The customer choose to withdraw the product.\\
+    \hline
+    Main Flow & Step 1 : Customer makes the returning request.\\
+    & Step 2 : Server checks the returning request.\\
+    & Step 3 : The package is delivered.\\
+    & Step 4 : The E-business receives and checks the pack.\\
+    & Step 5 : The E-business agrees the returning.\\
+    & Step 6 : Server make the new delivery schedule.\\
+    \hline
+    Extensions & Step 2.1 : The database does not verify the details.\\
+    & Step 3.1 : The package fails to be delivered.\\
+    & Step 5.1 : The E-business doesn't agree the withdrawing.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Exchange Product\\
+    \hline
+    Related Requirements & Scenario Seven\\
+    \hline
+    Goal in Context & A customer returns the product and the delivery schedule
+    is made again upon mutual agreement.\\
+    \hline
+    Preconditions & The customer wants to exchange the product the or she
+    unsatisfied with after receiving within a month.\\
+    \hline
+    Successful End Condition & The delivery schedule is made again upon
+    mutual agreement.\\
+    \hline
+    Failed End Condition & The delivery schedule fails to be made again upon
+    mutual agreement.\\
+    \hline
+    Primary Actors & Customer\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & The customer choose to exchange the product.\\
+    \hline
+    Main Flow & Step 1 : Customer makes the returning request.\\
+    & Step 2 : Server checks the returning request.\\
+    & Step 3 : The package is delivered.\\
+    & Step 4 : The E-business receives and checks the pack.\\
+    & Step 5 : The E-business agrees the returning.\\
+    & Step 6 : Server make the new delivery schedule.\\
+    \hline
+    Extensions & Step 2.1 : The database does not verify the details.\\
+    & Step 3.1 : The package fails to be delivered.\\
+    & Step 5.1 : The E-business doesn't agree the exchange.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/7ReturnProduct.png}
+  \caption{Scenario Seven Activity Diagram: Return Product}
+\end{figure}
+
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/7MakeReturningRequest.png}
+  \caption{Scenario Seven Activity Diagram: Make Returning Request}
+\end{figure}
+
+\subsection{Scenario Eight}
+\begin{figure}[H]
+  \centering\includegraphics[width=5in]{DocumentRes/8UseCaseDiagram.png}
+  \caption{Scenario Seven Use Case Diagram}
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Track Package\\
+    \hline
+    Related Requirements & Scenario Eight\\
+    \hline
+    Goal in Context & The logistics tracks all the packages, collecting the
+    location at fixed period and inserting new addresses of destinations into
+    the database.\\
+    \hline
+    Preconditions & The customer or the e-business company deliver the package.\\
+    \hline
+    Successful End Condition & The logistics tracks all the packages and feeds
+    back to the customer or the E-business.\\
+    \hline
+    Failed End Condition & The logistics fails track all the packages and feed
+    back to the customer or the E-business.\\
+    \hline
+    Primary Actors & Logistics\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & ????????.\\
+    \hline
+    Main Flow & Step 1 : Postman receives and expresses the package to the
+    logistics.\\
+    & Step 2 : Logistics delivers the package to the express station.\\
+    & Step 3 : The express station  scans the bar code.\\
+    & Step 4 : Server records the express station information of the package.\\
+    & Step 5 : Logistics delivers the package to the next express station.\\
+    \hline
+    Extensions & Step 3.1 : The express station fails to scan the bar code
+    and gets a new bar code.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Get Package Track Inmformation\\
+    \hline
+    Related Requirements & Scenario Eight\\
+    \hline
+    Goal in Context & The customer or the e-business can get track Inmformation
+    of the package delivered.\\
+    \hline
+    Preconditions & 1. The returning request is admitted.\\
+    & 2. The customer or E-business delivers the returning product.\\
+    & 3. The package has not been transferred to the receiver.\\
+    & 4.The customer or the E-business has obtained the tracking number.\\
+    & 5.The logistics tracks all the packages, collecting the GPS location at
+    fixed period and inserting new GPS addresses of destinations into the
+    database automatically.\\
+    \hline
+    Successful End Condition & The customer or the e-business successfully
+    tracks the package he or she delivered.\\
+    \hline
+    Failed End Condition & The customer or the e-business successfully failed
+    to track the package he or she delivered.\\
+    \hline
+    Primary Actors & Customer, E-business\\
+    \hline
+    Secondary Actors & None\\
+    \hline
+    Trigger & ????????.\\
+    \hline
+    Main Flow & Step 1 : The customer or the E-business logins the system.\\
+    & Step 2 : The customer or the E-business inputs the tracking number.\\
+    & Step 3 : The customer or the E-business get package track information.\\
+    \hline
+    Extensions & Step 1.1 : The customer or the E-business failed to login the
+    system with the wrong account and password.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/8TrackPackage.png}
+  \caption{Scenario Seven Activity Diagram: Track Package}
+\end{figure}
+
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/8GetPackageTrackInmformation.png}
+  \caption{Scenario Seven Activity Diagram: Get Package Track Inmformation}
+\end{figure}
 
 \chapter{Glossary of Terms}
 \begin{spacing}{0.7}

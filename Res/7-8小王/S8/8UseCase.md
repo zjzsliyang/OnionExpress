@@ -27,5 +27,5 @@
 | Secondary Actors         | None                                     |
 | Main Flow                | Step 1 The customer or the e-business logins the system. |
 |                          | Step 2 The customer or the e-business inputs the tracking number. |
-|                          | Step 3 The customer or the e-business get package track inmformation. |
+|                          | Step 3 The customer or the e-business get package track information. |
 | Extensions               | Step 1.1 The customer or the e-business failed to login the system with the wrong account and password. |

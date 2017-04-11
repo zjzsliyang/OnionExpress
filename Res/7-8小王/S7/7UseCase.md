@@ -11,12 +11,12 @@
 | Main Flow                | Step 1 Customer makes the returning request. |
 |                          | Step 2 Server checks the returning request. |
 |                          | Step 3 The package is delivered.         |
-|                          | Step 4  The e-business receives and checks the pack. |
-|                          | Step 5 The e-business agrees the returning. |
-|                          | Step 6 Customer gets payment back.       |
-|                          | Step 2.1 The database does not verify the details. |
+|                          | Step 4  The E-business receives and checks the pack. |
+|                          | Step 5 The E-business agrees the returning. |
+|                          | Step 6 The E-business agrees the returning. |
+| Extensions               | Step 2.1 The database does not verify the details. |
 |                          | Step 3.1 The package fails to be delivered. |
-|                          | Step 5.1 The e-business doesn't agree the withdrawing. |
+|                          | Step 5.1 The E-business doesn't agree the withdrawing. |
 
 | Use case name            | Exchange Product                         |
 | ------------------------ | ---------------------------------------- |
@@ -31,10 +31,10 @@
 | Main Flow                | Step 1 Customer makes the returning request. |
 |                          | Step 2 Server checks the returning request. |
 |                          | Step 3 The package is delivered.         |
-|                          | Step 4  The e-business receives and checks the pack. |
-|                          | Step 5 The e-business agrees the returning. |
-|                          | Step 6 The e-business make the new delivery schedule. |
-|                          | Step 2.1 The database does not verify the details. |
+|                          | Step 4  The E-business receives and checks the pack. |
+|                          | Step 5 The E-business agrees the returning. |
+|                          | Step 6 The E-business make the new delivery schedule. |
+| Extensions               | Step 2.1 The database does not verify the details. |
 |                          | Step 3.1 The package fails to be delivered. |
-|                          | Step 5.1 The e-business doesn't agree the exchange. |
+|                          | Step 5.1 The E-business doesn't agree the exchange. |
 
