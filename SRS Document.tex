@@ -510,7 +510,125 @@ detailed in supplementary Specification.
   \caption{Scenario Three Activity Diagram}
 \end{figure}
 
+\subsection{Scenario Four}
+\begin{figure}[H]
+  \centering\includegraphics[width=5in]{DocumentRes/4UseCaseDiagram.png}
+  \caption{Scenario Four Use Case Diagram}
+\end{figure}
 
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Made New Delivery Schedule\\
+    \hline
+    Related Requirements & Scenario Four\\
+    \hline
+    Goal in Context & Rearrange package delivery.\\
+    \hline
+    Preconditions & No one receives the package.\\
+    \hline
+    Successful End Condition & A new delivery schedule is made; Parcel would
+    be sent again.\\
+    \hline
+    Failed End Condition & Delivery reschedule failed.\\
+    \hline
+    Primary Actors & Server\\
+    \hline
+    Secondary Actors & Customer, Postman\\
+    \hline
+    Trigger & Server make a request of reschedule package delivery.\\
+    \hline
+    Main Flow & Step 1 : Server puts forward a new schedule.\\
+    & Step 2 : Server sends the new plan to customer to see if customer is
+    available then.\\
+    & Step 3 : Customer replies yes.\\
+    & Step 4 : Postman sends the package again according to new schedule that
+    specified by customer.\\
+    \hline
+    Extensions & Step 3.1 : Customer replies no.\\
+    & Step 3.2 : Made new delivery schedule again, or cancel the order.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Report Delivery Failure\\
+    \hline
+    Related Requirements & Scenario Four\\
+    \hline
+    Goal in Context & Rearrange package delivery.\\
+    \hline
+    Preconditions & Customer does not receive the package.\\
+    \hline
+    Successful End Condition & A new delivery schedule is made; Parcel would
+    be sent again.\\
+    \hline
+    Failed End Condition & Delivery reschedule failed.\\
+    \hline
+    Primary Actors & Postman\\
+    \hline
+    Secondary Actors & Server\\
+    \hline
+    Trigger & Package was received by no one.\\
+    \hline
+    Main Flow & Step 1 : Postman sends a report message, which inform the
+    failure of delivery, to server.\\
+    & Step 2 : Server makes a new delivery plan.\\
+    & Include : Made New Delivery Schedule\\
+    & Step 3 : A new feasible schedule is made, postman would execute it.\\
+    \hline
+    Extensions & Step 2.1 : Server fail to reschedule a new delivery plan.\\
+    & Step 2.2 : Postman wait until a new delivery schedule is made, or the
+    order is cancelled.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{| c | p{11cm} |}
+    \hline
+    Use Case Name & Reschedule Delivery\\
+    \hline
+    Related Requirements & Scenario Four\\
+    \hline
+    Goal in Context & Rearrange package delivery.\\
+    \hline
+    Preconditions & Customer does not receive the package.\\
+    \hline
+    Successful End Condition & A new delivery schedule is made; Parcel would
+    be sent again.\\
+    \hline
+    Failed End Condition & Delivery reschedule failed.\\
+    \hline
+    Primary Actors & Customer\\
+    \hline
+    Secondary Actors & Server\\
+    \hline
+    Trigger & Customer requests to reschedule package delivery.\\
+    \hline
+    Main Flow & Step 1 : Customer requests the server to reschedule package
+    delivery, sends a new time that he/she is available (and a new location if
+    he/she needs).\\
+    & Step 2 : Server makes a new delivery plan.\\
+    & Include : Made New Delivery Schedule\\
+    & Step 3 : Customer agrees.\\
+    & Step 4 : New Schedule would be executed.\\
+    \hline
+    Extensions & Step 3.1 : Customer is not satisfied with the new schedule.\\
+    & Step 3.2 : Made new delivery schedule again, or cancel the order.\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/4RescheduleDelivery.png}
+  \caption{Scenario Four Activity Diagram}
+\end{figure}
 
 \chapter{Glossary of Terms}
 \begin{spacing}{0.7}
