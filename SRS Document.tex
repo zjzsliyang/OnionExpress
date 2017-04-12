@@ -321,46 +321,6 @@ detailed in supplementary Specification.
   \centering
   \begin{tabular}{| c | p{11cm} |}
     \hline
-    Use Case Name & Confirm Reception\\
-    \hline
-    Related Requirements & Scenario Two \& Three\\
-    \hline
-    Goal in Context & Customer verifies if the receiver is designated
-    by him/her.\\
-    \hline
-    Preconditions & The package has delivered to the customer-specified
-    location on time but customer is not convenient to received it.\\
-    \hline
-    Successful End Condition & The receiver has the permission to sign the
-    package.\\
-    \hline
-    Failed End Condition & The receiver is an imposter; Postman refuses giving
-    him/her the package.\\
-    \hline
-    Primary Actors & Customer\\
-    \hline
-    Secondary Actors & Postman\\
-    \hline
-    Trigger & Someone but not customer claims that he/she have the permission
-    to receive the package.\\
-    \hline
-    Main Flow & Step 1 : Postman collects the necessary information of that
-    person and then sends to customer.\\
-    & Step 2 : Customer confirms the if the potential receiver is as expected.\\
-    & Step 3 : Postman gets a positive feedback from customer.\\
-    & Step 4 : The receiver can sign the package under customer's permission.\\
-    \hline
-    Extensions & Step 3.1 : Postman gets a negative feedback from customer;
-    That person is an imposter.\\
-    & Step 3.2 : Postman refuses to give away the parcel.\\
-    \hline
-  \end{tabular}
-\end{table}
-
-\begin{table}
-  \centering
-  \begin{tabular}{| c | p{11cm} |}
-    \hline
     Use Case Name & Sign on Pad\\
     \hline
     Related Requirements & Scenario Two \& Three\\
@@ -585,42 +545,6 @@ detailed in supplementary Specification.
     \hline
     Extensions & Step 3.1 : Customer is not satisfied with the new schedule.\\
     & Step 3.2 : Made new delivery schedule again, or cancel the order.\\
-    \hline
-  \end{tabular}
-\end{table}
-
-\begin{table}
-  \centering
-  \begin{tabular}{| c | p{11cm} |}
-    \hline
-    Use Case Name & Report Delivery Failure\\
-    \hline
-    Related Requirements & Scenario Four\\
-    \hline
-    Goal in Context & Rearrange package delivery.\\
-    \hline
-    Preconditions & Customer does not receive the package.\\
-    \hline
-    Successful End Condition & A new delivery schedule is made; Parcel would
-    be sent again.\\
-    \hline
-    Failed End Condition & Delivery reschedule failed.\\
-    \hline
-    Primary Actors & Postman\\
-    \hline
-    Secondary Actors & Server\\
-    \hline
-    Trigger & Package was received by no one.\\
-    \hline
-    Main Flow & Step 1 : Postman sends a report message, which inform the
-    failure of delivery, to server.\\
-    & Step 2 : Server makes a new delivery plan.\\
-    & Include : Made New Delivery Schedule\\
-    & Step 3 : A new feasible schedule is made, postman would execute it.\\
-    \hline
-    Extensions & Step 2.1 : Server fail to reschedule a new delivery plan.\\
-    & Step 2.2 : Postman wait until a new delivery schedule is made, or the
-    order is cancelled.\\
     \hline
   \end{tabular}
 \end{table}
