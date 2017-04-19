@@ -54,8 +54,8 @@ Weight: 15%
     - **at least 5 snapshots** with brief desctiption(30-60 words each)
   - List of references
   - Contributions of team members
-  - Presenting the use case model(**Due March 30**)
-- Releated UML Models
+
+Presenting the use case model(**Due March 30**)
 
 ### Distribution
 
@@ -81,3 +81,36 @@ Weight: 15%
 - Sixth Point: DEADLINE for SRS Document(*April 10, MON*)
 - Seventh Point: SRS Document Submission(*April 15, SAT*)
 
+
+## PART II Assignment
+
+**Due June 2nd, 7:00 pm**
+
+[Submit to TA](mailto:13122362186@163.com)
+
+Weight: 45%
+
+### Requirements
+
+Provide an analysis model together with a system analysis document with following structure.
+
+- Table of contents
+- Introduction
+- Architectural Analysis
+- Analysis model
+- Updated snapshots of the system's user interface
+- Annotated references
+- Contributions of team members
+
+Presenting preliminary architecture and critical parts of your analysis model(**Due May 12**)
+
+### Distribution
+
+
+
+### Agenda
+
+- Point: PRESENTATION(*May 12, Friday*)
+
+
+- Point: Document Submission(*June 2, Friday*)
