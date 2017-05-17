@@ -103,15 +103,16 @@ Nonfunctional requirements and further explanations on security, performance,
 data storage and computing, tracking the package, maintenance and others are
 detailed in supplementary Specification.
 
-\chapter{Use Case Modelling}
-\section{Global Use Cases}
+\chapter{Requirements}
+\section{Use Case Modelling}
+\subsection{Global Use Cases}
 \begin{figure}[H]
   \centering\includegraphics[width=5.5in]{DocumentRes/0UseCaseDiagram.png}
   \caption{Global Use Cases Diagram}
 \end{figure}
 
-\section{Specigication of Use Cases}
-\subsection{Scenario One}
+\subsection{Specigication of Use Cases}
+\subsubsection{Scenario One}
 \begin{figure}[H]
   \centering\includegraphics[width=4in]{DocumentRes/1UseCaseDiagram.png}
   \caption{Scenario One Use Case Diagram}
@@ -161,7 +162,7 @@ detailed in supplementary Specification.
   \caption{Scenario One Activity Diagram}
 \end{figure}
 
-\subsection{Scenario Two}
+\subsubsection{Scenario Two}
 \begin{figure}[H]
   \centering\includegraphics[width=4in]{DocumentRes/2UseCaseDiagram.png}
   \caption{Scenario Two Use Case Diagram}
@@ -275,7 +276,7 @@ detailed in supplementary Specification.
   \caption{Scenario Two Activity Diagram}
 \end{figure}
 
-\subsection{Scenario Three}
+\subsubsection{Scenario Three}
 \begin{figure}[H]
   \centering\includegraphics[width=4in]{DocumentRes/3UseCaseDiagram.png}
   \caption{Scenario Three Use Case Diagram}
@@ -470,7 +471,7 @@ detailed in supplementary Specification.
   \caption{Scenario Three Activity Diagram}
 \end{figure}
 
-\subsection{Scenario Four}
+\subsubsection{Scenario Four}
 \begin{figure}[H]
   \centering\includegraphics[width=4in]{DocumentRes/4UseCaseDiagram.png}
   \caption{Scenario Four Use Case Diagram}
@@ -554,7 +555,7 @@ detailed in supplementary Specification.
   \caption{Scenario Four Activity Diagram}
 \end{figure}
 
-\subsection{Scenario Five}
+\subsubsection{Scenario Five}
 \begin{figure}[H]
   \centering\includegraphics[width=4in]{DocumentRes/5UseCaseDiagram.png}
   \caption{Scenario Five Use Case Diagram}
@@ -724,7 +725,7 @@ detailed in supplementary Specification.
   \caption{Scenario Five Activity Diagram: Pay Online}
 \end{figure}
 
-\subsection{Scenario Six}
+\subsubsection{Scenario Six}
 \begin{figure}[H]
   \centering\includegraphics[width=4in]{DocumentRes/6UseCaseDiagram.png}
   \caption{Scenario Six Use Case Diagram}
@@ -840,7 +841,7 @@ detailed in supplementary Specification.
   \caption{Scenario Six Activity Diagram}
 \end{figure}
 
-\subsection{Scenario Seven}
+\subsubsection{Scenario Seven}
 \begin{figure}[H]
   \centering\includegraphics[width=3.5in]{DocumentRes/7UseCaseDiagram.png}
   \caption{Scenario Seven Use Case Diagram}
@@ -936,7 +937,7 @@ detailed in supplementary Specification.
   \caption{Scenario Seven Activity Diagram: Make Returning Request}
 \end{figure}
 
-\subsection{Scenario Eight}
+\subsubsection{Scenario Eight}
 \begin{figure}[H]
   \centering\includegraphics[width=4in]{DocumentRes/8UseCaseDiagram.png}
   \caption{Scenario Seven Use Case Diagram}
@@ -1030,6 +1031,213 @@ detailed in supplementary Specification.
 \begin{figure}[H]
   \centering\includegraphics[width=5in]{DocumentRes/8GetPackageTrackInmformation.png}
   \caption{Scenario Seven Activity Diagram: Get Package Track Inmformation}
+\end{figure}
+
+\section{Supplementary Specification}
+\subsection{Security}
+The system should avoid the database being attacked and data being taken
+advantage of by the wicked.
+\subsubsection{Access and Data Integrity}
+\begin{enumerate}
+  \item The authorization of access to the system of postmen, customers
+  and customer servers should be classified and announced clearly. With
+  certain authorization, different users have limited access to data and
+  operation.
+  \item The server should use anti-virus software.
+  \item Firewalls and network protection are necessary, and they should
+  be updated in time.
+  \item The atomic processes in the database will ensure the accuracy
+  of the database.
+\end{enumerate}
+
+\subsubsection{Encryption}
+\begin{enumerate}
+  \item The session should not be transmitted in DNS.
+  \item All texts and messages should be encrypted with Encryption Algorithm
+  such as RSA, 3DES or IDEA.
+  \item Two keys are used to identify a certain user. One public key is
+  used for encryption and anther private key is used for decryption.
+  The key is a completely random mix of letters.
+  \item The session will record the activity of the customer, and if the
+  customer has no operation for 5 minutes, he or she will log out the system
+  automatically.
+  \item After customers log out the system, all the private information(cookies)
+  will be cleaned.
+\end{enumerate}
+
+\subsubsection{Digital Certificates}
+\begin{enumerate}
+  \item We use digital certificates as a replacement of user names and
+  passwords, for example, SSL Certificates. It will be used automatically
+  with the permission of users.
+  \item The IP address or location where users log in the system will be
+  recorded and when the account is used beyond their regular locations, the
+  user will get alarmed.
+\end{enumerate}
+
+\subsubsection{Digital Signatures}
+\begin{enumerate}
+  \item Users should log in the system with a password. Our system will
+  test its complexity. If it is too simple, the system will remind the
+  users to complicate it. That involves cryptography.
+  \item We use a message digest to ensure the integrality of the data.
+  \item If necessary, we can extend our fingerprint system to login system.
+\end{enumerate}
+
+\subsection{Performance}
+\begin{enumerate}
+  \item The information of the package, including the real-time position,
+  Order-ID, the postman etc., should be checked by customers in 3 seconds
+  with at most 0.1\% error rate.
+  \item The payment should be confirmed in 2 seconds by the system from
+  the moment when the third party trade agent sends the message or the
+  postmen report the payment.
+  \item The order created by customers should be processed in 15 minutes.
+  \item The orders obtained from e-business should be processed every
+  hour(about 5,000 orders).
+  \item Information of the delivery such as the phone number, the address,
+  the receiver and others should be updated and checked by postman in 1 min.
+  \item This system allows the e-business to create batch orders which can
+  be sent at regular time.
+  \item The estimate of delivery time should be accurate with the max
+  uncertainty in 2 days.
+  \item The expectation should be sent to custom service in 2 min from
+  the time a postman reports it.
+  \item This system’s unavailable time should be controlled in 20 minutes
+  in a year.
+  \item To offer the best user experience, a content delivery network
+  should be used by this system.
+\end{enumerate}
+
+\subsection{Data Storage and Computing}
+\begin{enumerate}
+  \item To store a huge amount of data, distributed database should be used.
+  And it should use Homogeneous Distributed Databases Management System.
+  \item Considering that there may be an enormous number of visitors and
+  inquiries at the same time, the system must implement cloud computing service.
+  \item The system can support as many as 1500 times of visits per second.
+  \item There must be a copy of the database, including device entity,
+  software, data and even employees, in order to prevent some unpredictable
+  disasters.
+  \item If the database is destroyed, the copy should be enabled in 3 hours.
+  \item The data can be in English, Chinese, Japanese, French and Korean.
+\end{enumerate}
+
+\subsection{Track the Package}
+\begin{enumerate}
+  \item In order to track the package, the GIS system should be applied,
+  with the help of the GPS system. The system gets geographic information
+  from a third party system, and get the position of postmen who deliver
+  the package through the system of postmen. And this system should match
+  both kinds of the information and show it to users of the system.
+  \item The system for postmen should upload the position of the postman
+  automatically every 2 hours, through 3G, 4G or WLAN network.
+  \item If the locations of postmen are missing for 4 hours, the system
+  should inform the custom servers, and custom servers will contact with
+  postmen.
+\end{enumerate}
+
+\subsection{Maintenance}
+\begin{enumerate}
+  \item The distributed database should be maintained by the employees
+  of our own company including the employees of the standby database
+  every day when the visiting traffic is not heavy.
+  \item The software for custom service, customer and postmen and the
+  system itself should be maintained by our employees.
+  \item The geographic information source should be multiple, in case
+  that one of the sources is unavailable.
+  \item The engineers from the company offered DBMS will maintain
+  our system every year.
+  \item An integrated scheme to deal accidents, for example, the crash
+  of database, is necessary.
+\end{enumerate}
+
+\subsection{Others}
+\begin{enumerate}
+  \item The architectures of the postman app and the customer app are B/S
+  and C/S, but that of custom service is C/S for safety.
+  \item Our system can be used in iOS and Android on mobile devices and in
+  a normal browser on PC(Windows/macOS/Unix).
+  \item Anticipated development time is two months.
+\end{enumerate}
+
+\chapter{Analysis}
+\section{Architectural Analysis}
+
+\section{Analysis Model}
+\subsection{Global Class Diagram}
+
+
+\chapter{Design}
+
+
+\chapter{User Interface}
+\section{Mobile Devices(iOS)}
+\subsection{Log in Page}
+\begin{figure}[htbp]
+  \centering\includegraphics[width=3in]{DocumentRes/Login.png}
+  \caption{Log in}
+\end{figure}
+This is the login page of our app, for convenience, users can log in via WeChat or
+Facebook, which is the popular socail account around the world. Through the
+account, we will record user's infomation in the server, and can sync data to
+provide a better user experience.
+
+\subsection{Main Page}
+\begin{figure}[htbp]
+  \centering\includegraphics[width=3in]{DocumentRes/OnWay.png}
+  \caption{On way}
+\end{figure}
+This is the main page of our app. It shows the user at all glance all the
+current package, and click on the user after the show the details of the
+package. Details of the courier to provide a contact, historical evaluation,
+and the location of real-time display on the map, easy to track users.
+In addition, the basic information about the package is provided:
+including estimated time of arrival, delivery costs and weight.
+
+\subsection{Search Page}
+\begin{figure}[htbp]
+  \centering\includegraphics[width=3in]{DocumentRes/Search.png}
+  \caption{Search}
+\end{figure}
+This is the search page of our app. User can type everything he/she want to.
+And we will search both locally and in the server.
+
+\subsection{Order Page}
+\begin{figure}[H]
+  \centering\includegraphics[width=3in]{DocumentRes/Order.png}
+  \caption{Order}
+\end{figure}
+This is the order page of our app. It shows all the packages both on the way and
+delivered. Like the main page, it can show details and ordered with timeline.
+
+\subsection{Account Page}
+\begin{figure}[H]
+  \centering\includegraphics[width=3in]{DocumentRes/Account.png}
+  \caption{Account}
+\end{figure}
+This is the account page of our app. It shoes the basic infomation of users,
+including name, title, email, password, location and social account. Users can
+change settings there and it's simple and concise。
+
+\section{Website}
+There is basic information of the system showed on the page. The services can
+be ordered on this website after the user logs in. The custom can search for
+their packages' particulars after logging in. In addition, the significant
+notations of the Onion Express\textregistered\ are showed on the web page, such us the forbidden
+objects etc. Any common browsers of the website can contact the Onion
+Express\textregistered\ company and know about the company freely.
+\begin{figure}[htbp]
+  \centering\includegraphics[width=4in]{DocumentRes/index1.png}
+  \caption{Index1}
+\end{figure}
+\begin{figure}[htbp]
+  \centering\includegraphics[width=4in]{DocumentRes/index2.png}
+  \caption{Index2}
+\end{figure}
+\begin{figure}[htbp]
+  \centering\includegraphics[width=5in]{DocumentRes/index3.png}
+  \caption{Index3}
 \end{figure}
 
 \chapter{Glossary of Terms}
@@ -1164,202 +1372,6 @@ If the customer is unsatisfied with the product and has sent it back,
 he or she can choose withdraw the order and the payment will be reimbursed.
 \end{spacing}
 
-\chapter{Supplementary Specification}
-\section{Security}
-The system should avoid the database being attacked and data being taken
-advantage of by the wicked.
-\subsection{Access and Data Integrity}
-\begin{enumerate}
-  \item The authorization of access to the system of postmen, customers
-  and customer servers should be classified and announced clearly. With
-  certain authorization, different users have limited access to data and
-  operation.
-  \item The server should use anti-virus software.
-  \item Firewalls and network protection are necessary, and they should
-  be updated in time.
-  \item The atomic processes in the database will ensure the accuracy
-  of the database.
-\end{enumerate}
-
-\subsection{Encryption}
-\begin{enumerate}
-  \item The session should not be transmitted in DNS.
-  \item All texts and messages should be encrypted with Encryption Algorithm
-  such as RSA, 3DES or IDEA.
-  \item Two keys are used to identify a certain user. One public key is
-  used for encryption and anther private key is used for decryption.
-  The key is a completely random mix of letters.
-  \item The session will record the activity of the customer, and if the
-  customer has no operation for 5 minutes, he or she will log out the system
-  automatically.
-  \item After customers log out the system, all the private information(cookies)
-  will be cleaned.
-\end{enumerate}
-
-\subsection{Digital Certificates}
-\begin{enumerate}
-  \item We use digital certificates as a replacement of user names and
-  passwords, for example, SSL Certificates. It will be used automatically
-  with the permission of users.
-  \item The IP address or location where users log in the system will be
-  recorded and when the account is used beyond their regular locations, the
-  user will get alarmed.
-\end{enumerate}
-
-\subsection{Digital Signatures}
-\begin{enumerate}
-  \item Users should log in the system with a password. Our system will
-  test its complexity. If it is too simple, the system will remind the
-  users to complicate it. That involves cryptography.
-  \item We use a message digest to ensure the integrality of the data.
-  \item If necessary, we can extend our fingerprint system to login system.
-\end{enumerate}
-
-\section{Performance}
-\begin{enumerate}
-  \item The information of the package, including the real-time position,
-  Order-ID, the postman etc., should be checked by customers in 3 seconds
-  with at most 0.1\% error rate.
-  \item The payment should be confirmed in 2 seconds by the system from
-  the moment when the third party trade agent sends the message or the
-  postmen report the payment.
-  \item The order created by customers should be processed in 15 minutes.
-  \item The orders obtained from e-business should be processed every
-  hour(about 5,000 orders).
-  \item Information of the delivery such as the phone number, the address,
-  the receiver and others should be updated and checked by postman in 1 min.
-  \item This system allows the e-business to create batch orders which can
-  be sent at regular time.
-  \item The estimate of delivery time should be accurate with the max
-  uncertainty in 2 days.
-  \item The expectation should be sent to custom service in 2 min from
-  the time a postman reports it.
-  \item This system’s unavailable time should be controlled in 20 minutes
-  in a year.
-  \item To offer the best user experience, a content delivery network
-  should be used by this system.
-\end{enumerate}
-
-\section{Data Storage and Computing}
-\begin{enumerate}
-  \item To store a huge amount of data, distributed database should be used.
-  And it should use Homogeneous Distributed Databases Management System.
-  \item Considering that there may be an enormous number of visitors and
-  inquiries at the same time, the system must implement cloud computing service.
-  \item The system can support as many as 1500 times of visits per second.
-  \item There must be a copy of the database, including device entity,
-  software, data and even employees, in order to prevent some unpredictable
-  disasters.
-  \item If the database is destroyed, the copy should be enabled in 3 hours.
-  \item The data can be in English, Chinese, Japanese, French and Korean.
-\end{enumerate}
-
-\section{Track the Package}
-\begin{enumerate}
-  \item In order to track the package, the GIS system should be applied,
-  with the help of the GPS system. The system gets geographic information
-  from a third party system, and get the position of postmen who deliver
-  the package through the system of postmen. And this system should match
-  both kinds of the information and show it to users of the system.
-  \item The system for postmen should upload the position of the postman
-  automatically every 2 hours, through 3G, 4G or WLAN network.
-  \item If the locations of postmen are missing for 4 hours, the system
-  should inform the custom servers, and custom servers will contact with
-  postmen.
-\end{enumerate}
-
-\section{Maintenance}
-\begin{enumerate}
-  \item The distributed database should be maintained by the employees
-  of our own company including the employees of the standby database
-  every day when the visiting traffic is not heavy.
-  \item The software for custom service, customer and postmen and the
-  system itself should be maintained by our employees.
-  \item The geographic information source should be multiple, in case
-  that one of the sources is unavailable.
-  \item The engineers from the company offered DBMS will maintain
-  our system every year.
-  \item An integrated scheme to deal accidents, for example, the crash
-  of database, is necessary.
-\end{enumerate}
-
-\section{Others}
-\begin{enumerate}
-  \item The architectures of the postman app and the customer app are B/S
-  and C/S, but that of custom service is C/S for safety.
-  \item Our system can be used in iOS and Android on mobile devices and in
-  a normal browser on PC(Windows/macOS/Unix).
-  \item Anticipated development time is two months.
-\end{enumerate}
-
-\chapter{User Interface}
-\section{Mobile Devices(iOS)}
-\subsection{Log in Page}
-\begin{figure}[htbp]
-  \centering\includegraphics[width=3in]{DocumentRes/Login.png}
-  \caption{Log in}
-\end{figure}
-This is the login page of our app, for convenience, users can log in via WeChat or
-Facebook, which is the popular socail account around the world. Through the
-account, we will record user's infomation in the server, and can sync data to
-provide a better user experience.
-
-\subsection{Main Page}
-\begin{figure}[htbp]
-  \centering\includegraphics[width=3in]{DocumentRes/OnWay.png}
-  \caption{On way}
-\end{figure}
-This is the main page of our app. It shows the user at all glance all the
-current package, and click on the user after the show the details of the
-package. Details of the courier to provide a contact, historical evaluation,
-and the location of real-time display on the map, easy to track users.
-In addition, the basic information about the package is provided:
-including estimated time of arrival, delivery costs and weight.
-
-\subsection{Search Page}
-\begin{figure}[htbp]
-  \centering\includegraphics[width=3in]{DocumentRes/Search.png}
-  \caption{Search}
-\end{figure}
-This is the search page of our app. User can type everything he/she want to.
-And we will search both locally and in the server.
-
-\subsection{Order Page}
-\begin{figure}[H]
-  \centering\includegraphics[width=3in]{DocumentRes/Order.png}
-  \caption{Order}
-\end{figure}
-This is the order page of our app. It shows all the packages both on the way and
-delivered. Like the main page, it can show details and ordered with timeline.
-
-\subsection{Account Page}
-\begin{figure}[H]
-  \centering\includegraphics[width=3in]{DocumentRes/Account.png}
-  \caption{Account}
-\end{figure}
-This is the account page of our app. It shoes the basic infomation of users,
-including name, title, email, password, location and social account. Users can
-change settings there and it's simple and concise。
-
-\section{Website}
-There is basic information of the system showed on the page. The services can
-be ordered on this website after the user logs in. The custom can search for
-their packages' particulars after logging in. In addition, the significant
-notations of the Onion Express\textregistered\ are showed on the web page, such us the forbidden
-objects etc. Any common browsers of the website can contact the Onion
-Express\textregistered\ company and know about the company freely.
-\begin{figure}[htbp]
-  \centering\includegraphics[width=4in]{DocumentRes/index1.png}
-  \caption{Index1}
-\end{figure}
-\begin{figure}[htbp]
-  \centering\includegraphics[width=4in]{DocumentRes/index2.png}
-  \caption{Index2}
-\end{figure}
-\begin{figure}[htbp]
-  \centering\includegraphics[width=5in]{DocumentRes/index3.png}
-  \caption{Index3}
-\end{figure}
 
 \chapter{Contributions}
 More information, please visit more on \href{https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign}{GitHub}
