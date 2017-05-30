@@ -1186,17 +1186,32 @@ provides the services for pay via Alipay Account. This layer plays a role
 of delivering the request from Presentation Layer to Busniess Logic Layer.
 We have designed protocols and different frameworks to implement those API,
 including Spring Web and UIKit.\\
-The third layer is Business Logic Layer.
-
-The fourth layer is Data Layer.
-
-The last layer is Domain Layer.
+The third layer is Business Logic Layer. This layer contains several
+controllers including Order Controller, User Controller, Dispatch Management and
+Third-Party Service. In our system, these controllers will process the data and
+make package the update UI operation. This layer is one of the part of
+MVC(Model-View-Controller) framework.\\
+The fourth layer is Data Layer. This layer define the data model of our system,
+including data access and data maintenance. It contains Order Information and
+User Information which is entity in our database system. In this layer, we will
+take advantage of different database and handle different type efficiently(e.g.
+structural and non-structural data). We will use Oracle DBMS and SQL language.
+For the data access, we will choose the Hibernate and NHibernate framework.\\
+The last layer is Domain Layer. The Domain Layer contains 3 packages including
+Order, Customer, Postman. This layer contains the concrete information stored
+in our system. It provides services for the Business Logic Layer by helping it
+get concrete information. We sperate these information into this independent
+layer, so that there will be less data redundancy and the efficiency of reading
+or writing will be improved. This layer is also related with the Data Layer, It
+needs the service and support of the Data Layer.
 \section{Analysis Model}
 \subsection{Global Class Diagram}
 \begin{figure}[H]
   \centering\includegraphics[width=6in]{DocumentRes/ClassDiagram.png}
   \caption{Global Class Diagram}
 \end{figure}
+
+\subsection{Use Case Realization}
 
 
 \chapter{User Interface}
