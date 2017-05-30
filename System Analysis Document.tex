@@ -1169,7 +1169,8 @@ advantage of by the wicked.
 \end{figure}
 \subsection{System Structure}
 The architecture has 5 layers, which are extended from the 4-tier architecture.
-We have taken extensibility, code reusability into consideration.\\
+We have taken extensibility, code reusability into consideration.
+\subsubsection{Presentation Layer}
 The first layer is Presentation Layer. This layer provides a user interface to
 translate the logistics information to user friendly representation. It contains
 Web front-end and iOS app, serving as user's entry of the system. It transfers
@@ -1177,7 +1178,8 @@ the information the transport layer and call the API, provided by the transport
 layer. The layer in out system consists of two subsystems, iOS app and Website.
 As for the platforms consideration, the website will take advantage of Bootstrap
 framework, using the language of HTML, CSS and JavaScript. The iOS app will use
-the Cocoa Touch, Media, Core Services and Core OS in the development.\\
+the Cocoa Touch, Media, Core Services and Core OS in the development.
+\subsubsection{Service Layer}
 The second layer is Service Layer. This layer works as a coordinator of our
 system. It provides some Application Programming Interface(API) to the
 Presentation Layer, including Web API, iOS API and external API. The external
@@ -1185,18 +1187,21 @@ API provides interfaces to some third-party services, such as Alipay API
 provides the services for pay via Alipay Account. This layer plays a role
 of delivering the request from Presentation Layer to Busniess Logic Layer.
 We have designed protocols and different frameworks to implement those API,
-including Spring Web and UIKit.\\
+including Spring Web and UIKit.
+\subsubsection{Business Logic Layer}
 The third layer is Business Logic Layer. This layer contains several
 controllers including Order Controller, User Controller, Dispatch Management and
 Third-Party Service. In our system, these controllers will process the data and
 make package the update UI operation. This layer is one of the part of
-MVC(Model-View-Controller) framework.\\
+MVC(Model-View-Controller) framework.
+\subsubsection{Data Layer}
 The fourth layer is Data Layer. This layer define the data model of our system,
 including data access and data maintenance. It contains Order Information and
 User Information which is entity in our database system. In this layer, we will
 take advantage of different database and handle different type efficiently(e.g.
 structural and non-structural data). We will use Oracle DBMS and SQL language.
-For the data access, we will choose the Hibernate and NHibernate framework.\\
+For the data access, we will choose the Hibernate and NHibernate framework.
+\subsubsection{Domain Layer}
 The last layer is Domain Layer. The Domain Layer contains 3 packages including
 Order, Customer, Postman. This layer contains the concrete information stored
 in our system. It provides services for the Business Logic Layer by helping it
@@ -1210,6 +1215,21 @@ needs the service and support of the Data Layer.
   \centering\includegraphics[width=6in]{DocumentRes/ClassDiagram.png}
   \caption{Global Class Diagram}
 \end{figure}
+The first part is the entity classes.\\
+The UserProfile package includes two classes: User and OrderUser. The User Class records the basic information of a user. User ID is the primary key of Use and User Type is an enum consisting of [CUSTOMER, POSTMAN, SERVER, SUPERUSER]. The user can login the system by email or id or telephone number and password. The OrderUser class depends on the class User. In this newly created class, it stores the detailed information of the order, including user’s name, phone numbers and address. This class is designed as a self-define data type and can be used to compare the information of users stored in our system.
+The class Customer and Postman and CustomerServices inherit from the User.\\
+The class Customer has a corresponding order list and the attributes to sign the package. The Postman has the attribute ‘region’ to identify the areas where he is in charge of. We define the public API of User to provide services for the controller.
+The class Order record the basic information of an order. The Order ID is the primary key of Order.
+Since the sender or the receiver may not register an account in the system, the Order class records the name, Tel number and address of sender and receiver. The class Order is designed for containing information about our orders and all the basic services will be offered by the controller, such as [createOrder(), checkDelivery(), etc.]. The operation of the Order are limited within data domain like [setState(), getRealTimeAddr(), etc.]. When the user tracks the package, System will return the real-time address of the order.\\
+The Message is edited by an independent subsystem Message and sent to user when the package is sent or the package is damaged or lost. And Message can be other recommendation information. The class Message is also designed for providing services composing of fundamental functions for the controller.
+The Withdraw-Exchange is edited by customer when the customer is unsatisfied with the product after receiving it and later the request will be sent to System.
+The DeliveryException is edited by postman when the product is lost or damaged during the process of delivery and the info will be sent to System.
+The Address records the address which the postman has collected.\\
+The second part is the controller classes.\\
+All the requests from UI are sent to the dispatch controller. The dispatch controller provides three APIs to web UI, app UI and E-business. The controller will parse the request and delivery the request to corresponding controller. The corresponding controller collects the necessary information to record in the database and handles the request and returns the result to UI. For example, when the user tracks the package by using the APP UI, the APP UI will call the APP API and sends the request to dispatch controller. The DispatchController(DC) will then parse the request and sends it to order controller. The OrderController(OC) selects the corresponding order from database and calls the getRealTimeAddr(), and returns the result to the DC. DC returns the result to APP UI. The ExceptionController(EC) class is specially abstracted for controlling the exception handling and all the schedule issues will be handled with ScheduleController(SC).\\
+The third part is the boundary classes containing the UI class.\\
+The CustomerAppUI provides a lot of functions for customer, which is the same with the WebUI.
+The PostmanUI provides a lot of functions for postman to delivery products.
 
 \subsection{Use Case Realization}
 \subsubsection{Scenario One}
@@ -1221,7 +1241,6 @@ needs the service and support of the Data Layer.
   \centering\includegraphics[width=4in]{DocumentRes/1CommunicationDiagram_create.png}
   \caption{Scenario One Communication Diagram: Create}
 \end{figure}
-add some text1...
 
 \subsubsection{Scenario Two}
 \begin{figure}[H]
@@ -1232,11 +1251,16 @@ add some text1...
   \centering\includegraphics[width=4in]{DocumentRes/2CommunicationDiagram_check.png}
   \caption{Scenario Two Communication Diagram: Check}
 \end{figure}
-add some text2...
 
-\subsubsection{Scenario Three}
-
-\subsubsection{Scenario Four}
+\subsubsection{Scenario Three \& Four}
+\begin{figure}[H]
+  \centering\includegraphics[width=4in]{DocumentRes/34SequenceDiagram_signPackage.png}
+  \caption{Scenario Three \& Four Sequence Diagram: Sign Package}
+\end{figure}
+\begin{figure}[H]
+  \centering\includegraphics[width=4in]{DocumentRes/34CommunicationDiagram_signPackage.png}
+  \caption{Scenario Three \& Four Communication Diagram: Sign Package}
+\end{figure}
 
 \subsubsection{Scenario Five}
 \begin{figure}[H]
@@ -1273,10 +1297,18 @@ add some text2...
 \end{figure}
 \begin{figure}[H]
   \centering\includegraphics[width=4in]{DocumentRes/6CommunicationDiagram_recordDamage.png}
-  \caption{Scenario Six Sequence Diagram: Record Damage}
+  \caption{Scenario Six Communication Diagram: Record Damage}
 \end{figure}
 
 \subsubsection{Scenario Seven}
+\begin{figure}[H]
+  \centering\includegraphics[width=4in]{DocumentRes/7SequenceDiagram_return.png}
+  \caption{Scenario Seven Sequence Diagram: Return}
+\end{figure}
+\begin{figure}[H]
+  \centering\includegraphics[width=4in]{DocumentRes/7CommunicationDiagram_return.png}
+  \caption{Scenario Seven Communication Diagram: Return}
+\end{figure}
 
 \subsubsection{Scenario Eight}
 \begin{figure}[H]
@@ -1285,9 +1317,8 @@ add some text2...
 \end{figure}
 \begin{figure}[H]
   \centering\includegraphics[width=4in]{DocumentRes/8CommunicationDiagram_track.png}
-  \caption{Scenario Eight Sequence Diagram: Track}
+  \caption{Scenario Eight Communication Diagram: Track}
 \end{figure}
-add some text8...
 
 \chapter{User Interface}
 \section{Mobile Devices(iOS)}
