@@ -1163,12 +1163,40 @@ advantage of by the wicked.
 
 \chapter{Analysis}
 \section{Architectural Analysis}
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/PackageDiagram.png}
+  \caption{Package Diagram}
+\end{figure}
+\subsection{System Structure - Platform Dependent architecture}
+The architecture has 5 layers, which are extended from the 4-tier architecture.
+We have taken extensibility, code reusability into consideration.\\
+The first layer is Presentation Layer. This layer provides a user interface to
+translate the logistics information to user friendly representation. It contains
+Web front-end and iOS app, serving as user's entry of the system. It transfers
+the information the transport layer and call the API, provided by the transport
+layer. The layer in out system consists of two subsystems, iOS app and Website.
+As for the platforms consideration, the website will take advantage of Bootstrap
+framework, using the language of HTML, CSS and JavaScript. The iOS app will use
+the Cocoa Touch, Media, Core Services and Core OS in the development.\\
+The second layer is Service Layer. This layer works as a coordinator of our
+system. It provides some Application Programming Interface(API) to the
+Presentation Layer, including Web API, iOS API and external API. The external
+API provides interfaces to some third-party services, such as Alipay API
+provides the services for pay via Alipay Account. This layer plays a role
+of delivering the request from Presentation Layer to Busniess Logic Layer.
+We have designed protocols and different frameworks to implement those API,
+including Spring Web and UIKit.\\
+The third layer is Business Logic Layer.
 
+The fourth layer is Data Layer.
+
+The last layer is Domain Layer.
 \section{Analysis Model}
 \subsection{Global Class Diagram}
-
-
-\chapter{Design}
+\begin{figure}[H]
+  \centering\includegraphics[width=6in]{DocumentRes/ClassDiagram.png}
+  \caption{Global Class Diagram}
+\end{figure}
 
 
 \chapter{User Interface}
