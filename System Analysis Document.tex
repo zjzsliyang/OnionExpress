@@ -1256,6 +1256,14 @@ provides a lot of functions for users, which is the same with the WebUI.
   \centering\includegraphics[width=4in]{DocumentRes/1CommunicationDiagram_create.png}
   \caption{Scenario One Communication Diagram: Create}
 \end{figure}
+As seen in the communication diagram or sequence diagram, the customer can
+create order in our order management system. The customer will create order by
+pressing the corresponding buttons on user interface. After getting the request,
+user interface will send the request to the parser. Then, the parer send messages
+to the order controller to create order. The order controller, as seen from its
+name, will send the creating messages to the class order and control its
+creation of order, then new order will be created and inserted to database by
+database controller.
 
 \subsubsection{Scenario Two}
 \begin{figure}[H]
@@ -1266,6 +1274,13 @@ provides a lot of functions for users, which is the same with the WebUI.
   \centering\includegraphics[width=4in]{DocumentRes/2CommunicationDiagram_check.png}
   \caption{Scenario Two Communication Diagram: Check}
 \end{figure}
+As seen in the communication diagram or sequence diagram, postman can check
+order information in our order management system. Postman will check order
+information by pressing the corresponding buttons on user interface. After
+getting the request, the user interface will send the request to parser by
+calling the API. The parser will analyze the request and send messages to the
+order controller. Then the order controller will call database controller to
+select corresponding order information from database.
 
 \subsubsection{Scenario Three \& Four}
 \begin{figure}[H]
@@ -1276,6 +1291,16 @@ provides a lot of functions for users, which is the same with the WebUI.
   \centering\includegraphics[width=4in]{DocumentRes/34CommunicationDiagram_signPackage.png}
   \caption{Scenario Three \& Four Communication Diagram: Sign Package}
 \end{figure}
+The process of signing package is shown as the sequece diagram below. First of
+all, the postman needs to know information of the customer. As a result, a
+request of retriving the order information will be sent by postman. The parser
+here is to analysis requests from UI and transmit to the controller.
+Information, including customer's name and phone number, will be returned
+to the postman. After that, the receiver is supposed to inform the postman
+her information. In order to verify if she is the designated person or customer
+herself, a confirmation of customer is required. If so, the receiver will have
+access to sign the package; otherwise, the demand of signing the package should
+be rejected.
 
 \subsubsection{Scenario Five}
 \begin{figure}[H]
@@ -1304,6 +1329,22 @@ provides a lot of functions for users, which is the same with the WebUI.
   \centering\includegraphics[width=4in]{DocumentRes/5CommunicationDiagram_askInvoice.png}
   \caption{Scenario Five Communication Diagram: Ask Invoice}
 \end{figure}
+After the customer creates an order, he or she should choose one way to pay for
+the product, pay online or pay offline. If the customer chooses to pay online,
+he or she should enter the payment password after confirmed  the order. And the
+Parser will parse the request and send the password to the third-Party System.
+Then the third-Party System will response the payment information(success or
+failed) and the ui will display the payment information.\\
+On the other hand, if the customer chooses to pay offline, he or she needs to
+pay after received the product. The customers pays for the product by cash or by
+card after checked the amount with the postman. Then the postman submits the
+money to the logistic company. After the third-Party System or logistic company
+received the amount, it will transfer money to the E-bussiness.\\
+After paid the product, the customer has the opportunity to ask the E-bussiness
+for an invoice. He or she fills in the address in the app, and then the Parser
+will parse the request and send the address to the E-bussiness. If the customer
+wants a paper invoice, he or she needs to pay an extra postage for the invoice.
+After that, the E-business will send the invoice to the customer.
 
 \subsubsection{Scenario Six}
 \begin{figure}[H]
@@ -1314,6 +1355,14 @@ provides a lot of functions for users, which is the same with the WebUI.
   \centering\includegraphics[width=4in]{DocumentRes/6CommunicationDiagram_recordDamage.png}
   \caption{Scenario Six Communication Diagram: Record Damage}
 \end{figure}
+If the package is damaged or lost, the postman records the damages and sends
+the damages information to the logistic company. Then the logistic company will
+send an apology  message to the customer. After received the message, the
+customer can choose to recreate a new order or cancel the order. He or she
+needs to press the recreate or cancel button in the app, and then the Parser
+will parse the request and send a signal to the OrderController. After received
+the signal, the OrderController will execute a function to update or delete the
+order information in the database.
 
 \subsubsection{Scenario Seven}
 \begin{figure}[H]

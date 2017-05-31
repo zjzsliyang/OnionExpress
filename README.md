@@ -106,7 +106,14 @@ Presenting preliminary architecture and critical parts of your analysis model(**
 
 ### Distribution
 
-
+- Communication Diagram & Sequence Diagram
+  - Zhongjin LUO(Scenario 1-2)
+  - Guohui YANG(Scenario 3-4)
+  - Yiqun LIN(Scenario 5-6)
+  - Xinying WU(Scenario 7)
+  - Yirui WANG(Scenario 8 & Global)
+- Document
+  - Yang LI
 
 ### Agenda
 
@@ -114,3 +121,40 @@ Presenting preliminary architecture and critical parts of your analysis model(**
 
 
 - Point: Document Submission(*June 2, Friday*)
+
+## PART III Assignment
+
+**Due June 19, 7:00 pm**
+
+[Submit to TA](mailto:ooad_sse@sina.com)
+
+Weight: 30%
+
+### Requirements
+
+Prensent progress on software design and prototyping.
+
+- Table of contents
+- Overview of your progress on system design and a description of implement platforms and frameworks.
+- Architecture Refinement
+  - Present a platform-dependent architecture with refined overall structure.
+  - Provide a list of subsystems and interfaces.
+  - Demonstrate interface specification in details with one or several samples between your system and external systems, such as the e-commerce website, 3rd party messaging system, map services and so on.
+  - Select one subsystem as an example to specify the its interfaces in details.
+- Select any two analysis mechanism mentioned in your analysis model, find suitable solutions in your implementation platform and then provide detailed description of the corresponding design mechanisms.
+- Design two use case realizations by incorporating the design mechanisms and refined architecture.
+- Progress on prototyping.
+- Contributions of team members.
+- Updated use case model and analysis model.
+- Design model: includes the refined architecture, examples of detailed interfaces, and at least 2 examples of detailed use case realizations.
+
+Each team will be presenting your architecture refinement, interfaces and subsystem design, critical design mechanisms and sample use case realization design prior to submitting the final version of this document (**Due June 13**)
+
+### Distribution
+
+
+
+### Agenda
+
+- Point: PRESENTATION(*June 13, Tuesday*)
+- Point: Document Submission(*June 19, Wednesday*)
