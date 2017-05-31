@@ -1169,7 +1169,8 @@ advantage of by the wicked.
 \end{figure}
 \subsection{System Structure}
 The architecture has $5$ layers, which are extended from the 4-tier architecture.
-We have taken extensibility, code reusability into consideration.
+We have taken extensibility, code reusability into consideration. $5$ layers
+are as follows.
 \subsubsection{Presentation Layer}
 The first layer is Presentation Layer. This layer provides a user interface to
 translate the logistics information to user friendly representation. It contains
@@ -1215,21 +1216,35 @@ needs the service and support of the Data Layer.
   \centering\includegraphics[width=6in]{DocumentRes/ClassDiagram.png}
   \caption{Global Class Diagram}
 \end{figure}
-The first part is the entity classes.\\
-The UserProfile package includes two classes: User and OrderUser. The User Class records the basic information of a user. User ID is the primary key of Use and User Type is an enum consisting of [CUSTOMER, POSTMAN, SERVER, SUPERUSER]. The user can login the system by email or id or telephone number and password. The OrderUser class depends on the class User. In this newly created class, it stores the detailed information of the order, including user’s name, phone numbers and address. This class is designed as a self-define data type and can be used to compare the information of users stored in our system.
-The class Customer and Postman and CustomerServices inherit from the User.\\
-The class Customer has a corresponding order list and the attributes to sign the package. The Postman has the attribute ‘region’ to identify the areas where he is in charge of. We define the public API of User to provide services for the controller.
-The class Order record the basic information of an order. The Order ID is the primary key of Order.
-Since the sender or the receiver may not register an account in the system, the Order class records the name, Tel number and address of sender and receiver. The class Order is designed for containing information about our orders and all the basic services will be offered by the controller, such as [createOrder(), checkDelivery(), etc.]. The operation of the Order are limited within data domain like [setState(), getRealTimeAddr(), etc.]. When the user tracks the package, System will return the real-time address of the order.\\
-The Message is edited by an independent subsystem Message and sent to user when the package is sent or the package is damaged or lost. And Message can be other recommendation information. The class Message is also designed for providing services composing of fundamental functions for the controller.
-The Withdraw-Exchange is edited by customer when the customer is unsatisfied with the product after receiving it and later the request will be sent to System.
-The DeliveryException is edited by postman when the product is lost or damaged during the process of delivery and the info will be sent to System.
-The Address records the address which the postman has collected.\\
-The second part is the controller classes.\\
-All the requests from UI are sent to the dispatch controller. The dispatch controller provides three APIs to web UI, app UI and E-business. The controller will parse the request and delivery the request to corresponding controller. The corresponding controller collects the necessary information to record in the database and handles the request and returns the result to UI. For example, when the user tracks the package by using the APP UI, the APP UI will call the APP API and sends the request to dispatch controller. The DispatchController(DC) will then parse the request and sends it to order controller. The OrderController(OC) selects the corresponding order from database and calls the getRealTimeAddr(), and returns the result to the DC. DC returns the result to APP UI. The ExceptionController(EC) class is specially abstracted for controlling the exception handling and all the schedule issues will be handled with ScheduleController(SC).\\
-The third part is the boundary classes containing the UI class.\\
-The CustomerAppUI provides a lot of functions for customer, which is the same with the WebUI.
-The PostmanUI provides a lot of functions for postman to delivery products.
+The first part is the domain layer, which contains the User Class, Order Class
+and Client Class. Thus, Customer and Postman is the subclass of User and
+implement the method. The User Class records the basic information of a user.
+User ID is the primary key of Use and User Type is an enum consisting of
+\textbf{[Customer, Postman, Superuser]}. The user can login the system by email
+or ID or telephone number and password. In the newly created class, it's
+instance stores the detailed information of the order, including user's name,
+phone number, and address. This class is designed as a self-define data type
+and can be used to compare the information of users stored in our system.\\
+The class Customer has a corresponding order list and the attributes to sign
+the package. The Postman has the attribute ‘region’ to identify the areas where
+he is in charge of. We define the public API of User to provide services for
+the controller.\\
+The class Order record the basic information of an order. The Order ID is the
+primary key of Order. Since the sender or the receiver may not register an
+account in the system, the Order class records the name, Tel number and address
+of sender and receiver. The class Order is designed for containing information
+about our orders and all the basic services will be offered by the controller,
+such as \textbf{[createOrder(), getOrderInfo()]}. When the user tracks the
+package, System will return the real-time address of the order.\\
+The second part is the controller classes. All the requests from UI are sent to
+the Parser. The Parser provides Order Controller APIs to web UI and app UI.
+It will parse the request and delivery the request to corresponding controller.
+The DatabaseController collects the necessary information to record in
+the database and handles the request and returns the result to UI. For example,
+when the user tracks the package by using the app UI, the app UI will call
+the app API and sends the request to Parser then to the OrderController.\\
+The third part is the boundary classes containing the UI class. The AppUI
+provides a lot of functions for users, which is the same with the WebUI.
 
 \subsection{Use Case Realization}
 \subsubsection{Scenario One}
@@ -1309,6 +1324,14 @@ The PostmanUI provides a lot of functions for postman to delivery products.
   \centering\includegraphics[width=4in]{DocumentRes/7CommunicationDiagram_return.png}
   \caption{Scenario Seven Communication Diagram: Return}
 \end{figure}
+If the customer is unsatisfied with the product, he/she can return the product.
+Customers need to apply for returning through both App UI and Web UI. Then
+Parser will recognizes that request and assigns it to OrderController so Order
+Domain will return a label containing the address to send it back and the
+postage.\\
+If the customer chooses to cancel the order, after a similar process, the order
+will be completed. Else if he/she chooses to withdraw the order, the original
+order will be recorded through \textbf{withdrawProduct()} and then be completed.
 
 \subsubsection{Scenario Eight}
 \begin{figure}[H]
@@ -1319,6 +1342,12 @@ The PostmanUI provides a lot of functions for postman to delivery products.
   \centering\includegraphics[width=4in]{DocumentRes/8CommunicationDiagram_track.png}
   \caption{Scenario Eight Communication Diagram: Track}
 \end{figure}
+Customers and Customer Service have the right to track the product. Customer
+will invoke the function on UI. Messages will be sent to Parser in
+URL link. After parsing the link, Parser invokes the trackPackage
+function of OrderController. OrderController will then get the location by
+invoking the function of order entity. After getting the real time address,
+the system will return this information to the UI who invokes the function.
 
 \chapter{User Interface}
 \section{Mobile Devices(iOS)}
