@@ -104,14 +104,14 @@ data storage and computing, tracking the package, maintenance and others are
 detailed in supplementary Specification.
 
 \chapter{Requirements}
-\section{Use Case Modelling}
+\section{Use Case Modeling}
 \subsection{Global Use Cases}
 \begin{figure}[H]
   \centering\includegraphics[width=5.5in]{DocumentRes/0UseCaseDiagram.png}
   \caption{Global Use Cases Diagram}
 \end{figure}
 
-\subsection{Specigication of Use Cases}
+\subsection{Specification of Use Cases}
 \subsubsection{Scenario One}
 \begin{figure}[H]
   \centering\includegraphics[width=4in]{DocumentRes/1UseCaseDiagram.png}
@@ -251,8 +251,8 @@ detailed in supplementary Specification.
     \hline
     Goal in Context & Server Updates database.\\
     \hline
-    Preconditions & Postmen collected the GPS address of  the customer and
-    sended to server.\\
+    Preconditions & Postmen collected the GPS address of the customer and
+    sent to server.\\
     \hline
     Successful End Condition & Server Updates database successfully.\\
     \hline
@@ -342,7 +342,7 @@ detailed in supplementary Specification.
     \hline
     Secondary Actors & Postman\\
     \hline
-    Trigger & Postman requests customer to sign on pad with the agreetment of
+    Trigger & Postman requests customer to sign on pad with the agreement of
     customer.\\
     \hline
     Included Cases & Confirm Reception, Collect Corresponding Information\\
@@ -403,7 +403,7 @@ detailed in supplementary Specification.
     & Step 4 : All corresponding information including the data of the received
     product and customer acceptance will be transferred back to the server;
     The order will be marked as complete.\\
-    & Inlude : Collect Corresponding Information\\
+    & Include : Collect Corresponding Information\\
     \hline
     Extensions & Step 1.1 : The customer is not convenient to sign the package
     and asks someone to receive for him/her.\\
@@ -704,7 +704,7 @@ detailed in supplementary Specification.
     digital invoice sent by e-mail or a paper invoice sent by post.\\
     & Step 2 : E-business sends the invoice to the customer.\\
     & Step 3 : Customer receives the invoice and confirm whether
-    the infomation is onsistent.\\
+    the information is consistent.\\
     \hline
     Extensions & Step 1.1 : Customer chooses to receive a digital invoice
     sent by e-mail.\\
@@ -807,10 +807,10 @@ detailed in supplementary Specification.
     Related Requirements & Scenario Six\\
     \hline
     Goal in Context & The customer wants to recreate a new order without any
-    extra fees beceause the old package was damaged or lost.\\
+    extra fees because the old package was damaged or lost.\\
     \hline
     Preconditions & The old package was damaged or lost and the customer has
-    eceived the message from the logistics company.\\
+    received the message from the logistics company.\\
     \hline
     Successful End Condition & The new order is placed successfully.\\
     \hline
@@ -827,7 +827,7 @@ detailed in supplementary Specification.
     & Step 2 : Customer logins the logistics system.\\
     & Step 3 : Customer chooses to deliver a new package.\\
     & Step 4 : Customer fills in the basic information and recreates a new
-    order whithout any extra fees.\\
+    order without any extra fees.\\
     & Step 5 : The logistics company receives the new order and passes
     the request.\\
     \hline
@@ -986,11 +986,11 @@ detailed in supplementary Specification.
   \centering
   \begin{tabular}{| c | p{11cm} |}
     \hline
-    Use Case Name & Get Package Track Inmformation\\
+    Use Case Name & Get Package Track Information\\
     \hline
     Related Requirements & Scenario Eight\\
     \hline
-    Goal in Context & The customer or the e-business can get track Inmformation
+    Goal in Context & The customer or the e-business can get track Information
     of the package delivered.\\
     \hline
     Preconditions & 1. The returning request is admitted.\\
@@ -1029,8 +1029,8 @@ detailed in supplementary Specification.
 \end{figure}
 
 \begin{figure}[H]
-  \centering\includegraphics[width=5in]{DocumentRes/8GetPackageTrackInmformation.png}
-  \caption{Scenario Seven Activity Diagram: Get Package Track Inmformation}
+  \centering\includegraphics[width=5in]{DocumentRes/8GetPackageTrackInformation.png}
+  \caption{Scenario Seven Activity Diagram: Get Package Track Information}
 \end{figure}
 
 \section{Supplementary Specification}
@@ -1186,7 +1186,7 @@ system. It provides some Application Programming Interface(API) to the
 Presentation Layer, including Web API, iOS API and external API. The external
 API provides interfaces to some third-party services, such as Alipay API
 provides the services for pay via Alipay Account. This layer plays a role
-of delivering the request from Presentation Layer to Busniess Logic Layer.
+of delivering the request from Presentation Layer to Business Logic Layer.
 We have designed protocols and different frameworks to implement those API,
 including Spring Web and UIKit.
 \subsubsection{Business Logic Layer}
@@ -1206,7 +1206,7 @@ For the data access, we will choose the Hibernate and NHibernate framework.
 The last layer is Domain Layer. The Domain Layer contains $3$ packages including
 Order, Customer, Postman. This layer contains the concrete information stored
 in our system. It provides services for the Business Logic Layer by helping it
-get concrete information. We sperate these information into this independent
+get concrete information. We separate these information into this independent
 layer, so that there will be less data redundancy and the efficiency of reading
 or writing will be improved. This layer is also related with the Data Layer, It
 needs the service and support of the Data Layer.
@@ -1291,9 +1291,9 @@ select corresponding order information from database.
   \centering\includegraphics[width=4in]{DocumentRes/34CommunicationDiagram_signPackage.png}
   \caption{Scenario Three \& Four Communication Diagram: Sign Package}
 \end{figure}
-The process of signing package is shown as the sequece diagram below. First of
+The process of signing package is shown as the sequence diagram below. First of
 all, the postman needs to know information of the customer. As a result, a
-request of retriving the order information will be sent by postman. The parser
+request of retrieving the order information will be sent by postman. The parser
 here is to analysis requests from UI and transmit to the controller.
 Information, including customer's name and phone number, will be returned
 to the postman. After that, the receiver is supposed to inform the postman
@@ -1339,10 +1339,10 @@ On the other hand, if the customer chooses to pay offline, he or she needs to
 pay after received the product. The customers pays for the product by cash or by
 card after checked the amount with the postman. Then the postman submits the
 money to the logistic company. After the third-Party System or logistic company
-received the amount, it will transfer money to the E-bussiness.\\
-After paid the product, the customer has the opportunity to ask the E-bussiness
+received the amount, it will transfer money to the E-business.\\
+After paid the product, the customer has the opportunity to ask the E-business
 for an invoice. He or she fills in the address in the app, and then the Parser
-will parse the request and send the address to the E-bussiness. If the customer
+will parse the request and send the address to the E-business. If the customer
 wants a paper invoice, he or she needs to pay an extra postage for the invoice.
 After that, the E-business will send the invoice to the customer.
 
@@ -1413,8 +1413,8 @@ the system will return this information to the UI who invokes the function.
   \caption{Log in}
 \end{figure}
 This is the login page of our app, for convenience, users can log in via WeChat or
-Facebook, which is the popular socail account around the world. Through the
-account, we will record user's infomation in the server, and can sync data to
+Facebook, which is the popular social account around the world. Through the
+account, we will record user's information in the server, and can sync data to
 provide a better user experience.
 
 \subsection{Main Page}
@@ -1450,7 +1450,7 @@ delivered. Like the main page, it can show details and ordered with timeline.
   \centering\includegraphics[width=3in]{DocumentRes/Account.png}
   \caption{Account}
 \end{figure}
-This is the account page of our app. It shoes the basic infomation of users,
+This is the account page of our app. It shoes the basic information of users,
 including name, title, email, password, location and social account. Users can
 change settings there and it's simple and concise。
 
@@ -1505,7 +1505,7 @@ A decision support system is a computer-based information system that supports
 A single task to send the package to a customer.
 \subsubsection{delivery terminal}
 The destination of the delivery where the receiver receive and sign the package.
-\subsubsection{dispath list}
+\subsubsection{dispatch list}
 The digital list of information of the packages to be delivered in
 postmen’s port.
 \subsubsection{distribution center}
