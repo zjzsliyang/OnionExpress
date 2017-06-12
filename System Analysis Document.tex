@@ -44,64 +44,21 @@
 \tableofcontents
 
 \chapter{Introduction}
-Onion Express\textregistered\ is a system built for logistic companies,
-which provides them with a solution to logistics tracking, goods packing,
-goods distribution, after-sales management, data storage, information
-processing, etc.
+Onion Express\textregistered\ is a system built for logistic companies, which provides them with a solution to logistics tracking, goods packing, goods distribution, after-sales management, data storage, information processing, etc.
 
 \section{Purpose}
-These days as B2C business is increasing rapidly, the growth of
-logistics business is also remarkable. The enormous market demand
-brings logistics companies opportunities as well as the challenge.
-Facing such kind of condition, this project is aimed at improving the
-efficiency of field personnel and customer satisfaction of a logistics
-company by building a cross-platform system.
+These days as B2C business is increasing rapidly, the growth of logistics business is also remarkable. The enormous market demand brings logistics companies opportunities as well as the challenge. Facing such kind of condition, this project is aimed at improving the efficiency of field personnel and customer satisfaction of a logistics company by building a cross-platform system.
 
 \section{Definitions}
-As Jobs has ever said, “People don't know what I really want at all,
-until your products are in their eyes”. This project is specially
-designed for an independent logistics companies like UPS. The business
-scope is limited within China. To be more precise, the express is only
-available in Jiangsu, Zhejiang and Shanghai at the beginning.
-Temporarily private orders are not covered in the business scope,
-which means the express company corporates with e-commercial companies only
-with the cash-on-delivery express or normal express. The system focuses on logistics
-service without regard to O2O, bulk cargo or self-support e-business.
-Timing express might be expanded in future.
+As Jobs has ever said, “People don't know what I really want at all, until your products are in their eyes”. This project is specially designed for an independent logistics companies like UPS. The business scope is limited within China. To be more precise, the express is only available in Jiangsu, Zhejiang and Shanghai at the beginning. Temporarily private orders are not covered in the business scope, which means the express company corporates with e-commercial companies only with the cash-on-delivery express or normal express. The system focuses on logistics service without regard to O2O, bulk cargo or self-support e-business. Timing express might be expanded in future.
 
 \section{System Overview}
-The actors in the system are classified as \emph{Postman, E-business, Customer
-service, Customer} and \emph{Agent}. \emph{Customer} and \emph{Agent} are
-generalized as Receiver. The \emph{Postman} has access to this system
-only on mobile devices while \emph{Customer} has access both on browsers
-as well as mobile devices. \emph{E-business} offers orders periodically.
-\emph{Customer service} helps to deal with tasks cannot be done only by
-the system.\\
-Web application and iOS application provide different functions for different
-users to enhance user experience and have some humanization design(e.g.
-using different colors to mark tasks as reception or delivery in postman’s app).
-Besides basic functions, the system also provides some advanced functions,
-like printing invoices. Different offline payment methods are supported.
-And the customer’s telephone number is hidden to protect his/her privacy.\\
-The postman is equipped with a multifunctional special device, when the
-customer receives his/her package, he/she can use this device to pay by
-card and can also press thumb on it to sign digitally, besides, the device
-helps collect postman’s GPS location accurately.\\
-The system considers all the 8 scenarios, including sending the package,
-paying for the product, signing the package and so on. To integrate the
-system, two scenarios are added. One is creating the orders, at the beginning
-of the entire flow. Another is dealing the order manually, to reduce errors
-caused by the system and handle other unanticipated situations. That can
-improve the stability of the system and in consideration of the relatively
-small scale of users in the early stage, robot customer service is not
-necessary. It can be taken into consideration when the business is expanding
-to a certain stage.\\
-This project also designs several user interface mock-ups on the website
-and on mobile devices. Core functions are exhibited in these mock-ups,
-for example, the dispatch list interface.\\
-Nonfunctional requirements and further explanations on security, performance,
-data storage and computing, tracking the package, maintenance and others are
-detailed in supplementary Specification.
+The actors in the system are classified as \emph{Postman, E-business, Customer service, Customer} and \emph{Agent}. \emph{Customer} and \emph{Agent} are generalized as Receiver. The \emph{Postman} has access to this system only on mobile devices while \emph{Customer} has access both on browsers as well as mobile devices. \emph{E-business} offers orders periodically. \emph{Customer service} helps to deal with tasks cannot be done only by the system.\\
+Web application and iOS application provide different functions for different users to enhance user experience and have some humanization design(e.g. using different colors to mark tasks as reception or delivery in postman’s app). Besides basic functions, the system also provides some advanced functions, like printing invoices. Different offline payment methods are supported. And the customer’s telephone number is hidden to protect his/her privacy.\\
+The postman is equipped with a multifunctional special device, when the customer receives his/her package, he/she can use this device to pay by card and can also press thumb on it to sign digitally, besides, the device helps collect postman’s GPS location accurately.\\
+The system considers all the 8 scenarios, including sending the package, paying for the product, signing the package and so on. To integrate the system, two scenarios are added. One is creating the orders, at the beginning of the entire flow. Another is dealing the order manually, to reduce errors caused by the system and handle other unanticipated situations. That can improve the stability of the system and in consideration of the relatively small scale of users in the early stage, robot customer service is not necessary. It can be taken into consideration when the business is expanding to a certain stage.\\
+This project also designs several user interface mock-ups on the website and on mobile devices. Core functions are exhibited in these mock-ups, for example, the dispatch list interface.\\
+Nonfunctional requirements and further explanations on security, performance, data storage and computing, tracking the package, maintenance and others are detailed in supplementary Specification.
 
 \chapter{Requirements}
 \section{Use Case Modeling}
@@ -1168,83 +1125,29 @@ advantage of by the wicked.
   \caption{Package Diagram}
 \end{figure}
 \subsection{System Structure}
-The architecture has $5$ layers, which are extended from the 4-tier architecture.
-We have taken extensibility, code reusability into consideration. $5$ layers
-are as follows.
+The architecture has $5$ layers, which are extended from the 4-tier architecture. We have taken extensibility, code reusability into consideration. $5$ layers are as follows.
 \subsubsection{Presentation Layer}
-The first layer is Presentation Layer. This layer provides a user interface to
-translate the logistics information to user friendly representation. It contains
-Web front-end and iOS app, serving as user's entry of the system. It transfers
-the information the transport layer and call the API, provided by the transport
-layer. The layer in out system consists of two subsystems, iOS app and Website.
-As for the platforms consideration, the website will take advantage of Bootstrap
-framework, using the language of HTML, CSS and JavaScript. The iOS app will use
-the Cocoa Touch, Media, Core Services and Core OS in the development.
+The first layer is Presentation Layer. This layer provides a user interface to translate the logistics information to user friendly representation. It contains Web front-end and iOS app, serving as user's entry of the system. It transfers the information the transport layer and call the API, provided by the transport layer. The layer in out system consists of two subsystems, iOS app and Website. As for the platforms consideration, the website will take advantage of Bootstrap framework, using the language of HTML, CSS and JavaScript. The iOS app will use the Cocoa Touch, Media, Core Services and Core OS in the development.
 \subsubsection{Service Layer}
-The second layer is Service Layer. This layer works as a coordinator of our
-system. It provides some Application Programming Interface(API) to the
-Presentation Layer, including Web API, iOS API and external API. The external
-API provides interfaces to some third-party services, such as Alipay API
-provides the services for pay via Alipay Account. This layer plays a role
-of delivering the request from Presentation Layer to Business Logic Layer.
-We have designed protocols and different frameworks to implement those API,
-including Spring Web and UIKit.
+The second layer is Service Layer. This layer works as a coordinator of our system. It provides some Application Programming Interface(API) to the Presentation Layer, including Web API, iOS API and external API. The external API provides interfaces to some third-party services, such as Alipay API provides the services for pay via Alipay Account. This layer plays a role of delivering the request from Presentation Layer to Business Logic Layer. We have designed protocols and different frameworks to implement those API, including Spring Web and UIKit.
 \subsubsection{Business Logic Layer}
-The third layer is Business Logic Layer. This layer contains several
-controllers including Order Controller, User Controller, Dispatch Management and
-Third-Party Service. In our system, these controllers will process the data and
-make package the update UI operation. This layer is one of the part of
-MVC(Model-View-Controller) framework.
+The third layer is Business Logic Layer. This layer contains several controllers including Order Controller, User Controller, Dispatch Management and Third-Party Service. In our system, these controllers will process the data and make package the update UI operation. This layer is one of the part of MVC(Model-View-Controller) framework.
 \subsubsection{Data Layer}
-The fourth layer is Data Layer. This layer define the data model of our system,
-including data access and data maintenance. It contains Order Information and
-User Information which is entity in our database system. In this layer, we will
-take advantage of different database and handle different type efficiently(e.g.
-structural and non-structural data). We will use Oracle DBMS and SQL language.
-For the data access, we will choose the Hibernate and NHibernate framework.
+The fourth layer is Data Layer. This layer define the data model of our system, including data access and data maintenance. It contains Order Information and User Information which is entity in our database system. In this layer, we will take advantage of different database and handle different type efficiently(e.g. structural and non-structural data). We will use Oracle DBMS and SQL language. For the data access, we will choose the Hibernate and NHibernate framework.
 \subsubsection{Domain Layer}
-The last layer is Domain Layer. The Domain Layer contains $3$ packages including
-Order, Customer, Postman. This layer contains the concrete information stored
-in our system. It provides services for the Business Logic Layer by helping it
-get concrete information. We separate these information into this independent
-layer, so that there will be less data redundancy and the efficiency of reading
-or writing will be improved. This layer is also related with the Data Layer, It
-needs the service and support of the Data Layer.
+The last layer is Domain Layer. The Domain Layer contains $3$ packages including Order, Customer, Postman. This layer contains the concrete information stored in our system. It provides services for the Business Logic Layer by helping it get concrete information. We separate these information into this independent layer, so that there will be less data redundancy and the efficiency of reading or writing will be improved. This layer is also related with the Data Layer, It needs the service and support of the Data Layer.
+
 \section{Analysis Model}
 \subsection{Global Class Diagram}
 \begin{figure}[H]
   \centering\includegraphics[width=6in]{DocumentRes/ClassDiagram.png}
   \caption{Global Class Diagram}
 \end{figure}
-The first part is the domain layer, which contains the User Class, Order Class
-and Client Class. Thus, Customer and Postman is the subclass of User and
-implement the method. The User Class records the basic information of a user.
-User ID is the primary key of Use and User Type is an enum consisting of
-\textbf{[Customer, Postman, Superuser]}. The user can login the system by email
-or ID or telephone number and password. In the newly created class, it's
-instance stores the detailed information of the order, including user's name,
-phone number, and address. This class is designed as a self-define data type
-and can be used to compare the information of users stored in our system.\\
-The class Customer has a corresponding order list and the attributes to sign
-the package. The Postman has the attribute ‘region’ to identify the areas where
-he is in charge of. We define the public API of User to provide services for
-the controller.\\
-The class Order record the basic information of an order. The Order ID is the
-primary key of Order. Since the sender or the receiver may not register an
-account in the system, the Order class records the name, Tel number and address
-of sender and receiver. The class Order is designed for containing information
-about our orders and all the basic services will be offered by the controller,
-such as \textbf{[createOrder(), getOrderInfo()]}. When the user tracks the
-package, System will return the real-time address of the order.\\
-The second part is the controller classes. All the requests from UI are sent to
-the Parser. The Parser provides Order Controller APIs to web UI and app UI.
-It will parse the request and delivery the request to corresponding controller.
-The DatabaseController collects the necessary information to record in
-the database and handles the request and returns the result to UI. For example,
-when the user tracks the package by using the app UI, the app UI will call
-the app API and sends the request to Parser then to the OrderController.\\
-The third part is the boundary classes containing the UI class. The AppUI
-provides a lot of functions for users, which is the same with the WebUI.
+The first part is the domain layer, which contains the User Class, Order Class and Client Class. Thus, Customer and Postman is the subclass of User and implement the method. The User Class records the basic information of a user. User ID is the primary key of Use and User Type is an enum consisting of \textbf{[Customer, Postman, Superuser]}. The user can login the system by email or ID or telephone number and password. In the newly created class, it's instance stores the detailed information of the order, including user's name, phone number, and address. This class is designed as a self-define data type and can be used to compare the information of users stored in our system.\\
+The class Customer has a corresponding order list and the attributes to sign the package. The Postman has the attribute ‘region’ to identify the areas where he is in charge of. We define the public API of User to provide services for the controller.\\
+The class Order record the basic information of an order. The Order ID is the primary key of Order. Since the sender or the receiver may not register an account in the system, the Order class records the name, Tel number and address of sender and receiver. The class Order is designed for containing information about our orders and all the basic services will be offered by the controller, such as \textbf{[createOrder(), getOrderInfo()]}. When the user tracks the package, System will return the real-time address of the order.\\
+The second part is the controller classes. All the requests from UI are sent to the Parser. The Parser provides Order Controller APIs to web UI and app UI. It will parse the request and delivery the request to corresponding controller. The DatabaseController collects the necessary information to record in the database and handles the request and returns the result to UI. For example, when the user tracks the package by using the app UI, the app UI will call the app API and sends the request to Parser then to the OrderController.\\
+The third part is the boundary classes containing the UI class. The AppUI provides a lot of functions for users, which is the same with the WebUI.
 
 \subsection{Use Case Realization}
 \subsubsection{Scenario One}
@@ -1256,14 +1159,7 @@ provides a lot of functions for users, which is the same with the WebUI.
   \centering\includegraphics[width=4in]{DocumentRes/1CommunicationDiagram_create.png}
   \caption{Scenario One Communication Diagram: Create}
 \end{figure}
-As seen in the communication diagram or sequence diagram, the customer can
-create order in our order management system. The customer will create order by
-pressing the corresponding buttons on user interface. After getting the request,
-user interface will send the request to the parser. Then, the parer send messages
-to the order controller to create order. The order controller, as seen from its
-name, will send the creating messages to the class order and control its
-creation of order, then new order will be created and inserted to database by
-database controller.
+As seen in the communication diagram or sequence diagram, the customer can create order in our order management system. The customer will create order by pressing the corresponding buttons on user interface. After getting the request, user interface will send the request to the parser. Then, the parer send messages to the order controller to create order. The order controller, as seen from its name, will send the creating messages to the class order and control its creation of order, then new order will be created and inserted to database by database controller.
 
 \subsubsection{Scenario Two}
 \begin{figure}[H]
@@ -1274,13 +1170,7 @@ database controller.
   \centering\includegraphics[width=4in]{DocumentRes/2CommunicationDiagram_check.png}
   \caption{Scenario Two Communication Diagram: Check}
 \end{figure}
-As seen in the communication diagram or sequence diagram, postman can check
-order information in our order management system. Postman will check order
-information by pressing the corresponding buttons on user interface. After
-getting the request, the user interface will send the request to parser by
-calling the API. The parser will analyze the request and send messages to the
-order controller. Then the order controller will call database controller to
-select corresponding order information from database.
+As seen in the communication diagram or sequence diagram, postman can check order information in our order management system. Postman will check order information by pressing the corresponding buttons on user interface. After getting the request, the user interface will send the request to parser by calling the API. The parser will analyze the request and send messages to the order controller. Then the order controller will call database controller to select corresponding order information from database.
 
 \subsubsection{Scenario Three \& Four}
 \begin{figure}[H]
@@ -1291,16 +1181,7 @@ select corresponding order information from database.
   \centering\includegraphics[width=4in]{DocumentRes/34CommunicationDiagram_signPackage.png}
   \caption{Scenario Three \& Four Communication Diagram: Sign Package}
 \end{figure}
-The process of signing package is shown as the sequence diagram below. First of
-all, the postman needs to know information of the customer. As a result, a
-request of retrieving the order information will be sent by postman. The parser
-here is to analysis requests from UI and transmit to the controller.
-Information, including customer's name and phone number, will be returned
-to the postman. After that, the receiver is supposed to inform the postman
-her information. In order to verify if she is the designated person or customer
-herself, a confirmation of customer is required. If so, the receiver will have
-access to sign the package; otherwise, the demand of signing the package should
-be rejected.
+The process of signing package is shown as the sequence diagram below. First of all, the postman needs to know information of the customer. As a result, a request of retrieving the order information will be sent by postman. The parser here is to analysis requests from UI and transmit to the controller. Information, including customer's name and phone number, will be returned to the postman. After that, the receiver is supposed to inform the postman her information. In order to verify if she is the designated person or customer herself, a confirmation of customer is required. If so, the receiver will have access to sign the package; otherwise, the demand of signing the package should be rejected.
 
 \subsubsection{Scenario Five}
 \begin{figure}[H]
@@ -1329,22 +1210,9 @@ be rejected.
   \centering\includegraphics[width=4in]{DocumentRes/5CommunicationDiagram_askInvoice.png}
   \caption{Scenario Five Communication Diagram: Ask Invoice}
 \end{figure}
-After the customer creates an order, he or she should choose one way to pay for
-the product, pay online or pay offline. If the customer chooses to pay online,
-he or she should enter the payment password after confirmed  the order. And the
-Parser will parse the request and send the password to the third-Party System.
-Then the third-Party System will response the payment information(success or
-failed) and the ui will display the payment information.\\
-On the other hand, if the customer chooses to pay offline, he or she needs to
-pay after received the product. The customers pays for the product by cash or by
-card after checked the amount with the postman. Then the postman submits the
-money to the logistic company. After the third-Party System or logistic company
-received the amount, it will transfer money to the E-business.\\
-After paid the product, the customer has the opportunity to ask the E-business
-for an invoice. He or she fills in the address in the app, and then the Parser
-will parse the request and send the address to the E-business. If the customer
-wants a paper invoice, he or she needs to pay an extra postage for the invoice.
-After that, the E-business will send the invoice to the customer.
+After the customer creates an order, he or she should choose one way to pay for the product, pay online or pay offline. If the customer chooses to pay online, he or she should enter the payment password after confirmed  the order. And the Parser will parse the request and send the password to the third-Party System. Then the third-Party System will response the payment information(success or failed) and the ui will display the payment information.\\
+On the other hand, if the customer chooses to pay offline, he or she needs to pay after received the product. The customers pays for the product by cash or by card after checked the amount with the postman. Then the postman submits the money to the logistic company. After the third-Party System or logistic company received the amount, it will transfer money to the E-business.\\
+After paid the product, the customer has the opportunity to ask the E-business for an invoice. He or she fills in the address in the app, and then the Parser will parse the request and send the address to the E-business. If the customer wants a paper invoice, he or she needs to pay an extra postage for the invoice. After that, the E-business will send the invoice to the customer.
 
 \subsubsection{Scenario Six}
 \begin{figure}[H]
@@ -1355,14 +1223,7 @@ After that, the E-business will send the invoice to the customer.
   \centering\includegraphics[width=4in]{DocumentRes/6CommunicationDiagram_recordDamage.png}
   \caption{Scenario Six Communication Diagram: Record Damage}
 \end{figure}
-If the package is damaged or lost, the postman records the damages and sends
-the damages information to the logistic company. Then the logistic company will
-send an apology  message to the customer. After received the message, the
-customer can choose to recreate a new order or cancel the order. He or she
-needs to press the recreate or cancel button in the app, and then the Parser
-will parse the request and send a signal to the OrderController. After received
-the signal, the OrderController will execute a function to update or delete the
-order information in the database.
+If the package is damaged or lost, the postman records the damages and sends the damages information to the logistic company. Then the logistic company will send an apology  message to the customer. After received the message, the customer can choose to recreate a new order or cancel the order. He or she needs to press the recreate or cancel button in the app, and then the Parser will parse the request and send a signal to the OrderController. After received the signal, the OrderController will execute a function to update or delete the order information in the database.
 
 \subsubsection{Scenario Seven}
 \begin{figure}[H]
@@ -1373,14 +1234,8 @@ order information in the database.
   \centering\includegraphics[width=4in]{DocumentRes/7CommunicationDiagram_return.png}
   \caption{Scenario Seven Communication Diagram: Return}
 \end{figure}
-If the customer is unsatisfied with the product, he/she can return the product.
-Customers need to apply for returning through both App UI and Web UI. Then
-Parser will recognizes that request and assigns it to OrderController so Order
-Domain will return a label containing the address to send it back and the
-postage.\\
-If the customer chooses to cancel the order, after a similar process, the order
-will be completed. Else if he/she chooses to withdraw the order, the original
-order will be recorded through \textbf{withdrawProduct()} and then be completed.
+If the customer is unsatisfied with the product, he/she can return the product. Customers need to apply for returning through both App UI and Web UI. Then Parser will recognizes that request and assigns it to OrderController so Order Domain will return a label containing the address to send it back and the postage.\\
+If the customer chooses to cancel the order, after a similar process, the order will be completed. Else if he/she chooses to withdraw the order, the original order will be recorded through \textbf{withdrawProduct()} and then be completed.
 
 \subsubsection{Scenario Eight}
 \begin{figure}[H]
@@ -1391,18 +1246,18 @@ order will be recorded through \textbf{withdrawProduct()} and then be completed.
   \centering\includegraphics[width=4in]{DocumentRes/8CommunicationDiagram_track.png}
   \caption{Scenario Eight Communication Diagram: Track}
 \end{figure}
-Customers and Customer Service have the right to track the product. Customer
-will invoke the function on UI. Messages will be sent to Parser in
-URL link. After parsing the link, Parser invokes the trackPackage
-function of OrderController. OrderController will then get the location by
-invoking the function of order entity. After getting the real time address,
-the system will return this information to the UI who invokes the function.
+Customers and Customer Service have the right to track the product. Customer will invoke the function on UI. Messages will be sent to Parser in URL link. After parsing the link, Parser invokes the trackPackage function of OrderController. OrderController will then get the location by invoking the function of order entity. After getting the real time address, the system will return this information to the UI who invokes the function.
 
 \chapter{Design}
 \section{Subsystems}
 
 \section{Mechanisms}
-
+\subsection{Communication Mechanism}
+Our system provides both AppAPI and WebAPI to the User Interface. The parser will parse the request and forwarding to the OrderController or Third-Party System according to the content. The OrderController will use the interface provided by the Order Class. The communication will be provided by using its interface. The sequence diagram is used to describe the message receiving process of the subsystem's interface. This interface will receive the messages and then create responses, send back to front-end.
+\subsection{Security Mechanism}
+Our system provides two interfaces in this mechanism and defines two corresponding functions, including encryption and random string generation. There are two entity classes MD5Encrypt and SHAEncrypt which are designed for implementing the interface EncryptBehavior. Inheriting from the abstract class Encryption, the entity class ConcreteRandom is used to implement the RandomBehavior interface and will invoke these two interfaces.\\
+Encryption is an abstract class, without the \textbf{encryption} operation and \textbf{randomStr} operation. Thus, two attributes which are two interfaces are private. What is more is that we add a string attribute to store the content, an abstract operation \textbf{init} for subclass to init the text attribute and set algorithm at the beginning, a \textbf{runEncryption} operation to precess the encryption and a \textbf{setAlgorithm} operation to set the algorithm.\\
+The sequence diagram of this security mechanism shows the encryption process. The system will generate a string randomly according to the length defined in the Encryption class. The \textbf{encrypt} interface will put together the original password and the random string to complete the encryption, thus, return the encrypted string. This encrypted string is used to identify the user's identity by comparing the input of password with what stores in our database.
 \section{Use Case Realizations}
 
 \chapter{User Interface}
@@ -1412,55 +1267,38 @@ the system will return this information to the UI who invokes the function.
   \centering\includegraphics[width=3in]{DocumentRes/Login.png}
   \caption{Log in}
 \end{figure}
-This is the login page of our app, for convenience, users can log in via WeChat or
-Facebook, which is the popular social account around the world. Through the
-account, we will record user's information in the server, and can sync data to
-provide a better user experience.
+This is the login page of our app, for convenience, users can log in via WeChat or Facebook, which is the popular social account around the world. Through the account, we will record user's information in the server, and can sync data to provide a better user experience.
 
 \subsection{Main Page}
 \begin{figure}[htbp]
   \centering\includegraphics[width=3in]{DocumentRes/OnWay.png}
   \caption{On way}
 \end{figure}
-This is the main page of our app. It shows the user at all glance all the
-current package, and click on the user after the show the details of the
-package. Details of the courier to provide a contact, historical evaluation,
-and the location of real-time display on the map, easy to track users.
-In addition, the basic information about the package is provided:
-including estimated time of arrival, delivery costs and weight.
+This is the main page of our app. It shows the user at all glance all the current package, and click on the user after the show the details of the package. Details of the courier to provide a contact, historical evaluation, and the location of real-time display on the map, easy to track users. In addition, the basic information about the package is provided: including estimated time of arrival, delivery costs and weight.
 
 \subsection{Search Page}
 \begin{figure}[htbp]
   \centering\includegraphics[width=3in]{DocumentRes/Search.png}
   \caption{Search}
 \end{figure}
-This is the search page of our app. User can type everything he/she want to.
-And we will search both locally and in the server.
+This is the search page of our app. User can type everything he/she want to. And we will search both locally and in the server.
 
 \subsection{Order Page}
 \begin{figure}[H]
   \centering\includegraphics[width=3in]{DocumentRes/Order.png}
   \caption{Order}
 \end{figure}
-This is the order page of our app. It shows all the packages both on the way and
-delivered. Like the main page, it can show details and ordered with timeline.
+This is the order page of our app. It shows all the packages both on the way and delivered. Like the main page, it can show details and ordered with timeline.
 
 \subsection{Account Page}
 \begin{figure}[H]
   \centering\includegraphics[width=3in]{DocumentRes/Account.png}
   \caption{Account}
 \end{figure}
-This is the account page of our app. It shoes the basic information of users,
-including name, title, email, password, location and social account. Users can
-change settings there and it's simple and concise。
+This is the account page of our app. It shoes the basic information of users, including name, title, email, password, location and social account. Users can change settings there and it's simple and concise.
 
 \section{Website}
-There is basic information of the system showed on the page. The services can
-be ordered on this website after the user logs in. The custom can search for
-their packages' particulars after logging in. In addition, the significant
-notations of the Onion Express\textregistered\ are showed on the web page, such us the forbidden
-objects etc. Any common browsers of the website can contact the Onion
-Express\textregistered\ company and know about the company freely.
+There is basic information of the system showed on the page. The services can be ordered on this website after the user logs in. The custom can search for their packages' particulars after logging in. In addition, the significant notations of the Onion Express\textregistered\ are showed on the web page, such us the forbidden objects etc. Any common browsers of the website can contact the Onion Express\textregistered\ company and know about the company freely.
 \begin{figure}[htbp]
   \centering\includegraphics[width=4in]{DocumentRes/index1.png}
   \caption{Index1}
@@ -1480,49 +1318,40 @@ Express\textregistered\ company and know about the company freely.
 \chapter{Glossary of Terms}
 \begin{spacing}{0.7}
 \subsubsection{after-sales service}
-Also called customer service, after sales service is the provision of
-service to customers before, during and after a purchase.
+Also called customer service, after sales service is the provision of service to customers before, during and after a purchase.
 \subsubsection{article}
 The material in the package which is sent by a normal customer.
 \subsubsection{bi-directional read}
 The information can be read in both direction.
 \subsubsection{cash-on-delivery express}
-The sale of goods by express where payment is made on delivery rather
-than in advance.
+The sale of goods by express where payment is made on delivery rather than in advance.
 \subsubsection{claim}
 When packages are damaged or lost, customers have right to ask for compensation.
 \subsubsection{courier}
-A courier is a person who delivers messages, packages, and mail. Here it refers
-to postmen.
+A courier is a person who delivers messages, packages, and mail. Here it refers to postmen.
 \subsubsection{customer service staff}
 The staff in the logistics company serving customers.
 \subsubsection{damaged express item}
 The package that is damaged during express.
 \subsubsection{decision support system(DSS)}
-A decision support system is a computer-based information system that supports
- business or organizational decision-making activities.
+A decision support system is a computer-based information system that supports business or organizational decision-making activities.
 \subsubsection{delivery}
 A single task to send the package to a customer.
 \subsubsection{delivery terminal}
 The destination of the delivery where the receiver receive and sign the package.
 \subsubsection{dispatch list}
-The digital list of information of the packages to be delivered in
-postmen’s port.
+The digital list of information of the packages to be delivered in postmen’s port.
 \subsubsection{distribution center}
-A station in a large district to transfer packages to the regional
-distribution center.
+A station in a large district to transfer packages to the regional distribution center.
 \subsubsection{door-to-cfs}
-From the shipper factory or warehouse to the destination or the
-Container freight station of the discharging port.
+From the shipper factory or warehouse to the destination or the Container freight station of the discharging port.
 \subsubsection{door-to-door}
 From the shipper factory or warehouse to the consignee's factory
 or warehouse.
 \subsubsection{Electronic Data Interchange(EDI)}
-Electronic Data Interchange is an electronic communication method that provides
-standards for exchanging data via any electronic means.
+Electronic Data Interchange is an electronic communication method that provides standards for exchanging data via any electronic means.
 \subsubsection{Electronic Order System(EOS)}
-Electronic Order System is to meet demand instantly,
-with perfect quality and punctuality.
+Electronic Order System is to meet demand instantly, with perfect quality and punctuality.
 \subsubsection{express item}
 Packages to be delivered.
 \subsubsection{express item tracking system}
@@ -1530,65 +1359,43 @@ A subsystem in our system to track the packages with GIS automatically.
 \subsubsection{express network}
 A service network within the scope to help delivery.
 \subsubsection{express waybill}
-An express receipt given by the carrier to the shipper acknowledging receipt
-of the packages being shipped and specifying the terms of delivery.
+An express receipt given by the carrier to the shipper acknowledging receipt of the packages being shipped and specifying the terms of delivery.
 \subsubsection{first time delivery}
 The first time for particular postman to send the package to a position.
 \subsubsection{Global Position System(GPS)}
-The Global Positioning System is a space-based navigation system that
-provides location and time information in all weather conditions,
-anywhere on or near the Earth where there is an unobstructed line of
-sight to four or more GPS satellites.
+The Global Positioning System is a space-based navigation system that provides location and time information in all weather conditions, anywhere on or near the Earth where there is an unobstructed line of sight to four or more GPS satellites.
 \subsubsection{Geographic Information System(GIS)}
-A geographic information system is a system designed to capture,
-store, manipulate, analyze, manage, and present all types of spatial
-or geographical data.
+A geographic information system is a system designed to capture, store, manipulate, analyze, manage, and present all types of spatial or geographical data.
 \subsubsection{handheld terminal}
-Handheld terminal refers to the portable data processing terminal
-with some particular features. Here it refers to mobile phones with our app.
+Handheld terminal refers to the portable data processing terminal with some particular features. Here it refers to mobile phones with our app.
 \subsubsection{inquiry}
-The customer logins the system or connects with customer service staff to get
-information about the order, operation instruction etc.
+The customer logins the system or connects with customer service staff to get information about the order, operation instruction etc.
 \subsubsection{Integrated Services Digital Network(ISDN)}
-Integrated Services for Digital Network is a set of communication standards
-for simultaneous digital transmission of voice, video, data, and other
-network services over the traditional circuits of the public switched
-telephone network.
+Integrated Services for Digital Network is a set of communication standards for simultaneous digital transmission of voice, video, data, and other network services over the traditional circuits of the public switched telephone network.
 \subsubsection{interchange receipt}
-A voucher to certify that the customers or e-business commits articles
-or products to the logistics company for delivery.
+A voucher to certify that the customers or e-business commits articles or products to the logistics company for delivery.
 \subsubsection{Invoice(INV)}
-An invoice is a commercial document issued by a seller to a buyer,
-relating to a sale transaction and indicating the products, quantities,
-and agreed prices for products or services the seller had provided the buyer.
+An invoice is a commercial document issued by a seller to a buyer, relating to a sale transaction and indicating the products, quantities, and agreed prices for products or services the seller had provided the buyer.
 \subsubsection{Just-in-time logistics(JIT logistics)}
-Just-in-time logistics is a modern logistics method based on the JIT
-management philosophy.
+Just-in-time logistics is a modern logistics method based on the JIT management philosophy.
 \subsubsection{lost express item}
 The package that is lost during express.
 \subsubsection{order number}
 The number generalized when the order is created.
 \subsubsection{order processing}
-A series automatic operation in system to deal the order, such as
-creating an order, completing an order and so on.
+A series automatic operation in system to deal the order, such as creating an order, completing an order and so on.
 \subsubsection{package}
-The material to be delivered after customers or the e-business company
-create orders.
+The material to be delivered after customers or the e-business company create orders.
 \subsubsection{product}
-The material in the package which is ordered by customers from the
-e-business company.
+The material in the package which is ordered by customers from the e-business company.
 \subsubsection{receiver}
-Generalized from Customer and Agent, the person receiving and signing
-the package directly.
+Generalized from Customer and Agent, the person receiving and sign in the package directly.
 \subsubsection{redelivery}
-When no one can sign the package, the postman will carry it back to
-the delivery terminal and the order will be rescheduled in the system.
+When no one can sign the package, the postman will carry it back to the delivery terminal and the order will be rescheduled in the system.
 \subsubsection{redirect express item}
-When customer changes the destination or the destination is out of scope,
-the package will be reassigned.
+When customer changes the destination or the destination is out of scope, the package will be reassigned.
 \subsubsection{regional distribution center}
-The substation in a certain region of the logistics company to assign
-packages to postmen.
+The substation in a certain region of the logistics company to assign packages to postmen.
 \subsubsection{return}
 If customers are unsatisfied with the product, he or she can send it back
 with a label from system.
@@ -1599,14 +1406,11 @@ i.e. the tracking number of packages in the system.
 \subsubsection{sign in}
 The receiver sign the package and get it.
 \subsubsection{sorting}
-The packages in the regional distribution center are sorted to transfer to
-corresponding postmen or the packages in the distribution center are sorted to
-transport to regional distribution centers.
+The packages in the regional distribution center are sorted to transfer to corresponding postmen or the packages in the distribution center are sorted to transport to regional distribution centers.
 \subsubsection{tracking number}
 Especially for tracking the real-time GPS location of the package.
 \subsubsection{withdrawal}
-If the customer is unsatisfied with the product and has sent it back,
-he or she can choose withdraw the order and the payment will be reimbursed.
+If the customer is unsatisfied with the product and has sent it back, he or she can choose withdraw the order and the payment will be reimbursed.
 \end{spacing}
 
 
