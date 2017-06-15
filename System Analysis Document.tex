@@ -13,6 +13,8 @@
 \usepackage{color}
 \usepackage{setspace}
 \usepackage{tabularx}
+\usepackage{listings}
+\usepackage{xcolor}
 \usepackage{float}
 \title{
 \includegraphics[width=0.8in]{DocumentRes/OnionExpress.png} \\
@@ -40,6 +42,40 @@
 \setlength{\parindent}{1cm}
 
 \begin{document}
+
+
+
+\lstset{
+  aboveskip=1em,
+  belowskip=-1em,
+  backgroundcolor=\color{white},
+  basicstyle=\ttfamily,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\ttfamily\color{green},    
+  deletekeywords={},
+  escapeinside={},
+  extendedchars=true,
+%  frame=single,
+  keepspaces=true,
+  keywordstyle=\color{blue},
+  language=C++,
+  morekeywords={string},
+%  numbers=left,
+%  numbersep=5pt,
+%  numberstyle=\tiny\color{darkgray},
+  rulecolor=\color{black},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stepnumber=1,
+  stringstyle=\color{violet},
+  tabsize=2,
+  title=\lstname
+}
+
+
 \maketitle
 \tableofcontents
 
@@ -1250,6 +1286,87 @@ Customers and Customer Service have the right to track the product. Customer wil
 
 \chapter{Design}
 \section{Subsystems}
+\subsection{List of Interfaces}
+\subsubsection{Order Management Subsystem}
+\todo{Order Management Subsystem by LUO}
+
+\subsubsection{User Management Subsystem}
+This subsystem offers interface to user to create or modify his informations and was inherited. by Class Customer and Postman.
+\begin{lstlisting}
+	User createUser(string userName, string password, string email, string telephone, Address address)
+\end{lstlisting}
+This interface is used to create user via userName, password, email, telephone and address. Once created, it will generate an userId automatically to identify and store the whole user info in database.
+\begin{lstlisting}
+	User modifyUser(template<T> userInfo)
+\end{lstlisting}
+This interface is a virtual function implemented by different sub-functions. User can modify his informations through sending the new value of the Class User.
+
+\subsubsection{Package Sign Subsystem}
+\todo{Package Sign Subsystem by YANG}
+
+\subsubsection{Payment Subsystem}
+This subsystem offers interfaces to controller for customers and postmen to finish payment(including package and freight). The corresponding interfaces are as follows.
+\begin{lstlisting}
+	bool payOnline(string orderNumber, string password)
+\end{lstlisting}
+This interface is used in the scenario that customers pay online using third-party system(e.g. Alipay) and the third-party will check the payment and return the payment information(successful or failed). If the order and password are right, it will return true and amend the state of the order. Otherwise it will return false.
+\begin{lstlisting}
+	bool payByCash(string orderNumber, double amount)
+\end{lstlisting}
+This interface receives the orderNumber and the amount of the order as parameters and return payment information(success or fail). This is used in the receivers pay by cash and postmen check the payment.
+\begin{lstlisting}
+	bool payByCard(string orderNumber, double amount, string password)
+\end{lstlisting}
+This interface is used in the scenario that receivers pay by credit card. Postmen will check the order with the customers and then the amount and password will be entered into the POS device and return the payment information(success or fail).
+\begin{lstlisting}
+	Invoice provideInvoice(E-business ebusiness, string orderNumber, InvoiceType type, Address address)
+\end{lstlisting}
+This interface is used in the scenario that the customers need an invoice. If a customer asks for an invoice, he or she should send the orderNumber, invoice type(paper or digit), and corresponding address to the E-business company. Then the E-business company will return an invoice to the customer.
+\begin{lstlisting}
+	bool transferAmount(E-business ebusiness, double amount)
+\end{lstlisting}
+After the logistic company or third-party system received the amount from customers, they need to transfer the amount to the E-business company to finish this order payment.
+
+\subsubsection{Tracking Subsystem}
+This subsystem offers interfaces to controller for customers and e-business companies to track  their packages. The corresponding interfaces are as follows.
+\begin{lstlisting}
+	string getLocation(string orderNumber)
+\end{lstlisting}
+Customer submits his request to UI with order number.
+\begin{lstlisting}
+	bool parseAppRequest(string orderNumber)
+\end{lstlisting}
+UI passes Request to Parser to Parse the request.
+\begin{lstlisting}
+	trackPackage(string orderNumber)
+\end{lstlisting}
+OrderController is asked for package position information of the order.
+\todo{Fix bugs by WANG}
+\begin{lstlisting}
+	getAdd(string oderNumber)
+\end{lstlisting}
+Order gives information(expressing track and current location) back.
+
+\subsubsection{Return Products Subsystem}
+This subsystem is used to handle the withdrawal or exchange request from the customer. This subsystem offers interfaces to controller for postmen and customer service to deal with the returning. The corresponding interfaces are as follows.
+\begin{lstlisting}
+	bool sendWithdrawInfo(string orderNumber, string reason)
+\end{lstlisting}
+By sending the order number and the	withdrawal reason to this function, the corresponding information will be	changed	in the system. The return value decides whether	the message has been sent successfully.
+\begin{lstlisting}
+	bool sendExchangeInfo(string orderNumber)
+\end{lstlisting}
+By sending the order number and the	withdrawal reason to this function, the corresponding information will be changed in the system. The return value decides whether the message has been sent successfully.
+\begin{lstlisting}
+	string newDelivery(string info)
+\end{lstlisting}
+By sending the order number and the	withdrawal reason to this function, the corresponding information will be	changed	in the system. The return value decides whether	the message has been sent successfully.
+
+\subsection{Detailed Subsystem: Create Order}
+
+\subsection{Interface between Our System and External Systems}
+As shows above, we have designed create order interface for communication between our system and external systems. The external systems include the E-business websites and the customer.\\
+The Encryption class provides interfaces for the third party messaging system. These interfaces are showed in the security mechanism.
 
 \section{Mechanisms}
 \subsection{Communication Mechanism}
@@ -1259,6 +1376,9 @@ Our system provides two interfaces in this mechanism and defines two correspondi
 Encryption is an abstract class, without the \textbf{encryption} operation and \textbf{randomStr} operation. Thus, two attributes which are two interfaces are private. What is more is that we add a string attribute to store the content, an abstract operation \textbf{init} for subclass to init the text attribute and set algorithm at the beginning, a \textbf{runEncryption} operation to precess the encryption and a \textbf{setAlgorithm} operation to set the algorithm.\\
 The sequence diagram of this security mechanism shows the encryption process. The system will generate a string randomly according to the length defined in the Encryption class. The \textbf{encrypt} interface will put together the original password and the random string to complete the encryption, thus, return the encrypted string. This encrypted string is used to identify the user's identity by comparing the input of password with what stores in our database.
 \section{Use Case Realizations}
+\subsection{Sign the Package}
+
+\subsection{Track the Package}
 
 \chapter{User Interface}
 \section{Mobile Devices(iOS)}
@@ -1415,7 +1535,7 @@ If the customer is unsatisfied with the product and has sent it back, he or she 
 
 
 \chapter{Contributions}
-More information, please visit more on \href{https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign}{GitHub}
+More information, please visit us on \href{https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign}{GitHub}
 \vspace{3mm}\\
 \href{https://github.com/zjzsliyang}{{\color{blue}1452559 Yang LI}} \hspace{17mm} iOS UI, Document\hfill 17\%\\
 \href{https://github.com/tjluozhongjin}{{\color{blue}1453645 Zhongjin LUO}} \hspace{5mm} Scenario One \& Two Diagrams\hfill 17\%\\
