@@ -41,9 +41,13 @@
 \setlength{\textheight}{8.5in}
 \setlength{\parindent}{1cm}
 
+\newcommand\JSONnumbervaluestyle{\color{blue}}
+\newcommand\JSONstringvaluestyle{\color{red}}
+
+% switch used as state variable
+\newif\ifcolonfoundonthisline
+
 \begin{document}
-
-
 
 \lstset{
   aboveskip=1em,
@@ -1288,7 +1292,27 @@ Customers and Customer Service have the right to track the product. Customer wil
 \section{Subsystems}
 \subsection{List of Interfaces}
 \subsubsection{Order Management Subsystem}
-\todo{Order Management Subsystem by LUO}
+This subsystem offers interfaces to controller for customers and E-business companies to create order, check order information and update order information. The corresponding interfaces are as follows.
+\begin{lstlisting}
+	Order create(string orderID, TransportStatus rStatus, bool pStatus, double freight, double price)
+\end{lstlisting}
+This interface is used to create order entity. It will receive all orders’ information.  The return value indicates whether the creating process is successful, if return value is not NULL, the creating process is successful, and if return value is NULL, the creating process is unsuccessful.
+\begin{lstlisting}
+	Order selectOrder(string orderID)
+\end{lstlisting}
+This interface is used to select order from database. It will receive the order ID. The return value indicates whether the selecting process is successful, if return value is not NULL, the selecting process is successful, and if return value is NULL, the selecting process is unsuccessful.
+\begin{lstlisting}
+	bool insertOrder(Order order)
+\end{lstlisting}
+This interface is used to insert order into database. It will receive the order entity. The return value indicates whether the inserting process is successful, if return value is true, the inserting process is successful, and if return value is false, the inserting process is unsuccessful.
+\begin{lstlisting}
+	bool updateOrder(Order order)
+\end{lstlisting}
+This interface is used to update order of database. It will receive the order entity. The return value indicates whether the updating  process is successful, if return value is true, the updating  process is successful, and if return value is false, the updating  process is unsuccessful.
+\begin{lstlisting}
+	bool deleteOrder(string orderID)
+\end{lstlisting}
+This interface is used to delete order in database. It will receive the order ID. The return value indicates whether the deleting  process is successful, if return value is true, the deleting  process is successful, and if return value is false, the deleting  process is unsuccessful.
 
 \subsubsection{User Management Subsystem}
 This subsystem offers interface to user to create or modify his informations and was inherited. by Class Customer and Postman.
@@ -1332,21 +1356,19 @@ This subsystem offers interfaces to controller for customers and e-business comp
 \begin{lstlisting}
 	string getLocation(string orderNumber)
 \end{lstlisting}
-Customer submits his request to UI with order number.
+By sending request of customer to this function, the customer will get position information from App UI or Web UI.
 \begin{lstlisting}
 	bool parseAppRequest(string orderNumber)
 \end{lstlisting}
-UI passes Request to Parser to Parse the request.
+By UI passing request to Parser to parse the request, UI will get position information from Parser.
 \begin{lstlisting}
-	trackPackage(string orderNumber)
+	Address trackPackage(string orderNumber)
 \end{lstlisting}
-OrderController is asked for package position information of the order.
-\todo{Fix bugs by WANG}
+By Parser passing request to OrderController, Parser will get position information from OrderController.
 \begin{lstlisting}
-	getAdd(string oderNumber)
+	Address getAddress(string oderNumber)
 \end{lstlisting}
-Order gives information(expressing track and current location) back.
-
+By OrderController passing request to Order, OrderController will get position information from Order.
 \subsubsection{Return Products Subsystem}
 This subsystem is used to handle the withdrawal or exchange request from the customer. This subsystem offers interfaces to controller for postmen and customer service to deal with the returning. The corresponding interfaces are as follows.
 \begin{lstlisting}
@@ -1362,23 +1384,104 @@ By sending the order number and the	withdrawal reason to this function, the corr
 \end{lstlisting}
 By sending the order number and the	withdrawal reason to this function, the corresponding information will be	changed	in the system. The return value decides whether	the message has been sent successfully.
 
-\subsection{Detailed Subsystem: Create Order}
+\subsection{Detailed Subsystem: Order Management}
+Our Order Management Subsystem provides some interfaces such as create, selectOrder, insertOrder and so on. The OrderController class require following interfaces. For example, if a customer want to create an order, it will call the createOrder function of Order controller, and then use the create function of Order class interface to create an order and the insertOrder function of Database Controller to insert a new order into the database.\\
+As the class diagram shows, our system will get the external order information in the format of Pair from customers and E-business type if it creates orders for E-business. By invoking the interface in orderController class, it will call the create function in order and insertOrder function to insert the data in database.
+\begin{figure}[htbp]
+	\centering\includegraphics[width=6in]{DocumentRes/ClassDiagramOrderManagement.png}
+	\caption{Class Diagram: Order Management Subsystem}
+\end{figure}
+This sequence diagram shows the process of creating the order for the customer. After getting the request from the customer, the system will check if the customer already exists in our system. If the customer does exist, the system will add the external order information provided by the customer into our system. And return the result to the customer.\\
+This sequence diagram shows the process of creating order list for the E-business. In this subsystem, it will create the order list by creating one single order each time. Until the loop of creating a single order finishes, it will return the whole order list back to the E-business. For creating a single order, the process is the same as creating the order for the customer, as showed above. By checking the existence of the customer, the system will add the new order’s information of the customer.
+\begin{figure}[htbp]
+	\centering\includegraphics[width=6in]{DocumentRes/1SequenceDiagram_create.png}
+	\caption{Sequence Diagram: Create}
+	\centering\includegraphics[width=6in]{DocumentRes/2SequenceDiagram_check.png}
+	\caption{Sequence Diagram: Check}
+\end{figure}
+\subsubsection{Protocol}
+Mainly we would use TCP/IP (Internet Protocol Suite) and the common four layers: link layer, transport layer, internet layer and application layer.\\
+\begin{itemize}
+	\item Link Layer: We adopt Ethernet and particularly take MAC (Medial Access Control) model in our system.
+	\item Transport Layer: We employ IP to ensure the transportation of data and ARP \& RARP as the transformation between IP address and the physical address. In addition, considering our system is used around the regions of Jiangsu, Zhejiang and Shanghai, we use IGMP to process the trans-regional transportation.
+	\item Internet Layer: Because in OrderController, the content is orders, we decided use UDP and through the error handling to ICMP. If the transportation failed, ICMP in Transport Layer will send error message.
+	\item Application Layer: In this layer because there is no need to assure real-time communication. Besides, it is unpractical and will cost a lot, we use HTTP/HTTPS.	
+\end{itemize}
+\subsubsection{JSON Format of Order}
+\begin{lstlisting}
+{
+ "orderNumber" : string,
+ "orderDate" : string,
+ "orderSenderContacts" : {
+ 	"userID" : string,
+ 	"userType" : enum,
+ 	"userName" : string,
+ 	"email" : string,
+ 	"telephone" : string,
+ 	"address" : {
+ 		"country" : string,
+ 		"state" : string,
+ 		"city" : string,
+ 		"district" : string,
+ 		"road" : string,
+ 		"building" : string,
+ 		"room" : string
+ 		}
+ 	},
+ "orderReceiverContacts" : {
+ 	"userID" : string,
+ 	"userType" : enum,
+ 	"userName" : string,
+ 	"email" : string,
+ 	"telephone" : string,
+ 	"address" : {
+ 		"country" : string,
+ 		"state" : string,
+ 		"city" : string,
+ 		"district" : string,
+ 		"road" : string,
+ 		"building" : string,
+ 		"room" : string
+ 		}
+ 	},
+ "orderPackage" : Package
+}
+\end{lstlisting}
+\begin{figure}[htbp]
+	\centering\includegraphics[width=7in]{DocumentRes/OrderFormat.png}
+	\caption{Order Format}
+\end{figure}
 
 \subsection{Interface between Our System and External Systems}
 As shows above, we have designed create order interface for communication between our system and external systems. The external systems include the E-business websites and the customer.\\
-The Encryption class provides interfaces for the third party messaging system. These interfaces are showed in the security mechanism.
+The Encryption class provides interfaces for the third party messaging system. These interfaces are showed in the security mechanism.\\
 
 \section{Mechanisms}
 \subsection{Communication Mechanism}
 Our system provides both AppAPI and WebAPI to the User Interface. The parser will parse the request and forwarding to the OrderController or Third-Party System according to the content. The OrderController will use the interface provided by the Order Class. The communication will be provided by using its interface. The sequence diagram is used to describe the message receiving process of the subsystem's interface. This interface will receive the messages and then create responses, send back to front-end.
 \subsection{Security Mechanism}
+\begin{figure}[htbp]
+	\centering\includegraphics[width=6in]{DocumentRes/SecurityMechanism.png}
+	\caption{Security Mechanism}
+\end{figure}
 Our system provides two interfaces in this mechanism and defines two corresponding functions, including encryption and random string generation. There are two entity classes MD5Encrypt and SHAEncrypt which are designed for implementing the interface EncryptBehavior. Inheriting from the abstract class Encryption, the entity class ConcreteRandom is used to implement the RandomBehavior interface and will invoke these two interfaces.\\
 Encryption is an abstract class, without the \textbf{encryption} operation and \textbf{randomStr} operation. Thus, two attributes which are two interfaces are private. What is more is that we add a string attribute to store the content, an abstract operation \textbf{init} for subclass to init the text attribute and set algorithm at the beginning, a \textbf{runEncryption} operation to precess the encryption and a \textbf{setAlgorithm} operation to set the algorithm.\\
 The sequence diagram of this security mechanism shows the encryption process. The system will generate a string randomly according to the length defined in the Encryption class. The \textbf{encrypt} interface will put together the original password and the random string to complete the encryption, thus, return the encrypted string. This encrypted string is used to identify the user's identity by comparing the input of password with what stores in our database.
 \section{Use Case Realizations}
 \subsection{Sign the Package}
-
+\begin{figure}[htbp]
+	\centering\includegraphics[width=4in]{DocumentRes/34SequenceDiagram_signPackage.png}
+	\caption{Sequence Diagram: Sign the Package}
+\end{figure}
+In this use case, the postman uses his mobile device to let the receiver sign the package. Since the receiver is the generalization of the customer and the third-party agent, we add additional controller: Signature system, to control the signing way: fingerprint. After receiving and parsing the request in the Dispatch Controller from Postman's App UI, it will use the Order Controller to compare the receiver information and use the Signature System to compare the signature or fingerprint with what store in the system. We have defined a series of \textbf{get} functions and corresponding parameters to implement this use case. All the attributes except the orderID are defined as protected, so that the security is guaranteed. We define the signature, fingerprint and order list attribute of the class Customer as private ones to improve security. And the aggregation as well as the relationships such as aggregation, dependency are showed in the class diagram.\\
+The postman will get the receiver’s information by using the Postman's App UI. This boundary class will call its interface \textbf{getReceiverInfo()}. The corresponding request will pass through Dispatch Controller, Order Controller and Order class. Each class will call its own interface showed in the class diagram and retrieve the order and receiver information finally. During the signing process, the postman's App UI will call its interface \textbf{signPackage()}. If the package is signed by the agent, the system will identify the information and compare them by using the order controller and calling compareIdentifyInfo(). If the package is to be signed by the customer himself, the customer has alternative choices, including signature and fingerprint. We will submit the signature or fingerprint by calling the interface \textbf{submitSignature()}, provided by the signature system. And pass the corresponding information to the signature service which will compare the signature or fingerprint with what are stored in our system. If the corresponding information are matched with each other, the order controller will call its interface \textbf{confirmDelivery()}. Then the order class will use \textbf{updateStatus()} to complete the package delivery and return success signal to the \textbf{getStatus()} interface.
 \subsection{Track the Package}
+\begin{figure}[htbp]
+	\centering\includegraphics[width=4in]{DocumentRes/8SequenceDiagram_track.png}
+	\caption{Sequence Diagram: Track the Package}
+\end{figure}
+When the Customer and the Customer Service track the package by using the Customer's App UI or Web UI, the UI will call the API implemented by dispatch controller and send the Request by the HTTP. The request contains the order id and the content-type is JSON. The parser parses the request and sends the order id to Order Controller. Order Controller gets the order information from the database.                                                                                                                     And if the order exists, Order Controller will get the location info of the order and sends it to the Address Controller. The Address Controller will get the addresses from the location information by a loop and put them in an order list. This process will come to an end when the prelocationid is null. After this process, the Address Controller return the Address list to the customer.\\
+After invoking the interfaces parseWebRequest(URL url, JSON info) and parseAppRequest(URL url, JSON info) of Dispatch Controller, the system will get the tracking request from the customer or the customer service. It will use the getOrderFromDB(String ordered) provided by the Order Controller to get the package, required to track by the customer or the customer service. If the package exists in the database, it will invoke the getAddress() and getPreLocation() interfaces to get the current and former addresses of the package by its order id. Then the system will return the Address list to the customer or the customer service.
 
 \chapter{User Interface}
 \section{Mobile Devices(iOS)}
@@ -1433,7 +1536,19 @@ There is basic information of the system showed on the page. The services can be
 \end{figure}
 
 \chapter{Prototype}
-
+We build the connection with Oracle and the attributes of the connection, including user name, password and the dialect.\\
+\begin{figure}[htbp]
+	\centering\includegraphics{DocumentRes/database1.png}
+	\centering\includegraphics{DocumentRes/database2.png}	
+\end{figure}\\
+We create the mapping between the Order table in Oracle and the class Order of Java code. And specify the configuration file and starts one session with the database.\\
+After the instantiation of the Order class, the data has been stored in the database after the operations.\\
+Thus, encryption part is shown as follow:\\
+\begin{figure}[htbp]
+	\centering\includegraphics[width=3in]{DocumentRes/database3.png}
+\end{figure}\\
+In order to realize extendibility and reusability, the encryption mechanism of our system is designed be using the strategy pattern. We have defined 2 interfaces, which are encryption behaviors and generation of random string. An abstract class Encryption is defined and its method is designed for implementing the 2 interfaces. We may define a class inherited from the Encryption class and define the two interfaces in detail. In our prototype, we design two concrete class, named as MD5Encrypt and SHAEncrypt. And 2 other concrete classes are defined for the generation of random string and encryption of the password. The detailed test is in the test file.\\
+The source code is showed in the compressed package.
 
 \chapter{Glossary of Terms}
 \begin{spacing}{0.7}

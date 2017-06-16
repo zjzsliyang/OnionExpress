@@ -152,7 +152,15 @@ Each team will be presenting your architecture refinement, interfaces and subsys
 
 ### Distribution
 
-
+- Subsystems
+  - Zhongjin LUO(Order Management Subsystem)
+  - Guohui YANG(Package Sign Subsystem)
+  - Yang LI(User Management Subsystem)
+  - Yiqun LIN(Payment Subsystem)
+  - Yirui WANG(Tracking Subsystem)
+  - Xinying WU(Return Products Subsystem)
+- Mechanisms
+  - Yang LI
 
 ### Agenda
 
