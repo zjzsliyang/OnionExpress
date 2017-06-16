@@ -1326,7 +1326,15 @@ This interface is used to create user via userName, password, email, telephone a
 This interface is a virtual function implemented by different sub-functions. User can modify his informations through sending the new value of the Class User.
 
 \subsubsection{Package Sign Subsystem}
-\todo{Package Sign Subsystem by YANG}
+This subsystem allows customer to interact with controller to finish package signing.
+\begin{lstlisting}
+	bool signPackage(Customer customerInfo, Order orderInfo)
+\end{lstlisting}
+This function will be invoked when a receiver wants to sign the package. Information of customer and her order will be sent to back end. A boolean value will be returned as a mark which indicates the status of signing process, that is, success or not.
+\begin{lstlisting}
+	bool confirmReceiverInfo(Customer receiverInfo, Order orderInfo)
+\end{lstlisting}
+This interface receives the information of receiver and corresponding order, sends them to customer in order to confirm if the receiver has access to the package. It returns a boolean value that means the verification is successful or not.
 
 \subsubsection{Payment Subsystem}
 This subsystem offers interfaces to controller for customers and postmen to finish payment(including package and freight). The corresponding interfaces are as follows.
@@ -1388,7 +1396,7 @@ By sending the order number and the	withdrawal reason to this function, the corr
 Our Order Management Subsystem provides some interfaces such as create, selectOrder, insertOrder and so on. The OrderController class require following interfaces. For example, if a customer want to create an order, it will call the createOrder function of Order controller, and then use the create function of Order class interface to create an order and the insertOrder function of Database Controller to insert a new order into the database.\\
 As the class diagram shows, our system will get the external order information in the format of Pair from customers and E-business type if it creates orders for E-business. By invoking the interface in orderController class, it will call the create function in order and insertOrder function to insert the data in database.
 \begin{figure}[htbp]
-	\centering\includegraphics[width=6in]{DocumentRes/ClassDiagramOrderManagement.png}
+	\centering\includegraphics[width=6in]{DocumentRes/OrderManagement.png}
 	\caption{Class Diagram: Order Management Subsystem}
 \end{figure}
 This sequence diagram shows the process of creating the order for the customer. After getting the request from the customer, the system will check if the customer already exists in our system. If the customer does exist, the system will add the external order information provided by the customer into our system. And return the result to the customer.\\
