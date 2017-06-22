@@ -1,6 +1,6 @@
-%System Analysis Document
+%Project Evaluation & Self-Reflection Document
 %Copyright 2017 Yang LI
-%https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign
+%https://github.com/zjzsliyang/OnionExpress
 %Under GPL-3.0 License
 
 \documentclass[12pt]{scrreprt}
@@ -79,24 +79,79 @@
   title=\lstname
 }
 
-
 \maketitle
 \tableofcontents
 
 \chapter{Project Achievements}
+Reviewing the project from the end of semester, as we produce a large amount of document about our system, which contains a brief introduction and following key points:
+\subsubsection{Use Case Model}
+In the use case modeling, we have a global use case and several specification of use cases, which represent missions and stakeholder goals in the whole systems and the detailed scenario. Thus, it can provide the shortest summary of what our system will offer, and this project planning skeleton, to be used to build initial priorities, estimates, team allocation and timing. These use case constitute a powerful, user-centric tool for the software requirements specification process. It ensure that what has the real business value and the user really want is developed, not those trivial functions speculated from a developer or system inside perspective.
+\subsubsection{Supplementary Specification}
+The Supplementary Specification provides an overview of the entire document. It includes the purpose, scope, definitions, acronyms, abbreviations, references, and overview of this Supplementary Specification. It also captures the system requirements that are not readily captured in the use cases of the use-case model.\\
+We discuss this part in many ways, like security, performance, data storage and computing, maintain and more. As the complex system have many additional functions, we have dived into details about the dilemma and come up with some feasible solutions.
+\subsubsection{Architectural Analysis}
+Architectural Analysis reflects early decisions and working assumptions on implementing the Vision, as well as decisions concerning the physical and logical architecture and non-functional requirements of the system. It is produced by the designer, often in collaboration with the stakeholders. It takes the form of an informal, rich picture, story-board, or iconic graph. Conceptually, it illustrates the essential nature of the proposed solution, conveying the governing ideas and including the major building blocks. The level of formality of the architectural overview is project dependent. Take our system for example, in this large, high-ceremony project, it may be necessary to capture the architecture overview in the appropriate sections of the Software Architecture Document, so that it may be formally reviewed.\\
+We have designed the package diagram and divide our system into six layers, Presentation Layer, Service Layer, Controller Layer, Business Logical Layer, Domain Layer and Data Layer. Then, we analysis every layer's thing, and what it play in our whole system. It makes our project more clear and easy to understand.
+\subsubsection{Analysis Model}
+In this part, we have a global class diagram, every scenario's sequence diagram and communication diagram. The class diagram support the specification of the concept of classes known from object-oriented programming. The objective of class diagrams is to specify classes and their operations as well as the dependencies between them.\\
+As for the sequence diagram, it can help specifying the link between a use case and the methods and classes defined in class diagrams. It is therefore important to ensure consistency between these use case and class diagrams.\\
+Communication diagrams illustrate object interactions in a graph or network format, in which objects can be placed anywhere on the diagram. \\
+However, it has been some difference between this similar diagrams. Sequence diagrams have some advantages over communication diagrams. Perhaps first and foremost, the UML specification is more sequence diagram centric—more thought and effort has been put into the notation and semantics. Thus, tool support is better and more notation options are available. Also, it is easier to see the call-flow sequence with sequence diagrams—simply read top to bottom. With communication diagrams we must read the sequence numbers, such as "1:" and "2:". Hence, sequence diagrams are excellent for documentation or to easily read a reverse-engineered call-flow sequence, generated from source code with a UML tool.\\
+But on the other hand, communication diagrams have advantages when applying "UML as sketch" to draw on walls because they are much more space-efficient. This is because the boxes can be easily placed or erased anywhere—horizontal or vertical. Consequently as well, modifying wall sketches is easier with communication diagrams—it is simple to erase a box at one location, draw a new one elsewhere, and sketch a line to it. In contrast, new objects in a sequence diagrams must always be added to the right edge, which is limiting as it quickly consumes and exhausts right-edge space on a page; free space in the vertical dimension is not efficiently used. Developers doing sequence diagrams on walls rapidly feel the drawing pain when contrasted with communication diagrams.\\
+Likewise, when drawing diagrams that are to be published on narrow pages, communication diagrams have the advantage over sequence diagrams of allowing vertical expansion for new objects—much more can be packed into a small visual space.
+\subsubsection{Subsystems}
+Informally speaking, a subsystem is a cross between a package and a class. It behaves like a package in that it groups other model elements, but it also behaves like a class because it has a specified behavior.\\
+To say that a subsystem behaves like a package implies that it has an inside view and an outside view. Inside the subsystem are a number of other model elements(e.g., classes) that collaborate to fulfill the behavior for which the subsystem is responsible. From the outside of the subsystem these classes are not necessarily visible; in fact, it is a very good idea to make them invisible. From the outside, inner details of the subsystem are not interesting, and it is best to treat the subsystem as a single unit.\\
+As we design following subsystems: order management, user management subsystem, package sign subsystem, payment subsystem, tracking subsystem and return products subsystem. It help architects greatly in realizing many of a software system's architecture qualities such as insulation from change, replaceable implementation, dynamic replacement, abstraction, reuse and more.
+\subsubsection{Mechanisms}
+
+\subsubsection{User Interface}
+
+\subsubsection{Prototype}
 
 \chapter{Limitations of Design}
 
+
 \chapter{Potential Improvements}
+
 
 \chapter{Open Issues}
 
+
 \chapter{Development Plan}
+As now we have the documents about our Onion Express system, the development plan can be pretty clear
 
 \chapter{Course Reflection}
+\subsubsection{Yang LI}
+As the \LaTeX\ file open sourced in \href{https://github.com/zjzsliyang/OnionExpress}{GitHub} and everything comes to an end, it is time to review all this semester that we have learned and how it works in my daily project.\\
+The first thing is that as a team leader, I have to organize our teammates to assign different part to everyone according to their strengths. Thus, we have meeting weekly to discuss in Tongji Apple Club and record the contents in \href{https://github.com/zjzsliyang/OnionExpress/blob/master/README.md}{README} file. Having this well-organized documents, I am full of satisfaction. What's more, I need to set the deadline to every points in each assignment to ensure we can finish on time. To be honest, due to procrastination, it is pretty difficult.\\
+Next come to the course content, as a organizer, I should understand all the knowledge, to combine them together and check whether there has a mistake. And I also make some contributions in the specific scenario, such as class diagram, iOS UI, design an analysis mechanism and so on, which make me have a deep understanding of a project.\\
+As I filled in the questionnaire, Prof. LIU and Prof. CAO both have a fluent polish and taught clearly, so we can always catch the key points accurately and English teaching did not affect us at all, while it lay a solid foundation for our future study abroad. Thanks to two professors and TAs.
+
+\subsubsection{Zhongjin LUO}
+In this class, I experienced a whole process of System Analysis and Design. I not only learn to use unified modeling language, but also learn to analyze and solve problems using analytical skills. In the first stage, I learn that the first step to design is to analyze use case. And after practicing, I have learned to draw use case diagram and describe the whole use procedure normatively. In the second stage, I have learn the analysis model including class diagram, sequence diagram, communication diagram. I found that the sequence diagram and communication sequence diagram are little different. And converting text to graphs are more clear. In the third step, I have learned to encapsulate different classes to a subsystem and provide  interfaces to other subsystem. I found that dividing the whole system to different subsystem make the whole architecture more clear, and of course, it is more easy to maintain. In class, I found that UML have a lot of advantages. It provides standard for software development, reduces costs to develop diagrams of UML using supporting tools, reduces development time and has large visual elements to construct and easy to follow. Finally, I have improved my English listening and writing ability. 
+
+\subsubsection{Guohui YANG}
+
+
+\subsubsection{Yirui WANG}
+Through class and assignment, I learned to perform a requirement analysis of a project and through use case, class diagram, sequence diagram, communication diagram to perform specific analysis and describe the solution. I learned to consider the problem systematically and comprehensively as well as analysis a particular aspect meticulously.\\
+Compared to UML, source code focuses only on the software itself and ignores the rest of the system. Even though the code is a complete and generally unambiguous definition of what the software will do, the source code alone simply cannot tell how the software is to be used and by whom, nor how it is to be deployed; the bigger picture is missing entirely if all you have is the source code. When it comes to informal languages, the informal languages do not have a formally defined notation; there are no hard and fast rules as to what a particular notation can mean, although sometimes there are guidelines. The best thing about having modeled the system using UML is that the notation has a specific and defined meaning. If others know UML, the design would be clearly understood.
+
+\subsubsection{Yiqun LIN}
+I have learnt the process of system analysis and design, how to analyze and how to design our logistic system. We complete the analysis and design of this project step by step, and I have learnt how to design a use case diagram, communication diagram, activity diagram and sequence diagram. Besides, I have learnt how to work in a team. In this teamwork, I was responsible for design diagram for scenario five and scenario six, and the architecture analysis diagram. \\
+I think our team leader Yang LI is the core of our team. We managed the files on GitHub and He organized the discussion and assigned tasks after each assignment arranged. \\
+Because the course was taught in English and I haven't learnt UML before, I can't follow the teacher without any preview. Each diagram design, I would review the slides and books(Chinese books) to make sure I really understand the point and didn't make any mistakes.\\
+All in all, this course benefits me a lot.\\
+
+\subsubsection{Xinying WU}
+In system analyze and design course we did the project called onion express as a group. The whole project is divided into three parts, which allows us to complete the project step by step and better understand the knowledge.\\
+Teamwork is a very important part of the whole project. After analyzing the requirements we had a clear division of labor. The first part I was responsible for UI design, the second part I did communication diagram and sequence diagram about return of goods and finally part I designed the subsystem with partners.\\
+It was difficult for me to follow with the teacher because the course is taught in English and I was unfamiliar with UML. Thanks to my team partners explaining the points I do not understand and I also reviewed the textbook to make sure I didn't make mistakes.\\
+It is interesting to have two teachers to give us classes, which gives us a different class experience. And what I learn in the course benefits me a lot.
 
 \chapter{Contributions}
-More information, please visit us on \href{https://github.com/zjzsliyang/42003201ObjectOrientedAnalysisAndDesign}{GitHub}
+More information, please visit us on \href{https://github.com/zjzsliyang/OnionExpress}{GitHub}
 \vspace{3mm}\\
 \href{https://github.com/zjzsliyang}{{\color{blue}1452559 Yang LI}} \hspace{17mm} iOS UI, Document\hfill 17\%\\
 \href{https://github.com/tjluozhongjin}{{\color{blue}1453645 Zhongjin LUO}} \hspace{5mm} Scenario One \& Two Diagrams\hfill 17\%\\

@@ -1,4 +1,5 @@
-# 42003201ObjectOrientedAnalysisAndDesign
+# OnionExpress
+
 42003201 Spring2017 Object-Oriented Analysis And Design(Project) by Yan LIU & Buyang CAO @ SSE, TJU
 
 ------
@@ -166,3 +167,45 @@ Each team will be presenting your architecture refinement, interfaces and subsys
 
 - Point: PRESENTATION(*June 13, Tuesday*)
 - Point: Document Submission(*June 19, Wednesday*)
+
+## PART IV Assignment
+
+**Due June 27, 7:00 pm**
+
+[Submit to TA](mailto:ooad_sse@sina.com)
+
+Weight: 10%
+
+### Requirements
+
+In the previous assignments, you analysed and designed a system. In the final assignment, you should evaluate your solutions; and explore the possibility to improve the QUALITY of your system design. Your project evaluation and self-reflection should be summarized in a report, which should cover the following aspects.
+
+- Project achievements
+- Limitations of your design
+- Potential improvements in the software architecture
+
+- Open issues in your design model
+
+- A development plan for the system implementation based on your current progress
+
+- Other project self-reflections, if any.
+
+- Course reflection: What you have learned during the class; and how it will assist you in achieving professional goals.
+
+
+- Contributions of team members
+
+### Distribution
+
+- Course Reflection
+  - Yang LI
+  - Zhongjin LUO
+  - Guohui YANG
+  - Yirui WANG
+  - Yiqun LIN
+  - Xinying WU
+- ​
+
+### Agenda
+
+- Point: Document Submission(*June 27, Tuesday*)
