@@ -104,6 +104,9 @@ Informally speaking, a subsystem is a cross between a package and a class. It be
 To say that a subsystem behaves like a package implies that it has an inside view and an outside view. Inside the subsystem are a number of other model elements(e.g., classes) that collaborate to fulfill the behavior for which the subsystem is responsible. From the outside of the subsystem these classes are not necessarily visible; in fact, it is a very good idea to make them invisible. From the outside, inner details of the subsystem are not interesting, and it is best to treat the subsystem as a single unit.\\
 As we design following subsystems: order management, user management subsystem, package sign subsystem, payment subsystem, tracking subsystem and return products subsystem. It help architects greatly in realizing many of a software system's architecture qualities such as insulation from change, replaceable implementation, dynamic replacement, abstraction, reuse and more.
 \subsubsection{Mechanisms}
+A building is made simpler and more harmonious by the conformance to a pattern of common features. It is made simpler by the presence of four common mechanisms that apply consistently throughout the language.\\
+In our system design, we take communication mechanism and security mechanism in detail. In the first one, we design the API between the front-end and back-end, and use JSON to communicate. While in the security mechanism, we use SHA and MD5 encryption to make sure the security. Those 
+
 
 \subsubsection{User Interface}
 
@@ -116,8 +119,17 @@ As we design following subsystems: order management, user management subsystem, 
 
 
 \chapter{Open Issues}
-
-
+\section{Integrality}
+Although we have design all pages UI of our system, but we just achieve part of system function. We haven't fitted all screen resolutions and all browsers. In deed, we have to design Web UI to meet customer need. And we also hope that develop native app for iOS and Android, because Web View is a bad user experience in mobile.\\
+We haven‘t designed our database, just store our data in a simple table without thinking about redundancy and performance. Database performance would affect the whole system performance and Database redundancy would lead to lead to data inconsistency. And in the class, we found that other group use distributed database to guarantee performance, we all think that it is a superb choice to add this concept to our system to improve performance.\\
+As for payment, we just use third-party payment service, which require customer use third-party payment to pay for their order. And for enterprise customer, they pay for their order manually every time. We haven't add our own paying wallet. If have, we can provide a more convenient method for customer, and we can also allow enterprise customer choose to pay automatically, which will reduce their workload.
+\section{Separability}
+Now, in our system, all customers(including personal customers and enterprise customer) use the same application. We found that the functional requirement of personal customers and enterprise customers is different. For example, enterprise customers has many packages to send, while personal customers have little packages. So, we need to improve our system to make enterprise customers manage their packages more easily.
+\section{Security}
+Now, we can users can log in via WeChat or Facebook, it is unsafe when a user's social account is stolen. We haven't record users' usual IP address and usual equipment. We found that if we bring face recognition and fingerprint recognition to our application cannot only improve security, but also improve user experience. We haven't add real name authentication to our system, which is unsafe for user's fund.\\
+We haven't work out to prevent SQL injection, XSS, CSRF. And evildoer will use these faultiness to invade our database. We also haven't use IP limitation to prevent malicious visitors.
+\section{Concurrency}
+We haven't considered concurrence access problems. In our system, if a large number of customers use our system in the same time, our system may  crash.  And system crash will lead to data insecurity and data missing.
 \chapter{Development Plan}
 As now we have the documents about our Onion Express system, the development plan can be pretty clear
 

@@ -204,7 +204,8 @@ In the previous assignments, you analysed and designed a system. In the final as
   - Yirui WANG
   - Yiqun LIN
   - Xinying WU
-- ​
+- Project Achievements
+  - Yang LI
 
 ### Agenda
 
