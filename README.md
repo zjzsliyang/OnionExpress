@@ -206,6 +206,14 @@ In the previous assignments, you analysed and designed a system. In the final as
   - Xinying WU
 - Project Achievements
   - Yang LI
+- Limitations of Design
+  - Yiqun LIN
+- Potential Improvements
+  - Guihui YANG
+- Open Issues
+  - Zhongjin LUO
+- Development Plan
+  - Yirui WANG, Xinying WU
 
 ### Agenda
 
