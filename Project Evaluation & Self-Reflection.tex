@@ -113,11 +113,28 @@ The Prototyping Model is a systems development method in which a prototype is bu
 As our prototype, it can improved and increased user involvement, and reduced time and costs. We take our connection with Oracle Database and Encryption for example.
 
 \chapter{Limitations of Design}
-There still are several limitations in our design. The security mechanism is not perfect. The final design should prevent cross-domain access and SQL injection. Besides, the design should be closer to the reality, and we need to do some detailed research to figure out the exact user scenario. In addition, maybe we can simplify the overall architecture. Some subsystems are considered not comprehensive enough. For example, in the payment subsystem, customer can pay by Apple Pay or check.
+There still are several limitations in our design. The security mechanism is not perfect. The final design should prevent cross-domain access and SQL injection. For the former, we will take some detailed action for consideration, such as look for the header, use and .htaccess file, and use tokens. As to the latter, we prepare statements with parameterized queries, stored procedures white list input validation, escape all user supplied input and so on. There may be a lot program vulnerability in security, we will work on it all the time.\\
+Besides, reality is also a big part, that is the design should be closer to the reality, and we need to do some detailed research to figure out the exact user scenario. In addition, maybe we can simplify the overall architecture. Some subsystems are considered not comprehensive enough. For example, in the payment subsystem, customer can pay by Apple Pay, check and so on. With wave of smart home, we can combine it with some IoT things to provide a better user experience.\\
+Thus, some potential limitations can be fixed soon is under our calendar, we will discuss details in the several chapters.
 
-Thus, we also 
 \chapter{Potential Improvements}
+\section{Use Cases}
+Requirements change all the time. In fact, in addition to the original given scenarios, from which we extracted use cases, there are more potential use cases still. For example, considering efficiency, in some densely populated areas like school, residential areas, people may hope that they can take their packages at any time they want. Therefore, self-help package signing system is in need. It allows customers to get their packages at a nearby centralized package storage, without worrying about time constraints. In this case, we have to modify our use cases model and related designs to accommodate new requirements.\\
+That also raises another issue:
 
+\section{Coupling and Cohesion}
+Generally, low coupling and high cohesion is a critical principle we should follow in the process of object-oriented analysis and design. Otherwise, the more and more complex systems will lead to a maintenance nightmare. In our analysis and design, however, we probably did not meet this rule strictly. Take our subsystem design as an example, interfaces design is not high cohesion.
+
+\section{Security Mechanism}
+As to an e-commerce platform, security is always the primary consideration at most of the time. So far we have created a security mechanism, but there are still something that we should think carefully, that is, such following capabilities:
+\begin{enumerate}
+	\item \textbf{Specification of physical exposure}: Can someone access and impact the component? For example, can someone replace the memory?
+	\item \textbf{Specification of trust}: Is a component verified so that it can be trusted (no propagation of fault or vulnerability)?
+	\item \textbf{Security levels and domains}: What are the criticality levels and domains of components? Does a component handle several domains or levels?
+	\item \textbf{Specification of encryption mechanism}: Is data encrypted when it is transported between two components? Is the encryption mechanism strong enough?
+	\item \textbf{Specification of authentication mechanism}: Does the system use an authentication mechanism (user/password, password, etc.)? Can we trust it?
+\end{enumerate}
+We only considered the encryption and authentication mechanism here. We can purpose improvements plans from other aspects.
 
 \chapter{Open Issues}
 \section{Integrality}
@@ -184,8 +201,8 @@ Through class and assignment, I learned to perform a requirement analysis of a p
 Compared to UML, source code focuses only on the software itself and ignores the rest of the system. Even though the code is a complete and generally unambiguous definition of what the software will do, the source code alone simply cannot tell how the software is to be used and by whom, nor how it is to be deployed; the bigger picture is missing entirely if all you have is the source code. When it comes to informal languages, the informal languages do not have a formally defined notation; there are no hard and fast rules as to what a particular notation can mean, although sometimes there are guidelines. The best thing about having modeled the system using UML is that the notation has a specific and defined meaning. If others know UML, the design would be clearly understood.
 
 \subsubsection{Yiqun LIN}
-I have learnt the process of system analysis and design, how to analyze and how to design our logistic system. We complete the analysis and design of this project step by step, and I have learnt how to design a use case diagram, communication diagram, activity diagram and sequence diagram. Besides, I have learnt how to work in a team. In this teamwork, I was responsible for design diagram for scenario five and scenario six, and the architecture analysis diagram. \\
-I think our team leader Yang LI is the core of our team. We managed the files on GitHub and He organized the discussion and assigned tasks after each assignment arranged. \\
+I have learnt the process of system analysis and design, how to analyze and how to design our logistic system. We complete the analysis and design of this project step by step, and I have learnt how to design a use case diagram, communication diagram, activity diagram and sequence diagram. Besides, I have learnt how to work in a team. In this teamwork, I was responsible for design diagram for scenario five and scenario six, and the architecture analysis diagram.\\
+I think our team leader Yang LI is the core of our team. We managed the files on GitHub and He organized the discussion and assigned tasks after each assignment arranged.\\
 Because the course was taught in English and I haven't learnt UML before, I can't follow the teacher without any preview. Each diagram design, I would review the slides and books(Chinese books) to make sure I really understand the point and didn't make any mistakes.\\
 All in all, this course benefits me a lot.\\
 
